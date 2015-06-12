@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		491F24E61B2B3876008CD3F2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 491F24E51B2B3876008CD3F2 /* README.md */; };
+		49543A861B2B6109005E9164 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49543A831B2B6109005E9164 /* PageContentViewController.m */; };
+		49543A871B2B6109005E9164 /* WelcomeFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49543A851B2B6109005E9164 /* WelcomeFlowController.m */; };
+		49543A891B2B68C0005E9164 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49543A881B2B68C0005E9164 /* MapKit.framework */; };
+		49543A8B1B2B68C5005E9164 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49543A8A1B2B68C5005E9164 /* CoreLocation.framework */; };
+		49543A8E1B2B68E4005E9164 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49543A8D1B2B68E4005E9164 /* UIKit.framework */; };
 		499CEC921B2B36AC00DF341A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC911B2B36AC00DF341A /* main.m */; };
 		499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC941B2B36AC00DF341A /* AppDelegate.m */; };
-		499CEC981B2B36AC00DF341A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC971B2B36AC00DF341A /* ViewController.m */; };
 		499CEC9B1B2B36AC00DF341A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499CEC991B2B36AC00DF341A /* Main.storyboard */; };
 		499CEC9D1B2B36AC00DF341A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499CEC9C1B2B36AC00DF341A /* Images.xcassets */; };
 		499CECA01B2B36AC00DF341A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499CEC9E1B2B36AC00DF341A /* LaunchScreen.xib */; };
@@ -33,13 +37,18 @@
 
 /* Begin PBXFileReference section */
 		491F24E51B2B3876008CD3F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		49543A821B2B6109005E9164 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		49543A831B2B6109005E9164 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		49543A841B2B6109005E9164 /* WelcomeFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeFlowController.h; sourceTree = "<group>"; };
+		49543A851B2B6109005E9164 /* WelcomeFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeFlowController.m; sourceTree = "<group>"; };
+		49543A881B2B68C0005E9164 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		49543A8A1B2B68C5005E9164 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		49543A8D1B2B68E4005E9164 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		499CEC8C1B2B36AC00DF341A /* waho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = waho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499CEC901B2B36AC00DF341A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		499CEC911B2B36AC00DF341A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		499CEC931B2B36AC00DF341A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		499CEC941B2B36AC00DF341A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		499CEC961B2B36AC00DF341A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		499CEC971B2B36AC00DF341A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		499CEC9A1B2B36AC00DF341A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		499CEC9C1B2B36AC00DF341A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		499CEC9F1B2B36AC00DF341A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -74,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49543A8C1B2B68DB005E9164 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49543A8A1B2B68C5005E9164 /* CoreLocation.framework */,
+				49543A881B2B68C0005E9164 /* MapKit.framework */,
+				49543A8D1B2B68E4005E9164 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		499CEC831B2B36AC00DF341A = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +100,7 @@
 				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
 				B9A952211B2B5F5100485EC8 /* MapKit.framework */,
 				491F24E51B2B3876008CD3F2 /* README.md */,
+				49543A8C1B2B68DB005E9164 /* Frameworks */,
 				499CEC8E1B2B36AC00DF341A /* waho */,
 				499CECA81B2B36AC00DF341A /* wahoTests */,
 				499CEC8D1B2B36AC00DF341A /* Products */,
@@ -109,6 +129,10 @@
 				499CEC9C1B2B36AC00DF341A /* Images.xcassets */,
 				499CEC9E1B2B36AC00DF341A /* LaunchScreen.xib */,
 				499CEC8F1B2B36AC00DF341A /* Supporting Files */,
+				49543A821B2B6109005E9164 /* PageContentViewController.h */,
+				49543A831B2B6109005E9164 /* PageContentViewController.m */,
+				49543A841B2B6109005E9164 /* WelcomeFlowController.h */,
+				49543A851B2B6109005E9164 /* WelcomeFlowController.m */,
 			);
 			path = waho;
 			sourceTree = "<group>";
@@ -240,7 +264,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499CEC981B2B36AC00DF341A /* ViewController.m in Sources */,
 				499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */,
 				B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */,
 				499CEC921B2B36AC00DF341A /* main.m in Sources */,
