@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491F24E61B2B3876008CD3F2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 491F24E51B2B3876008CD3F2 /* README.md */; };
 		499CEC921B2B36AC00DF341A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC911B2B36AC00DF341A /* main.m */; };
 		499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC941B2B36AC00DF341A /* AppDelegate.m */; };
 		499CEC981B2B36AC00DF341A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC971B2B36AC00DF341A /* ViewController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		491F24E51B2B3876008CD3F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		499CEC8C1B2B36AC00DF341A /* waho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = waho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499CEC901B2B36AC00DF341A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		499CEC911B2B36AC00DF341A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		499CEC831B2B36AC00DF341A = {
 			isa = PBXGroup;
 			children = (
+				491F24E51B2B3876008CD3F2 /* README.md */,
 				499CEC8E1B2B36AC00DF341A /* waho */,
 				499CECA81B2B36AC00DF341A /* wahoTests */,
 				499CEC8D1B2B36AC00DF341A /* Products */,
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491F24E61B2B3876008CD3F2 /* README.md in Resources */,
 				499CEC9B1B2B36AC00DF341A /* Main.storyboard in Resources */,
 				499CECA01B2B36AC00DF341A /* LaunchScreen.xib in Resources */,
 				499CEC9D1B2B36AC00DF341A /* Images.xcassets in Resources */,
@@ -416,6 +420,7 @@
 				499CECB11B2B36AC00DF341A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		499CECB21B2B36AC00DF341A /* Build configuration list for PBXNativeTarget "wahoTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +429,7 @@
 				499CECB41B2B36AC00DF341A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
