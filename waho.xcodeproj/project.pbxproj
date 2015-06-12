@@ -15,6 +15,10 @@
 		499CEC9D1B2B36AC00DF341A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499CEC9C1B2B36AC00DF341A /* Images.xcassets */; };
 		499CECA01B2B36AC00DF341A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499CEC9E1B2B36AC00DF341A /* LaunchScreen.xib */; };
 		499CECAC1B2B36AC00DF341A /* wahoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CECAB1B2B36AC00DF341A /* wahoTests.m */; };
+		B9A952221B2B5F5100485EC8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A952211B2B5F5100485EC8 /* MapKit.framework */; };
+		B9A952241B2B5F5A00485EC8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */; };
+		B9A952261B2B5F7E00485EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A952251B2B5F7E00485EC8 /* UIKit.framework */; };
+		B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A952281B2B776100485EC8 /* EstablishmentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,11 @@
 		499CECA51B2B36AC00DF341A /* wahoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wahoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		499CECAA1B2B36AC00DF341A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		499CECAB1B2B36AC00DF341A /* wahoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wahoTests.m; sourceTree = "<group>"; };
+		B9A952211B2B5F5100485EC8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B9A952251B2B5F7E00485EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B9A952271B2B776100485EC8 /* EstablishmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstablishmentViewController.h; sourceTree = "<group>"; };
+		B9A952281B2B776100485EC8 /* EstablishmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstablishmentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9A952261B2B5F7E00485EC8 /* UIKit.framework in Frameworks */,
+				B9A952241B2B5F5A00485EC8 /* CoreLocation.framework in Frameworks */,
+				B9A952221B2B5F5100485EC8 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +77,9 @@
 		499CEC831B2B36AC00DF341A = {
 			isa = PBXGroup;
 			children = (
+				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
+				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
+				B9A952211B2B5F5100485EC8 /* MapKit.framework */,
 				491F24E51B2B3876008CD3F2 /* README.md */,
 				499CEC8E1B2B36AC00DF341A /* waho */,
 				499CECA81B2B36AC00DF341A /* wahoTests */,
@@ -88,6 +103,8 @@
 				499CEC941B2B36AC00DF341A /* AppDelegate.m */,
 				499CEC961B2B36AC00DF341A /* ViewController.h */,
 				499CEC971B2B36AC00DF341A /* ViewController.m */,
+				B9A952271B2B776100485EC8 /* EstablishmentViewController.h */,
+				B9A952281B2B776100485EC8 /* EstablishmentViewController.m */,
 				499CEC991B2B36AC00DF341A /* Main.storyboard */,
 				499CEC9C1B2B36AC00DF341A /* Images.xcassets */,
 				499CEC9E1B2B36AC00DF341A /* LaunchScreen.xib */,
@@ -225,6 +242,7 @@
 			files = (
 				499CEC981B2B36AC00DF341A /* ViewController.m in Sources */,
 				499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */,
+				B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */,
 				499CEC921B2B36AC00DF341A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
