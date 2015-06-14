@@ -6,6 +6,7 @@
 //
 
 #import "PageContentViewController.h"
+#import <Parse/Parse.h>
 
 @interface WelcomeFlowController : PageContentViewController
 
