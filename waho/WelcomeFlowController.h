@@ -10,4 +10,6 @@
 
 @interface WelcomeFlowController : PageContentViewController
 
+@property(nonatomic) NSArray *placesArray;
+
 @end

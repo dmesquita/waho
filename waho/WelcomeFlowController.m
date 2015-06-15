@@ -13,14 +13,23 @@
 
 @implementation WelcomeFlowController
 
+@synthesize placesArray;
+
 - (void)viewDidLoad
 {
 	// Do any additional setup after loading the view, typically from a nib.
     [super viewDidLoad];
     
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+    //Returning Place objects from Prase
+    PFQuery *query = [PFQuery queryWithClassName:@"Place"];
+    //query.cachePolicy = kPFCachePolicyNetworkElseCache;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
+        if (!error) {
+            placesArray = places;
+        } else {
+            NSLog(@"Error while getting Place objects from Parse");
+        }
+    }];
 
 	[self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"View1"]];
 	[self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"View2"]];

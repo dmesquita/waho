@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -26,7 +27,8 @@
                   clientKey:@"dZ58w8TBhE4bz1NkSAzQ4JwL9PGBms0vPngK5pjL"];
     
     // [Optional] Track statistics around application opens.
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];   
+    
     return YES;
 }
 
