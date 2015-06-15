@@ -334,7 +334,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Ynx-Dq-lQS" kind="relationship" relationship="rootViewController" id="LEj-wx-7m1"/>
+                        <segue destination="Oqd-gg-8U9" kind="relationship" relationship="rootViewController" id="jEd-ai-1wK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etn-hY-O0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -455,6 +455,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDD-K8-L62" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1369.5" y="-550.5"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Pzl-EA-DhO">
+            <objects>
+                <viewController id="Oqd-gg-8U9" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0FH-Dn-42r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="JN8-rZ-4le">
+                                <rect key="frame" x="0.0" y="-14" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" id="w1Z-vA-Tnh">
+                                <rect key="frame" x="0.0" y="77" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qEk-8b-qxw"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="JN8-rZ-4le" id="13P-a5-lvU"/>
+                        <outlet property="searchBar" destination="w1Z-vA-Tnh" id="8QP-Qr-fCm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kVf-mr-0wi" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2437.5" y="3130.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
