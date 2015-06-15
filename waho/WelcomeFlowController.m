@@ -26,6 +26,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
         if (!error) {
             placesArray = places;
+            NSLog(@"Success retrieving objects from Parse!");
         } else {
             NSLog(@"Error while getting Place objects from Parse");
         }

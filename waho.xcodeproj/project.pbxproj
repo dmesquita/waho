@@ -23,6 +23,11 @@
 		42E4C5861B2E4AB6002F79E2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5851B2E4AB6002F79E2 /* SystemConfiguration.framework */; };
 		42E4C5881B2E4ACB002F79E2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5871B2E4ACB002F79E2 /* libz.dylib */; };
 		42E4C58A1B2E4AD4002F79E2 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5891B2E4AD4002F79E2 /* libsqlite3.dylib */; };
+		42E4C58C1B2E50F3002F79E2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C58B1B2E50F3002F79E2 /* Social.framework */; };
+		42E4C58E1B2E50FA002F79E2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C58D1B2E50FA002F79E2 /* Accounts.framework */; };
+		42E4C5901B2E5337002F79E2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C58F1B2E5337002F79E2 /* FBSDKCoreKit.framework */; };
+		42E4C5921B2E5355002F79E2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */; };
+		42E4C5941B2E5363002F79E2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */; };
 		491F24E61B2B3876008CD3F2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 491F24E51B2B3876008CD3F2 /* README.md */; };
 		49543A861B2B6109005E9164 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49543A831B2B6109005E9164 /* PageContentViewController.m */; };
 		49543A871B2B6109005E9164 /* WelcomeFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49543A851B2B6109005E9164 /* WelcomeFlowController.m */; };
@@ -64,6 +69,11 @@
 		42E4C5851B2E4AB6002F79E2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		42E4C5871B2E4ACB002F79E2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		42E4C5891B2E4AD4002F79E2 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		42E4C58B1B2E50F3002F79E2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		42E4C58D1B2E50FA002F79E2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		42E4C58F1B2E5337002F79E2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		491F24E51B2B3876008CD3F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49543A821B2B6109005E9164 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		49543A831B2B6109005E9164 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
@@ -90,10 +100,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E4C58E1B2E50FA002F79E2 /* Accounts.framework in Frameworks */,
+				42E4C58C1B2E50F3002F79E2 /* Social.framework in Frameworks */,
 				42E4C58A1B2E4AD4002F79E2 /* libsqlite3.dylib in Frameworks */,
+				42E4C5901B2E5337002F79E2 /* FBSDKCoreKit.framework in Frameworks */,
 				42E4C5881B2E4ACB002F79E2 /* libz.dylib in Frameworks */,
+				42E4C5921B2E5355002F79E2 /* FBSDKLoginKit.framework in Frameworks */,
 				42E4C5861B2E4AB6002F79E2 /* SystemConfiguration.framework in Frameworks */,
 				42E4C5841B2E4AA2002F79E2 /* StoreKit.framework in Frameworks */,
+				42E4C5941B2E5363002F79E2 /* FBSDKShareKit.framework in Frameworks */,
 				42E4C5821B2E4A98002F79E2 /* Security.framework in Frameworks */,
 				42E4C5801B2E4A90002F79E2 /* QuartzCore.framework in Frameworks */,
 				42E4C57E1B2E4A87002F79E2 /* MobileCoreServices.framework in Frameworks */,
@@ -139,6 +154,11 @@
 		49543A8C1B2B68DB005E9164 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */,
+				42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */,
+				42E4C58F1B2E5337002F79E2 /* FBSDKCoreKit.framework */,
+				42E4C58D1B2E50FA002F79E2 /* Accounts.framework */,
+				42E4C58B1B2E50F3002F79E2 /* Social.framework */,
 				42E4C5891B2E4AD4002F79E2 /* libsqlite3.dylib */,
 				42E4C5871B2E4ACB002F79E2 /* libz.dylib */,
 				42E4C5851B2E4AB6002F79E2 /* SystemConfiguration.framework */,
@@ -455,6 +475,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/deborahmesquita1/Downloads/parse-library-1.7.4",
+					/Users/deborahmesquita1/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = waho/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -470,6 +491,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/deborahmesquita1/Downloads/parse-library-1.7.4",
+					/Users/deborahmesquita1/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = waho/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
