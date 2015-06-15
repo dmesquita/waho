@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="66" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rya-7P-vR8" id="OLG-kL-cAP">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -89,6 +89,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-7U-zpI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="926.5" y="2097.5"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="HHY-Bg-P8l">
+            <objects>
+                <tableViewController id="eWU-pW-Cfl" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BQG-jR-qBi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mTJ-5d-MXe">
+                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mTJ-5d-MXe" id="QBv-C6-oAH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eWU-pW-Cfl" id="bkj-4M-ir6"/>
+                            <outlet property="delegate" destination="eWU-pW-Cfl" id="u1c-Sf-9ah"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="KFH-qG-xbX"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TBE-cD-uSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2005.5" y="3937.5"/>
         </scene>
         <!--Estabelecimento-->
         <scene sceneID="Zmh-Wa-Omh">
@@ -334,7 +364,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Oqd-gg-8U9" kind="relationship" relationship="rootViewController" id="jEd-ai-1wK"/>
+                        <segue destination="Ynx-Dq-lQS" kind="relationship" relationship="rootViewController" id="O7Y-xA-mjm"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etn-hY-O0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -455,37 +485,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDD-K8-L62" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1369.5" y="-550.5"/>
-        </scene>
-        <!--Map View Controller-->
-        <scene sceneID="Pzl-EA-DhO">
-            <objects>
-                <viewController id="Oqd-gg-8U9" customClass="MapViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0FH-Dn-42r">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="JN8-rZ-4le">
-                                <rect key="frame" x="0.0" y="-14" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" id="w1Z-vA-Tnh">
-                                <rect key="frame" x="0.0" y="77" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="qEk-8b-qxw"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="mapView" destination="JN8-rZ-4le" id="13P-a5-lvU"/>
-                        <outlet property="searchBar" destination="w1Z-vA-Tnh" id="8QP-Qr-fCm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kVf-mr-0wi" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2437.5" y="3130.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
