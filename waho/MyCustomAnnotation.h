@@ -12,6 +12,7 @@
 @interface MyCustomAnnotation : NSObject <MKAnnotation>
 @property (nonatomic,readonly) CLLocationCoordinate2D coordinate;
 @property (copy,nonatomic) NSString *title;
+@property (nonatomic) int id_place;
 
 - (id)initWithTitle:(NSString *) newTitle Location:(CLLocationCoordinate2D)location;
 - (MKAnnotationView *)annotationView;

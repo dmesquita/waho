@@ -40,7 +40,7 @@
                 annotationCoord.latitude = lat;
                 annotationCoord.longitude = lon;
                 MyCustomAnnotation *annotationPointCustom = [[MyCustomAnnotation alloc] initWithTitle:places[i][@"name"] Location:annotationCoord];
-                
+                annotationPointCustom.id_place = i;
                 [mapView addAnnotation:annotationPointCustom];
             };
             activityLoadingMarkers.hidesWhenStopped = true;
@@ -71,9 +71,9 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     //launch a new view upon touching the disclosure indicator
-    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //RedViewController *tvc = (RedViewController *)[storyboard instantiateViewControllerWithIdentifier:@"teste"];
-    //[self presentViewController:tvc animated:YES completion:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EstablishmentViewController *tvc = (EstablishmentViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Establishment"];
+    [self presentViewController:tvc animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

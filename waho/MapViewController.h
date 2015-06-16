@@ -10,6 +10,7 @@
 #import "MapKit/MapKit.h"
 #import "Parse/Parse.h"
 #import "MyCustomAnnotation.h"
+#import "EstablishmentViewController.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 

@@ -123,7 +123,7 @@
         <!--Estabelecimento-->
         <scene sceneID="Zmh-Wa-Omh">
             <objects>
-                <viewController title="Estabelecimento" id="zpd-wd-7Up" customClass="EstablishmentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Establishment" title="Estabelecimento" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zpd-wd-7Up" customClass="EstablishmentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VlG-uG-hga">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
