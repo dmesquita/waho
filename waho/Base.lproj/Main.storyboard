@@ -343,7 +343,7 @@
         <!--Item-->
         <scene sceneID="d4t-5m-TB9">
             <objects>
-                <navigationController id="ogF-Sy-w7R" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="EstablishmentsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ogF-Sy-w7R" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Vo3-l8-knv"/>
                     <navigationItem key="navigationItem" id="stO-PQ-AIU"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

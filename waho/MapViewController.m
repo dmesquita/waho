@@ -71,9 +71,11 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     //launch a new view upon touching the disclosure indicator
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
     EstablishmentViewController *tvc = (EstablishmentViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Establishment"];
-    [self presentViewController:tvc animated:YES completion:nil];
+    [self.navigationController pushViewController:tvc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

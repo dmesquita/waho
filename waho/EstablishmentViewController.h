@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EstablishmentViewController : UIViewController
+@interface EstablishmentViewController : UIViewController{
+    
+}
 @property (strong, nonatomic) IBOutlet UIView *storyView;
 @property (strong, nonatomic) IBOutlet UIView *localView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlEstablishment;
