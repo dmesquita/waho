@@ -24,6 +24,13 @@
     //To show custom annotations
     self.mapView.delegate = self;
     
+    //Getting user's location
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager setDelegate:self ];
+    self.mapView.showsUserLocation=YES;
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager startUpdatingLocation];
+    
     [activityLoadingMarkers startAnimating];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Place"];
