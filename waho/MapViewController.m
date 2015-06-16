@@ -31,6 +31,19 @@
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager startUpdatingLocation];
     
+    CLLocation *location = [self.locationManager location];
+    CLLocationCoordinate2D userCoordinate = [location coordinate];
+    /**
+    MKCoordinateRegion viewRegion;
+    viewRegion.center = [location coordinate];
+    viewRegion.span.latitudeDelta = 0.2;
+    viewRegion.span.longitudeDelta = 0.2;
+    **/
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userCoordinate, 500, 800);
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+    
+    [self.mapView setRegion:adjustedRegion animated:YES];
+    
     [activityLoadingMarkers startAnimating];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Place"];
