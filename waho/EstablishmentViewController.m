@@ -13,12 +13,14 @@
 @end
 
 @implementation EstablishmentViewController
-@synthesize storyView, localView, lbName, lbTeste;
+@synthesize storyView, localView, lbName, lbNameLocal, lbNameStory, lbAbout, txtAboutLocal, txtAboutStory;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(lbTeste);
-    lbName.text = lbTeste;
+    lbNameLocal.text = lbName;
+    lbNameStory.text = lbName;
+    txtAboutLocal.text = lbAbout;
+    txtAboutStory.text = lbAbout;
 
     // Do any additional setup after loading the view.
 }

@@ -13,9 +13,13 @@
 @property (strong, nonatomic) IBOutlet UIView *storyView;
 @property (strong, nonatomic) IBOutlet UIView *localView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlEstablishment;
-@property (weak, nonatomic) IBOutlet UILabel *lbName;
+@property (weak, nonatomic) IBOutlet UILabel *lbNameStory;
+@property (weak, nonatomic) IBOutlet UILabel *lbNameLocal;
+@property (weak, nonatomic) IBOutlet UITextView *txtAboutStory;
+@property (weak, nonatomic) IBOutlet UITextView *txtAboutLocal;
 
-@property (nonatomic) IBOutlet NSString *lbTeste;
+@property (nonatomic) IBOutlet NSString *lbName;
+@property (nonatomic) IBOutlet NSString *lbAbout;
 
 - (IBAction)segmentValeuChanged:(id)sender;
 

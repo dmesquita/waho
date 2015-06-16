@@ -268,10 +268,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="lbName" destination="K73-VY-vxc" id="mzR-bN-gZh"/>
+                        <outlet property="lbNameLocal" destination="K73-VY-vxc" id="c4R-z0-RmU"/>
+                        <outlet property="lbNameStory" destination="QZB-Fi-LiF" id="EYw-vp-ibc"/>
                         <outlet property="localView" destination="7dZ-gw-AhA" id="Rfl-eb-Uct"/>
                         <outlet property="segmentedControlEstablishment" destination="aEE-w7-O8P" id="cFa-m4-pRv"/>
                         <outlet property="storyView" destination="wCM-8T-nzW" id="7Qh-Es-B17"/>
+                        <outlet property="txtAboutLocal" destination="pyI-mL-fz9" id="onq-Zo-W3h"/>
+                        <outlet property="txtAboutStory" destination="6oB-v2-wuC" id="3mG-Wm-660"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oP-pO-toa" userLabel="First Responder" sceneMemberID="firstResponder"/>
