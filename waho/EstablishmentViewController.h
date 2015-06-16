@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EstablishmentViewController : UIViewController{
-    
-}
+@interface EstablishmentViewController : UIViewController
+
 @property (strong, nonatomic) IBOutlet UIView *storyView;
 @property (strong, nonatomic) IBOutlet UIView *localView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlEstablishment;
+@property (weak, nonatomic) IBOutlet UILabel *lbName;
+
+@property (nonatomic) IBOutlet NSString *lbTeste;
+
 - (IBAction)segmentValeuChanged:(id)sender;
 
 @end

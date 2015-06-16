@@ -268,6 +268,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="lbName" destination="K73-VY-vxc" id="mzR-bN-gZh"/>
                         <outlet property="localView" destination="7dZ-gw-AhA" id="Rfl-eb-Uct"/>
                         <outlet property="segmentedControlEstablishment" destination="aEE-w7-O8P" id="cFa-m4-pRv"/>
                         <outlet property="storyView" destination="wCM-8T-nzW" id="7Qh-Es-B17"/>
