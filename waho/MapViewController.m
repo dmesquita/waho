@@ -2,7 +2,7 @@
 //  MapViewController.m
 //  waho
 //
-//  Created by Miguel Araújo on 6/15/15.
+//  Created by Déborah Mesquita on 16/06/15.
 //  Copyright (c) 2015 Miguel Araújo. All rights reserved.
 //
 
@@ -14,44 +14,81 @@
 
 @implementation MapViewController
 
+@synthesize activityLoadingMarkers;
+@synthesize mapView;
+@synthesize placesArray;
+
 - (void)viewDidLoad {
-    _annotation = [[MKPointAnnotation alloc] init];
-    _mapView.delegate = self;
-    _searchBar.delegate = self;
+    [super viewDidLoad];
+    
+    //To show custom annotations
+    self.mapView.delegate = self;
+    
+    [activityLoadingMarkers startAnimating];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Place"];
+    //query.cachePolicy = kPFCachePolicyNetworkElseCache;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
+        if (!error) {
+            placesArray = places;
+            CLLocationCoordinate2D annotationCoord;
+            PFGeoPoint * point;
+            for(int i = 0; i < [places count]; i++){
+                point = places[i][@"location"];
+                double lat = point.latitude;
+                double lon = point.longitude;
+                annotationCoord.latitude = lat;
+                annotationCoord.longitude = lon;
+                MyCustomAnnotation *annotationPointCustom = [[MyCustomAnnotation alloc] initWithTitle:places[i][@"name"] Location:annotationCoord];
+                
+                [mapView addAnnotation:annotationPointCustom];
+            };
+            activityLoadingMarkers.hidesWhenStopped = true;
+            [activityLoadingMarkers stopAnimating];
+        } else {
+            NSLog(@"Deu erro");
+        }
+    }];
 }
 
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if([annotation isKindOfClass:[MyCustomAnnotation class]]){
+        MyCustomAnnotation *myLocation = (MyCustomAnnotation *)annotation;
+        MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MyCustomAnnotation"];
+        
+        if(annotationView == nil){
+            annotationView = myLocation.annotationView;
+        }else{
+            annotationView.annotation = annotation;
+        }
+        return annotationView;
+    }else{
+        return nil;
+    }
     
-    [_searchBar resignFirstResponder];
-    
-    CLGeocoder * geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:_searchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
-        
-        CLPlacemark * placemark = [placemarks objectAtIndex:0];
-        
-        MKCoordinateRegion region;
-        CLLocationCoordinate2D novaLocalizacao = [placemark.location coordinate];
-        
-        [_mapView removeAnnotation:_annotation];
-        [_annotation setCoordinate:novaLocalizacao];
-        [_annotation setTitle:_searchBar.text];
-        [_mapView addAnnotation:_annotation];
-        
-        MKCoordinateSpan span;
-        span.latitudeDelta = 1.0;
-        span.longitudeDelta = 1.0;
-        
-        region.span = span;
-        region.center = novaLocalizacao;
-        
-        [_mapView setRegion:region animated:YES];
-        [_mapView regionThatFits:region];
-    }];
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    //launch a new view upon touching the disclosure indicator
+    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //RedViewController *tvc = (RedViewController *)[storyboard instantiateViewControllerWithIdentifier:@"teste"];
+    //[self presentViewController:tvc animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

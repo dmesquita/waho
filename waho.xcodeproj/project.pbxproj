@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		42DF51771B308E9400CF0DE2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49543A881B2B68C0005E9164 /* MapKit.framework */; };
+		42DF517A1B308F2300CF0DE2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF51791B308F2300CF0DE2 /* MapViewController.m */; };
+		42DF517D1B308F7900CF0DE2 /* MyCustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF517C1B308F7900CF0DE2 /* MyCustomAnnotation.m */; };
+		42DF517F1B3091FC00CF0DE2 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DF517E1B3091FC00CF0DE2 /* pin.png */; };
 		42E4C5711B2E4A3D002F79E2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C56B1B2E4A3D002F79E2 /* Bolts.framework */; };
 		42E4C5721B2E4A3D002F79E2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C56C1B2E4A3D002F79E2 /* Parse.framework */; };
 		42E4C5731B2E4A3D002F79E2 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C56D1B2E4A3D002F79E2 /* ParseCrashReporting.framework */; };
@@ -52,6 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42DF51781B308F2300CF0DE2 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		42DF51791B308F2300CF0DE2 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		42DF517B1B308F7900CF0DE2 /* MyCustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomAnnotation.h; sourceTree = "<group>"; };
+		42DF517C1B308F7900CF0DE2 /* MyCustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomAnnotation.m; sourceTree = "<group>"; };
+		42DF517E1B3091FC00CF0DE2 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		42E4C56B1B2E4A3D002F79E2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		42E4C56C1B2E4A3D002F79E2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		42E4C56D1B2E4A3D002F79E2 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -186,6 +194,7 @@
 		499CEC831B2B36AC00DF341A = {
 			isa = PBXGroup;
 			children = (
+				42DF517E1B3091FC00CF0DE2 /* pin.png */,
 				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
 				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
 				B9A952211B2B5F5100485EC8 /* MapKit.framework */,
@@ -213,6 +222,8 @@
 				499CEC941B2B36AC00DF341A /* AppDelegate.m */,
 				B9A952271B2B776100485EC8 /* EstablishmentViewController.h */,
 				B9A952281B2B776100485EC8 /* EstablishmentViewController.m */,
+				42DF517B1B308F7900CF0DE2 /* MyCustomAnnotation.h */,
+				42DF517C1B308F7900CF0DE2 /* MyCustomAnnotation.m */,
 				49543A821B2B6109005E9164 /* PageContentViewController.h */,
 				49543A831B2B6109005E9164 /* PageContentViewController.m */,
 				49543A841B2B6109005E9164 /* WelcomeFlowController.h */,
@@ -222,6 +233,8 @@
 				B9F430791B2F5EEC007CB828 /* SaveEstablishmentTableViewController.h */,
 				B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */,
 				499CEC991B2B36AC00DF341A /* Main.storyboard */,
+				42DF51781B308F2300CF0DE2 /* MapViewController.h */,
+				42DF51791B308F2300CF0DE2 /* MapViewController.m */,
 				499CEC9C1B2B36AC00DF341A /* Images.xcassets */,
 				499CEC9E1B2B36AC00DF341A /* LaunchScreen.xib */,
 				499CEC8F1B2B36AC00DF341A /* Supporting Files */,
@@ -339,6 +352,7 @@
 				491F24E61B2B3876008CD3F2 /* README.md in Resources */,
 				499CEC9B1B2B36AC00DF341A /* Main.storyboard in Resources */,
 				499CECA01B2B36AC00DF341A /* LaunchScreen.xib in Resources */,
+				42DF517F1B3091FC00CF0DE2 /* pin.png in Resources */,
 				499CEC9D1B2B36AC00DF341A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +374,8 @@
 				499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */,
 				B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */,
 				499CEC921B2B36AC00DF341A /* main.m in Sources */,
+				42DF517A1B308F2300CF0DE2 /* MapViewController.m in Sources */,
+				42DF517D1B308F7900CF0DE2 /* MyCustomAnnotation.m in Sources */,
 				B9F4307B1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m in Sources */,
 				B9F430781B2F4D84007CB828 /* ListEstablishmentTableViewController.m in Sources */,
 			);

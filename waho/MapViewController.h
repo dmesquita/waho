@@ -2,17 +2,20 @@
 //  MapViewController.h
 //  waho
 //
-//  Created by Miguel Araújo on 6/15/15.
+//  Created by Déborah Mesquita on 16/06/15.
 //  Copyright (c) 2015 Miguel Araújo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-@import MapKit;
+#import "MapKit/MapKit.h"
+#import "Parse/Parse.h"
+#import "MyCustomAnnotation.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, UISearchBarDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (strong, nonatomic) MKPointAnnotation * annotation;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property(nonatomic) NSArray *placesArray;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoadingMarkers;
 
 @end

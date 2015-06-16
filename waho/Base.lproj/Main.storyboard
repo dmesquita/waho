@@ -280,15 +280,19 @@
         <!--Mapa-->
         <scene sceneID="Tba-4x-uin">
             <objects>
-                <viewController title="Mapa" id="Ynx-Dq-lQS" sceneMemberID="viewController">
+                <viewController title="Mapa" id="Ynx-Dq-lQS" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lrs-14-Zrh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Ztm-YU-o1E">
-                                <rect key="frame" x="0.0" y="-5" width="375" height="667"/>
+                                <rect key="frame" x="1" y="-5" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="jAA-Pk-Oby">
+                                <rect key="frame" x="178" y="159" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -298,6 +302,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityLoadingMarkers" destination="jAA-Pk-Oby" id="bLE-CZ-MvD"/>
+                        <outlet property="mapView" destination="Ztm-YU-o1E" id="UUY-qT-3Hh"/>
                         <outlet property="searchDisplayController" destination="ybm-fV-R1x" id="g2V-ma-8K0"/>
                     </connections>
                 </viewController>
