@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42DF51771B308E9400CF0DE2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49543A881B2B68C0005E9164 /* MapKit.framework */; };
 		42E4C5711B2E4A3D002F79E2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C56B1B2E4A3D002F79E2 /* Bolts.framework */; };
 		42E4C5721B2E4A3D002F79E2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C56C1B2E4A3D002F79E2 /* Parse.framework */; };
 		42E4C5731B2E4A3D002F79E2 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C56D1B2E4A3D002F79E2 /* ParseCrashReporting.framework */; };
@@ -35,9 +36,6 @@
 		499CEC9D1B2B36AC00DF341A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499CEC9C1B2B36AC00DF341A /* Images.xcassets */; };
 		499CECA01B2B36AC00DF341A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499CEC9E1B2B36AC00DF341A /* LaunchScreen.xib */; };
 		499CECAC1B2B36AC00DF341A /* wahoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CECAB1B2B36AC00DF341A /* wahoTests.m */; };
-		B9A952221B2B5F5100485EC8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A952211B2B5F5100485EC8 /* MapKit.framework */; };
-		B9A952241B2B5F5A00485EC8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */; };
-		B9A952261B2B5F7E00485EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A952251B2B5F7E00485EC8 /* UIKit.framework */; };
 		B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A952281B2B776100485EC8 /* EstablishmentViewController.m */; };
 		B9F430781B2F4D84007CB828 /* ListEstablishmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F430771B2F4D84007CB828 /* ListEstablishmentTableViewController.m */; };
 		B9F4307B1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */; };
@@ -76,8 +74,6 @@
 		42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		491F24E51B2B3876008CD3F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		493201011B2F481F00113048 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		493201021B2F481F00113048 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		49543A821B2B6109005E9164 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		49543A831B2B6109005E9164 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		49543A841B2B6109005E9164 /* WelcomeFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeFlowController.h; sourceTree = "<group>"; };
@@ -112,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42DF51771B308E9400CF0DE2 /* MapKit.framework in Frameworks */,
 				42E4C58E1B2E50FA002F79E2 /* Accounts.framework in Frameworks */,
 				42E4C58C1B2E50F3002F79E2 /* Social.framework in Frameworks */,
 				42E4C58A1B2E4AD4002F79E2 /* libsqlite3.dylib in Frameworks */,
@@ -124,16 +121,13 @@
 				42E4C5821B2E4A98002F79E2 /* Security.framework in Frameworks */,
 				42E4C5801B2E4A90002F79E2 /* QuartzCore.framework in Frameworks */,
 				42E4C57E1B2E4A87002F79E2 /* MobileCoreServices.framework in Frameworks */,
-				49543A8B1B2B68C5005E9164 /* CoreLocation.framework in Frameworks */,
 				42E4C57C1B2E4A74002F79E2 /* CoreGraphics.framework in Frameworks */,
 				42E4C57A1B2E4A6C002F79E2 /* CFNetwork.framework in Frameworks */,
 				42E4C5781B2E4A64002F79E2 /* AudioToolbox.framework in Frameworks */,
 				42E4C5761B2E4A3D002F79E2 /* ParseUI.framework in Frameworks */,
 				42E4C5741B2E4A3D002F79E2 /* ParseFacebookUtils.framework in Frameworks */,
-				49543A8E1B2B68E4005E9164 /* UIKit.framework in Frameworks */,
 				42E4C5751B2E4A3D002F79E2 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				42E4C5731B2E4A3D002F79E2 /* ParseCrashReporting.framework in Frameworks */,
-				49543A891B2B68C0005E9164 /* MapKit.framework in Frameworks */,
 				42E4C5711B2E4A3D002F79E2 /* Bolts.framework in Frameworks */,
 				42E4C5721B2E4A3D002F79E2 /* Parse.framework in Frameworks */,
 			);
