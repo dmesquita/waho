@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse/Parse.h"
 
 @interface EstablishmentViewController : UIViewController
 
@@ -20,6 +21,7 @@
 
 @property (nonatomic) IBOutlet NSString *lbName;
 @property (nonatomic) IBOutlet NSString *lbAbout;
+@property (weak, nonatomic) IBOutlet UIButton *btFav;
 
 - (IBAction)segmentValeuChanged:(id)sender;
 

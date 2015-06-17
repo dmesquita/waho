@@ -39,7 +39,7 @@
     viewRegion.span.latitudeDelta = 0.2;
     viewRegion.span.longitudeDelta = 0.2;
     **/
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userCoordinate, 500, 800);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userCoordinate, 500, 500);
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
     
     [self.mapView setRegion:adjustedRegion animated:YES];
@@ -97,7 +97,7 @@
     EstablishmentViewController *tvc = (EstablishmentViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Establishment"];
     MyCustomAnnotation *ann = (MyCustomAnnotation *)view.annotation;
     tvc.lbName = placesArray[ann.id_place][@"name"];
-    tvc.lbAbout = placesArray[ann.id_place][@"about"];
+    tvc.lbAbout = placesArray[ann.id_place][@"about"];NSLog(placesArray[ann.id_place][@"objectId"]);
     [self.navigationController pushViewController:tvc animated:YES];
 }
 

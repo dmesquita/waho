@@ -24,6 +24,21 @@
 
     // Do any additional setup after loading the view.
 }
+- (IBAction)favBtPressed:(id)sender {
+    NSLog(@"oi");
+}
+- (IBAction)irPressed:(id)sender {
+    PFObject * query = [PFObject objectWithClassName:@"_User"];
+    query[@"favoritePlaces"] = @1337;
+    [query saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+     NSLog(@"hahaha");
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
