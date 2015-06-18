@@ -39,10 +39,10 @@
     viewRegion.span.latitudeDelta = 0.2;
     viewRegion.span.longitudeDelta = 0.2;
     **/
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userCoordinate, 500, 500);
-    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
-    
-    [self.mapView setRegion:adjustedRegion animated:YES];
+//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userCoordinate, 500, 500);
+//    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+//    
+//    [self.mapView setRegion:adjustedRegion animated:YES];
     
     [activityLoadingMarkers startAnimating];
     

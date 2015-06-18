@@ -28,16 +28,23 @@
     NSLog(@"oi");
 }
 - (IBAction)irPressed:(id)sender {
-    PFObject * query = [PFObject objectWithClassName:@"_User"];
-    query[@"favoritePlaces"] = @1337;
-    [query saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            // The object has been saved.
-        } else {
-            // There was a problem, check error.description
-        }
-    }];
+//    PFObject * query = [PFObject objectWithClassName:@"_User"];
+//    query[@"favoritePlaces"] = @1337;
+//    [query saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (succeeded) {
+//            // The object has been saved.
+//        } else {
+//            // There was a problem, check error.description
+//        }
+//    }];
      NSLog(@"hahaha");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    LogInViewController *tvc = (LogInViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Login"];
+    [self.navigationController pushViewController:tvc animated:YES];
+    //[self performSegueWithIdentifier:@"callLogin" sender:self];
+   
+    //[self presentViewController:tvc animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -11,6 +11,7 @@
 		42DF517A1B308F2300CF0DE2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF51791B308F2300CF0DE2 /* MapViewController.m */; };
 		42DF517D1B308F7900CF0DE2 /* MyCustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF517C1B308F7900CF0DE2 /* MyCustomAnnotation.m */; };
 		42DF517F1B3091FC00CF0DE2 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DF517E1B3091FC00CF0DE2 /* pin.png */; };
+		42E0F0101B333D4B00DA42DF /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E0F00F1B333D4B00DA42DF /* LogInViewController.m */; };
 		42E4C5711B2E4A3D002F79E2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C56B1B2E4A3D002F79E2 /* Bolts.framework */; };
 		42E4C5721B2E4A3D002F79E2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C56C1B2E4A3D002F79E2 /* Parse.framework */; };
 		42E4C5731B2E4A3D002F79E2 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C56D1B2E4A3D002F79E2 /* ParseCrashReporting.framework */; };
@@ -60,6 +61,8 @@
 		42DF517B1B308F7900CF0DE2 /* MyCustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomAnnotation.h; sourceTree = "<group>"; };
 		42DF517C1B308F7900CF0DE2 /* MyCustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomAnnotation.m; sourceTree = "<group>"; };
 		42DF517E1B3091FC00CF0DE2 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		42E0F00E1B333D4B00DA42DF /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		42E0F00F1B333D4B00DA42DF /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		42E4C56B1B2E4A3D002F79E2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		42E4C56C1B2E4A3D002F79E2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		42E4C56D1B2E4A3D002F79E2 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 				B9F430791B2F5EEC007CB828 /* SaveEstablishmentTableViewController.h */,
 				B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */,
 				499CEC991B2B36AC00DF341A /* Main.storyboard */,
+				42E0F00E1B333D4B00DA42DF /* LogInViewController.h */,
+				42E0F00F1B333D4B00DA42DF /* LogInViewController.m */,
 				42DF51781B308F2300CF0DE2 /* MapViewController.h */,
 				42DF51791B308F2300CF0DE2 /* MapViewController.m */,
 				499CEC9C1B2B36AC00DF341A /* Images.xcassets */,
@@ -371,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E0F0101B333D4B00DA42DF /* LogInViewController.m in Sources */,
 				499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */,
 				B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */,
 				499CEC921B2B36AC00DF341A /* main.m in Sources */,
