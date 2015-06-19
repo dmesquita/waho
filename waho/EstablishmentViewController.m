@@ -38,19 +38,24 @@
 //        }
 //    }];
      NSLog(@"hahaha");
-    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-    [logInViewController setDelegate:self];
-    [self presentViewController:logInViewController animated:YES completion:NULL];
+    [PFUser logOut];
+    PFUser *userF = [PFUser currentUser];
+    [PFUser logOut];
+    if (userF) {
+        // do stuff with the user
+        NSLog(@"Logado, querido");
+    } else {
+        // show the signup or login page
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        [logInViewController setDelegate:self];
+        [self presentViewController:logInViewController animated:YES completion:NULL];
+    }
+    
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     NSLog(@"logou eh tetraaa");
-    [self dismissModalViewControllerAnimated:YES];
-}
-
-- (void)hideLoginView{
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"oi");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

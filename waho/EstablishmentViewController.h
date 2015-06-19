@@ -27,6 +27,4 @@
 
 - (IBAction)segmentValeuChanged:(id)sender;
 
--(void)hideLoginView;
-
 @end
