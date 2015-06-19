@@ -14,9 +14,7 @@
 
 @implementation LogInViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
+
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -51,8 +49,7 @@
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-     NSLog(@"logou");
-    [self dismissViewControllerAnimated:YES completion:NULL];
+     NSLog(@"logou eh tetraaa");
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {

@@ -38,13 +38,19 @@
 //        }
 //    }];
      NSLog(@"hahaha");
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    LogInViewController *tvc = (LogInViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Login"];
-    [self.navigationController pushViewController:tvc animated:YES];
-    //[self performSegueWithIdentifier:@"callLogin" sender:self];
-   
-    //[self presentViewController:tvc animated:YES completion:nil];
+    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+    [logInViewController setDelegate:self];
+    [self presentViewController:logInViewController animated:YES completion:NULL];
+}
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    NSLog(@"logou eh tetraaa");
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)hideLoginView{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"oi");
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,7 +10,8 @@
 #import "Parse/Parse.h"
 #import "LogInViewController.h"
 
-@interface EstablishmentViewController : UIViewController
+@interface EstablishmentViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+
 
 @property (strong, nonatomic) IBOutlet UIView *storyView;
 @property (strong, nonatomic) IBOutlet UIView *localView;
@@ -25,5 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btFav;
 
 - (IBAction)segmentValeuChanged:(id)sender;
+
+-(void)hideLoginView;
 
 @end
