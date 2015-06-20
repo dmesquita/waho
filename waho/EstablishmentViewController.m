@@ -28,22 +28,74 @@
     NSLog(@"oi");
 }
 - (IBAction)irPressed:(id)sender {
-//    PFObject * query = [PFObject objectWithClassName:@"_User"];
-//    query[@"favoritePlaces"] = @1337;
-//    [query saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//            // The object has been saved.
-//        } else {
-//            // There was a problem, check error.description
-//        }
-//    }];
     NSLog(@"hahaha");
-    [PFUser logOut];
+   [PFUser logOut];
     PFUser *userF = [PFUser currentUser];
     [PFUser logOut];
     if (userF) {
+        dispatch_queue_t downloadQueue = dispatch_queue_create("downloader", NULL);
+        dispatch_async(downloadQueue, ^{
+            //Checking if place is in users favoritePlaces list
+            NSString *id_place = place[@"id_place"];
+            PFQuery *queryPlace = [PFQuery queryWithClassName:@"Place"];
+            [queryPlace whereKey:@"id_place" equalTo:id_place];
+            PFQuery *queryUser = [PFQuery queryWithClassName:@"FavoritePlaces"];
+            NSLog(@"objectId");
+            NSLog([[PFUser currentUser] objectId]);
+            NSLog(@"eita");
+            [queryUser whereKey:@"user" equalTo:[[PFUser currentUser] objectId]];
+            [queryUser whereKey:@"places" matchesQuery:queryPlace];
+            [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                if (!error) {
+                    if([objects count] > 0){
+                        NSLog(@"Está na lista de favoritos");
+                    }else{
+                        NSLog(@"NAAAO ESTAAAH NA LISTAAA");
+                    }
+                } else {
+                    NSLog(@"Error: %@", error);
+                }
+            }];
+            
+            //Saving place to favorites list
+            NSString *objectId = [place objectId];
+            PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Place" objectId:objectId];
+            PFObject *gameScore = [PFObject objectWithClassName:@"FavoritePlaces"];
+            gameScore[@"user"] = [userF objectId];
+            gameScore[@"place"] = pointer;
+            gameScore[@"places"] = @[pointer];
+            [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    NSLog(@"salvou");
+                } else {
+                    // There was a problem, check error.description
+                    NSLog(@"Error");
+                    
+                }
+            }];
+        });
+        dispatch_async(dispatch_get_main_queue() , ^{
+            NSString *objectId = [place objectId];
+            //NSLog(objectId);
+            PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Place" objectId:objectId];
+            PFObject *gameScore = [PFObject objectWithClassName:@"FavoritePlaces"];
+            gameScore[@"user"] = [userF objectId];
+            gameScore[@"place"] = pointer;
+            gameScore[@"places"] = @[pointer];
+            [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    NSLog(@"salvou");
+                } else {
+                    // There was a problem, check error.description
+                    NSLog(@"Error");
+                    
+                }
+            }];
+        });
         // do stuff with the user
         NSLog(@"Logado, querido");
+       
+       
     } else {
         // show the signup or login page
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
@@ -72,29 +124,94 @@
                 NSString *objectId = [place objectId];
                 NSLog(objectId);
                 PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Place" objectId:objectId];
-                
-//                [currentUser addObjectsFromArray:@[pointer] forKey:@"favoritePlaces"];
-//                [[PFUser currentUser] saveInBackground];
+                PFObject *gameScore = [PFObject objectWithClassName:@"FavoritePlaces"];
+                PFObject *usuario = [PFUser currentUser];
+                gameScore[@"userrr"] = usuario;
+                gameScore[@"place"] = pointer;
+                gameScore[@"places"] = @[pointer];
+                [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        NSLog(@"salvou");
+                    } else {
+                        // There was a problem, check error.description
+                        NSLog(@"Error");
+                        
+                    }
+                }];
             }
         } else {
             NSLog(@"Error: %@", error);
         }
     }];
     
-    PFUser *currentUser = [PFUser currentUser];
-    if([PFUser currentUser] != nil){
-        NSLog(@"que merda eh essa");
-    }
-    user[@"teste"] = @"1337";
-    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            NSLog(@"Funcionou");
-        }else{
-            
-        }
-    }];
-    
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password {
+    // Check if both fields are completed
+    if (username && password && username.length != 0 && password.length != 0) {
+        return YES; // Begin login process
+    }
+    
+    [[[UIAlertView alloc] initWithTitle:@"Missing Information"
+                                message:@"Make sure you fill out all of the information!"
+                               delegate:nil
+                      cancelButtonTitle:@"ok"
+                      otherButtonTitles:nil] show];
+    return NO; // Interrupt login process
+}
+
+- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
+    [[[UIAlertView alloc] initWithTitle:@"Error"
+                                message:@"Wrong username or password!"
+                               delegate:nil
+                      cancelButtonTitle:@"ok"
+                      otherButtonTitles:nil] show];
+    NSLog(@"Failed to log in...");
+}
+
+// Sent to the delegate when the log in screen is dismissed.
+- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info {
+    BOOL informationComplete = YES;
+    
+    // loop through all of the submitted data
+    for (id key in info) {
+        NSString *field = [info objectForKey:key];
+        if (!field || field.length == 0) { // check completion
+            informationComplete = NO;
+            break;
+        }
+    }
+    
+    // Display an alert if a field wasn't completed
+    if (!informationComplete) {
+        [[[UIAlertView alloc] initWithTitle:@"Missing Information"
+                                    message:@"Make sure you fill out all of the information!"
+                                   delegate:nil
+                          cancelButtonTitle:@"ok"
+                          otherButtonTitles:nil] show];
+    }
+    
+    return informationComplete;
+}
+
+// Sent to the delegate when a PFUser is signed up.
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+    [self dismissModalViewControllerAnimated:YES]; // Dismiss the PFSignUpViewController
+}
+
+// Sent to the delegate when the sign up attempt fails.
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error {
+    NSLog(@"Failed to sign up...");
+}
+
+// Sent to the delegate when the sign up screen is dismissed.
+- (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
+    NSLog(@"User dismissed the signUpViewController");
 }
 
 - (void)didReceiveMemoryWarning {

@@ -266,7 +266,7 @@
                     <navigationItem key="navigationItem" id="3jj-tR-raQ">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="aEE-w7-O8P">
-                            <rect key="frame" x="126" y="8" width="123" height="29"/>
+                            <rect key="frame" x="126" y="7.5" width="123" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="História"/>
@@ -322,7 +322,7 @@
                     <navigationItem key="navigationItem" id="0TX-ji-kRK">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Q6y-UF-TRs">
-                            <rect key="frame" x="113" y="8" width="150" height="29"/>
+                            <rect key="frame" x="112.5" y="7.5" width="150" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Mapa"/>
@@ -535,6 +535,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="VPT-o9-Eyj"/>
+        <segue reference="ABP-VH-oTJ"/>
     </inferredMetricsTieBreakers>
 </document>
