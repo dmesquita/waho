@@ -311,18 +311,36 @@
                                 <rect key="frame" x="178" y="159" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fdM-lt-Uxw">
+                                <rect key="frame" x="0.0" y="57" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="NXX-ca-Ugu"/>
-                    <navigationItem key="navigationItem" id="b7X-ON-5U8">
+                    <navigationItem key="navigationItem" id="0TX-ji-kRK">
                         <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Q6y-UF-TRs">
+                            <rect key="frame" x="112.5" y="7.5" width="150" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Mapa"/>
+                                <segment title="Lista"/>
+                            </segments>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="valueChangedMap:" destination="Ynx-Dq-lQS" eventType="valueChanged" id="0Iz-cD-Mf8"/>
+                            </connections>
+                        </segmentedControl>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="activityLoadingMarkers" destination="jAA-Pk-Oby" id="bLE-CZ-MvD"/>
+                        <outlet property="listEstablishmentView" destination="fdM-lt-Uxw" id="4CY-Yd-TOX"/>
                         <outlet property="mapView" destination="Ztm-YU-o1E" id="UUY-qT-3Hh"/>
                         <outlet property="searchDisplayController" destination="ybm-fV-R1x" id="g2V-ma-8K0"/>
+                        <outlet property="segmentedControlMap" destination="Q6y-UF-TRs" id="UcY-Id-1do"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09E-BF-fSA" userLabel="First Responder" sceneMemberID="firstResponder"/>

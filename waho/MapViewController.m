@@ -19,6 +19,9 @@
 @synthesize placesArray;
 
 - (void)viewDidLoad {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
     [super viewDidLoad];
     
     //To show custom annotations
@@ -101,6 +104,25 @@
     tvc.lbAbout = placesArray[ann.id_place][@"about"];NSLog(placesArray[ann.id_place][@"objectId"]);
     [self.navigationController pushViewController:tvc animated:YES];
 }
+- (IBAction)valueChangedMap:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+            //map
+        case 0:
+            self.mapView.hidden = NO;
+            self.listEstablishmentView.hidden = YES;
+            break;
+            
+            //list establishment
+        case 1:
+            self.mapView.hidden = YES;
+            self.listEstablishmentView.hidden = NO;
+            break;
+            
+        default:
+            break;
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
