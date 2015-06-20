@@ -24,6 +24,7 @@
 @property (nonatomic) IBOutlet NSString *lbName;
 @property (nonatomic) IBOutlet NSString *lbAbout;
 @property (weak, nonatomic) IBOutlet UIButton *btFav;
+@property(nonatomic) NSDictionary *place;
 
 - (IBAction)segmentValeuChanged:(id)sender;
 

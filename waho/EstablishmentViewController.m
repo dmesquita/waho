@@ -13,7 +13,7 @@
 @end
 
 @implementation EstablishmentViewController
-@synthesize storyView, localView, lbName, lbNameLocal, lbNameStory, lbAbout, txtAboutLocal, txtAboutStory;
+@synthesize storyView, localView, lbName, lbNameLocal, lbNameStory, lbAbout, txtAboutLocal, txtAboutStory, place;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,7 +37,7 @@
 //            // There was a problem, check error.description
 //        }
 //    }];
-     NSLog(@"hahaha");
+    NSLog(@"hahaha");
     [PFUser logOut];
     PFUser *userF = [PFUser currentUser];
     [PFUser logOut];
@@ -55,6 +55,36 @@
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     NSLog(@"logou eh tetraaa");
+//    PFQuery *query= [PFUser query];
+//    
+//    [query whereKey:@"username" equalTo:[[PFUser currentUser]username]];
+//    
+//    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error){
+//        
+//        BOOL isPrivate = [[object objectForKey:@"favoritePlaces"]boolValue];
+//        
+//    }];
+    NSString *id_place = place[@"id_place"];
+    PFQuery *queryPlace = [PFQuery queryWithClassName:@"Place"];
+    [queryPlace whereKey:@"id_place" equalTo:id_place];
+    PFQuery *queryUser = [PFUser query];
+    [queryUser whereKey:@"username" equalTo:[[PFUser currentUser]username]];
+    [queryUser whereKey:@"favoritePlaces" matchesQuery:queryPlace];
+    [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // Query succeeded - continue your app logic here.
+            NSLog(@"Query ok");
+            if([objects count] > 0){
+                NSLog(@"Está na Lista");
+            }else{
+                NSLog(@"Não está na lista");            }
+            
+        } else {
+            // Query failed - handle an error.
+            NSLog(@"NÃO achou o objeto nos favoritos");
+        }
+    }];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

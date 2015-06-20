@@ -90,22 +90,6 @@
             </objects>
             <point key="canvasLocation" x="926.5" y="2097.5"/>
         </scene>
-        <!--Log In View Controller-->
-        <scene sceneID="FZq-e9-Cnw">
-            <objects>
-                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="61W-sJ-JvV" customClass="LogInViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vRu-y9-rvB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="6cP-uv-sGL"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dRK-Z3-sLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="955.5" y="1282.5"/>
-        </scene>
         <!--Table View Controller-->
         <scene sceneID="HHY-Bg-P8l">
             <objects>
@@ -385,9 +369,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="61W-sJ-JvV" kind="relationship" relationship="rootViewController" id="t0P-NF-NB4"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Nr-fq-dKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

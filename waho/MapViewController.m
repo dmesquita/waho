@@ -96,6 +96,7 @@
     
     EstablishmentViewController *tvc = (EstablishmentViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Establishment"];
     MyCustomAnnotation *ann = (MyCustomAnnotation *)view.annotation;
+    tvc.place = placesArray[ann.id_place];
     tvc.lbName = placesArray[ann.id_place][@"name"];
     tvc.lbAbout = placesArray[ann.id_place][@"about"];NSLog(placesArray[ann.id_place][@"objectId"]);
     [self.navigationController pushViewController:tvc animated:YES];
