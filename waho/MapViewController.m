@@ -59,8 +59,9 @@
                 double lon = point.longitude;
                 annotationCoord.latitude = lat;
                 annotationCoord.longitude = lon;
-                MyCustomAnnotation *annotationPointCustom = [[MyCustomAnnotation alloc] initWithTitle:places[i][@"name"] Location:annotationCoord];
+                MyCustomAnnotation *annotationPointCustom = [[MyCustomAnnotation alloc] initWithTitle:places[i][@"name"] Location:annotationCoord Type:places[i][@"categoria"] ];
                 annotationPointCustom.id_place = i;
+                
                 [mapView addAnnotation:annotationPointCustom];
             };
             activityLoadingMarkers.hidesWhenStopped = true;
@@ -74,8 +75,7 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     if([annotation isKindOfClass:[MyCustomAnnotation class]]){
         MyCustomAnnotation *myLocation = (MyCustomAnnotation *)annotation;
-        MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MyCustomAnnotation"];
-        
+        MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MyCustomAnnotation"];        
         if(annotationView == nil){
             annotationView = myLocation.annotationView;
         }else{
