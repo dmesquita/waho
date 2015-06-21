@@ -30,7 +30,9 @@
     [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             if([objects count] > 0){
-                //NSLog(objects[0][@"places"][1] );
+                //NSArray *items = [[results objectForKey:@"vehicles"] objectAtIndex:0];
+                NSLog((NSArray*)objects[0][@"places"]);
+                
                 NSLog(@"Está na lista de favoritos");
             }else{
                 NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
