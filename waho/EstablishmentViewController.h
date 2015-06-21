@@ -24,7 +24,9 @@
 @property (nonatomic) IBOutlet NSString *lbName;
 @property (nonatomic) IBOutlet NSString *lbAbout;
 @property (weak, nonatomic) IBOutlet UIButton *btFav;
+@property (weak, nonatomic) IBOutlet UILabel *lblFavoritado;
 @property(nonatomic) PFObject *place;
+@property(nonatomic) NSMutableArray *favoritedPlaces;
 
 - (IBAction)segmentValeuChanged:(id)sender;
 

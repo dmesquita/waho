@@ -17,6 +17,7 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property(nonatomic) NSArray *placesArray;
+@property(nonatomic) NSMutableArray *favoritedPlaces;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoadingMarkers;
 @property (weak, nonatomic) IBOutlet UITableView *listEstablishmentView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlMap;

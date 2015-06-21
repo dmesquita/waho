@@ -25,15 +25,15 @@
     // Do any additional setup after loading the view.
     [activityLoadingFavs startAnimating];
     
-    PFQuery *queryUser = [PFQuery queryWithClassName:@"FavoritePlaces"];
-    [queryUser whereKey:@"user" equalTo:[[PFUser currentUser] objectId]];
+    PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
+    [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
     [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             if([objects count] > 0){
-                //NSArray *items = [[results objectForKey:@"vehicles"] objectAtIndex:0];
-                NSLog((NSArray*)objects[0][@"places"]);
-                
                 NSLog(@"Está na lista de favoritos");
+                for (int i = 0; i < [objects count]; i++){
+                     NSLog(objects[i][@"name"]);
+                };
             }else{
                 NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
             }

@@ -16,7 +16,7 @@
 
 @synthesize activityLoadingMarkers;
 @synthesize mapView;
-@synthesize placesArray;
+@synthesize placesArray, favoritedPlaces;
 
 - (void)viewDidLoad {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
@@ -24,18 +24,20 @@
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     [super viewDidLoad];
     
-    //To show custom annotations
+    // --- To show custom annotations ---
     self.mapView.delegate = self;
     
-    //Getting user's location
+    // --- Getting user's location ---
     self.locationManager = [[CLLocationManager alloc] init];
-    [self.locationManager setDelegate:self ];
+    [self.locationManager setDelegate:self];
     self.mapView.showsUserLocation=YES;
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager startUpdatingLocation];
     
     CLLocation *location = [self.locationManager location];
     CLLocationCoordinate2D userCoordinate = [location coordinate];
+    
+    // --- Zooming into users region ---
     /**
     MKCoordinateRegion viewRegion;
     viewRegion.center = [location coordinate];
@@ -49,6 +51,7 @@
     
     [activityLoadingMarkers startAnimating];
     
+    // --- Loading markers ---
     PFQuery *query = [PFQuery queryWithClassName:@"Place"];
     //query.cachePolicy = kPFCachePolicyNetworkElseCache;
     [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
@@ -70,7 +73,31 @@
             activityLoadingMarkers.hidesWhenStopped = true;
             [activityLoadingMarkers stopAnimating];
         } else {
-            NSLog(@"Deu erro");
+            [self loadMarkersFail];
+            NSLog(@"Erro ao carregar marcadores");
+        }
+    }];
+    [self getFavoritedPlaces];
+}
+
+- (void) getFavoritedPlaces {
+    favoritedPlaces = [[NSMutableArray alloc] init];
+    PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
+    [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
+    [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {            
+            if([objects count] > 0){
+                NSLog(@"Lista de favoritos encontrada");
+                for (int i = 0; i < [objects count]; i++) {
+                    NSLog(objects[i][@"name"]);
+                    //int id_place = objects[i][@"id_place"];
+                    [favoritedPlaces addObject:objects[i]];
+                };
+            }else{
+                NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+            }
+        } else {
+            NSLog(@"Error: %@", error);
         }
     }];
 }
@@ -78,7 +105,7 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     if([annotation isKindOfClass:[MyCustomAnnotation class]]){
         MyCustomAnnotation *myLocation = (MyCustomAnnotation *)annotation;
-        MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MyCustomAnnotation"];        
+        MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MyCustomAnnotation"];
         if(annotationView == nil){
             annotationView = myLocation.annotationView;
         }else{
@@ -91,19 +118,23 @@
     
 }
 
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
-    //launch a new view upon touching the disclosure indicator
-    
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    EstablishmentViewController *tvc = (EstablishmentViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Establishment"];
-    MyCustomAnnotation *ann = (MyCustomAnnotation *)view.annotation;
-    tvc.place = placesArray[ann.id_place];
-    tvc.lbName = placesArray[ann.id_place][@"name"];
-    tvc.lbAbout = placesArray[ann.id_place][@"about"];NSLog(placesArray[ann.id_place][@"objectId"]);
-    [self.navigationController pushViewController:tvc animated:YES];
+    EstablishmentViewController *establishmentVC = (EstablishmentViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Establishment"];
+    MyCustomAnnotation *annotation = (MyCustomAnnotation *)view.annotation;
+    establishmentVC.place = placesArray[annotation.id_place];
+    establishmentVC.lbName = placesArray[annotation.id_place][@"name"];
+    establishmentVC.lbAbout = placesArray[annotation.id_place][@"about"];
+    establishmentVC.favoritedPlaces = favoritedPlaces;
+    [self.navigationController pushViewController:establishmentVC animated:YES];
 }
+
+- (void) loadMarkersFail {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooooops!" message:@"Erro ao carregar locais" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
 - (IBAction)valueChangedMap:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
             //map

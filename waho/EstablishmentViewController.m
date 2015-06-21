@@ -13,7 +13,7 @@
 @end
 
 @implementation EstablishmentViewController
-@synthesize storyView, localView, lbName, lbNameLocal, lbNameStory, lbAbout, txtAboutLocal, txtAboutStory, place;
+@synthesize storyView, localView, lbName, lbNameLocal, lbNameStory, lbAbout, txtAboutLocal, lblFavoritado ,txtAboutStory, place, favoritedPlaces;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,87 +21,48 @@
     lbNameStory.text = lbName;
     txtAboutLocal.text = lbAbout;
     txtAboutStory.text = lbAbout;
+    
+    if([favoritedPlaces containsObject:place]){
+        lblFavoritado.text = @"FAVORITOU!";
+    }
 
     // Do any additional setup after loading the view.
 }
 - (IBAction)favBtPressed:(id)sender {
     NSLog(@"oi");
 }
+
+- (void) likePlace:(PFObject *)object{
+    [object addUniqueObject:[[PFUser currentUser] objectId] forKey:@"favorites"];
+    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            NSLog(@"local favoritado!");
+            [self favoritedSuccess];
+        } else {
+            [self favoritedFail];
+            NSLog(@"Error: %@", error);
+        }
+    }];
+}
+
+- (void) favoritedSuccess{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sucesso!" message:@"Local favoritado com sucesso" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
+- (void) favoritedFail{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooooops!" message:@"Erro ao tentar favoritar local" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
+
 - (IBAction)irPressed:(id)sender {
     NSLog(@"hahaha");
    //[PFUser logOut];
     PFUser *userF = [PFUser currentUser];
     //[PFUser logOut];
     if (userF) {
-        dispatch_queue_t downloadQueue = dispatch_queue_create("downloader", NULL);
-        dispatch_async(downloadQueue, ^{
-            //Checking if place is in users favoritePlaces list
-            NSString *id_place = place[@"id_place"];
-            PFQuery *queryUser = [PFQuery queryWithClassName:@"FavoritePlaces"];
-            NSLog(@"objectId");
-            NSLog([[PFUser currentUser] objectId]);
-            NSLog(@"eita");
-            //[queryUser whereKey:@"places" containedIn:@[@"item1", @"item2", @"item3"]];
-            [queryUser whereKey:@"user" equalTo:[[PFUser currentUser] objectId]];
-            [queryUser whereKey:@"places" equalTo:id_place];
-            [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                if (!error) {
-                    if([objects count] > 0){
-                        NSLog(@"Está na lista de favoritos");
-                    }else{
-                        NSLog(@"NAAAO ESTAAAH NA LISTAAA");
-                    }
-                } else {
-                    NSLog(@"Error: %@", error);
-                }
-            }];
-            
-            //Saving place to favorites list
-//            PFQuery *queryPlaceSave = [PFQuery queryWithClassName:@"FavoritePlaces"];
-//            [queryPlaceSave whereKey:@"user" equalTo:[[PFUser currentUser] objectId]];
-//            [queryPlaceSave findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//                if (!error) {
-//                    NSString *objectId = [place objectId];
-//                    PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Place" objectId:objectId];
-//                    if([objects count] > 0){
-//                        NSLog(@"PRA SALVAR Está na lista de favoritos");
-//                        [objects[0] addUniqueObjectsFromArray:@[pointer] forKey:@"places"];
-//                        [objects[0] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//                            if (succeeded) {
-//                                NSLog(@"PRA SALVAR salvou NOVO");
-//                            } else {
-//                                // There was a problem, check error.description
-//                                NSLog(@"PRA SALVAR Error");
-//                                
-//                            }
-//                        }];
-//                    }else{
-//                        PFObject *gameScore = [PFObject objectWithClassName:@"FavoritePlaces"];
-//                        gameScore[@"user"] = [userF objectId];
-//                        [gameScore addUniqueObjectsFromArray:@[pointer] forKey:@"places"];
-//                        [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//                            if (succeeded) {
-//                                NSLog(@"PRA SALVAR salvou");
-//                            } else {
-//                                // There was a problem, check error.description
-//                                NSLog(@"PRA SALVAR Error");
-//                                
-//                            }
-//                        }];
-//                    }
-//                } else {
-//                    NSLog(@"Error: %@", error);
-//                }
-//            }];
-            
-        });
-        dispatch_async(dispatch_get_main_queue() , ^{
-            //Do stuff
-        });
-        // do stuff with the user
-        NSLog(@"Logado, querido");
-       
-       
+        [self likePlace:place];       
     } else {
         // show the signup or login page
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
