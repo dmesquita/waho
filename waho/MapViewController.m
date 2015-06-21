@@ -82,24 +82,29 @@
 
 - (void) getFavoritedPlaces {
     favoritedPlaces = [[NSMutableArray alloc] init];
-    PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
-    [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
-    [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {            
-            if([objects count] > 0){
-                NSLog(@"Lista de favoritos encontrada");
-                for (int i = 0; i < [objects count]; i++) {
-                    NSLog(objects[i][@"name"]);
-                    //int id_place = objects[i][@"id_place"];
-                    [favoritedPlaces addObject:objects[i]];
-                };
-            }else{
-                NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+    if ([PFUser currentUser] != nil) {
+        PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
+        [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
+        [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                if([objects count] > 0){
+                    NSLog(@"Lista de favoritos encontrada");
+                    for (int i = 0; i < [objects count]; i++) {
+                        NSLog(objects[i][@"name"]);
+                        //int id_place = objects[i][@"id_place"];
+                        [favoritedPlaces addObject:objects[i]];
+                    };
+                }else{
+                    NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+                }
+            } else {
+                NSLog(@"Error: %@", error);
             }
-        } else {
-            NSLog(@"Error: %@", error);
-        }
-    }];
+        }];
+    } else {
+        NSLog(@"Usuario nao esta logado");
+    }
+    
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {

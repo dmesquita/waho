@@ -37,6 +37,7 @@
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             NSLog(@"local favoritado!");
+            [favoritedPlaces addObject:place];
             [self favoritedSuccess];
         } else {
             [self favoritedFail];
