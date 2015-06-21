@@ -18,10 +18,27 @@
 
 }
 
+@synthesize activityLoadingFavs;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [activityLoadingFavs startAnimating];
     
+    PFQuery *queryUser = [PFQuery queryWithClassName:@"FavoritePlaces"];
+    [queryUser whereKey:@"user" equalTo:[[PFUser currentUser] objectId]];
+    [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            if([objects count] > 0){
+                //NSLog(objects[0][@"places"][1] );
+                NSLog(@"Está na lista de favoritos");
+            }else{
+                NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+            }
+        } else {
+            NSLog(@"Error: %@", error);
+        }
+    }];
     savedEstablishments = [NSArray arrayWithObjects:@"Biruta Bar", @"Paço do Frevo", nil];
     
 }

@@ -37,14 +37,13 @@
         dispatch_async(downloadQueue, ^{
             //Checking if place is in users favoritePlaces list
             NSString *id_place = place[@"id_place"];
-            PFQuery *queryPlace = [PFQuery queryWithClassName:@"Place"];
-            [queryPlace whereKey:@"id_place" equalTo:id_place];
             PFQuery *queryUser = [PFQuery queryWithClassName:@"FavoritePlaces"];
             NSLog(@"objectId");
             NSLog([[PFUser currentUser] objectId]);
             NSLog(@"eita");
+            //[queryUser whereKey:@"places" containedIn:@[@"item1", @"item2", @"item3"]];
             [queryUser whereKey:@"user" equalTo:[[PFUser currentUser] objectId]];
-            [queryUser whereKey:@"places" matchesQuery:queryPlace];
+            [queryUser whereKey:@"places" equalTo:id_place];
             [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 if (!error) {
                     if([objects count] > 0){
@@ -114,43 +113,6 @@
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     NSLog(@"logou eh tetraaa");
-    
-    //Check if place is in favoritePlaces list
-//    NSString *id_place = place[@"id_place"];
-//    PFQuery *queryPlace = [PFQuery queryWithClassName:@"Place"];
-//    [queryPlace whereKey:@"id_place" equalTo:id_place];
-//    PFQuery *queryUser = [PFUser query];
-//    [queryUser whereKey:@"username" equalTo:[[PFUser currentUser]username]];
-//    [queryUser whereKey:@"favoritePlaces" matchesQuery:queryPlace];
-//    [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error) {
-//            if([objects count] > 0){
-//                NSLog(@"Está na lista de favoritos");
-//            }else{
-//                NSLog(@"NAAAO ESTAAAH NA LISTAAA");
-//                NSString *objectId = [place objectId];
-//                NSLog(objectId);
-//                PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Place" objectId:objectId];
-//                PFObject *gameScore = [PFObject objectWithClassName:@"FavoritePlaces"];
-//                PFObject *usuario = [PFUser currentUser];
-//                gameScore[@"userrr"] = usuario;
-//                gameScore[@"place"] = pointer;
-//                gameScore[@"places"] = @[pointer];
-//                [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//                    if (succeeded) {
-//                        NSLog(@"salvou");
-//                    } else {
-//                        // There was a problem, check error.description
-//                        NSLog(@"Error");
-//                        
-//                    }
-//                }];
-//            }
-//        } else {
-//            NSLog(@"Error: %@", error);
-//        }
-//    }];
-    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
