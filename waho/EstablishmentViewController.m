@@ -29,9 +29,9 @@
 }
 - (IBAction)irPressed:(id)sender {
     NSLog(@"hahaha");
-   [PFUser logOut];
+   //[PFUser logOut];
     PFUser *userF = [PFUser currentUser];
-    [PFUser logOut];
+    //[PFUser logOut];
     if (userF) {
         dispatch_queue_t downloadQueue = dispatch_queue_create("downloader", NULL);
         dispatch_async(downloadQueue, ^{
@@ -58,39 +58,46 @@
             }];
             
             //Saving place to favorites list
-            NSString *objectId = [place objectId];
-            PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Place" objectId:objectId];
-            PFObject *gameScore = [PFObject objectWithClassName:@"FavoritePlaces"];
-            gameScore[@"user"] = [userF objectId];
-            gameScore[@"place"] = pointer;
-            gameScore[@"places"] = @[pointer];
-            [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    NSLog(@"salvou");
-                } else {
-                    // There was a problem, check error.description
-                    NSLog(@"Error");
-                    
-                }
-            }];
+//            PFQuery *queryPlaceSave = [PFQuery queryWithClassName:@"FavoritePlaces"];
+//            [queryPlaceSave whereKey:@"user" equalTo:[[PFUser currentUser] objectId]];
+//            [queryPlaceSave findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//                if (!error) {
+//                    NSString *objectId = [place objectId];
+//                    PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Place" objectId:objectId];
+//                    if([objects count] > 0){
+//                        NSLog(@"PRA SALVAR Está na lista de favoritos");
+//                        [objects[0] addUniqueObjectsFromArray:@[pointer] forKey:@"places"];
+//                        [objects[0] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//                            if (succeeded) {
+//                                NSLog(@"PRA SALVAR salvou NOVO");
+//                            } else {
+//                                // There was a problem, check error.description
+//                                NSLog(@"PRA SALVAR Error");
+//                                
+//                            }
+//                        }];
+//                    }else{
+//                        PFObject *gameScore = [PFObject objectWithClassName:@"FavoritePlaces"];
+//                        gameScore[@"user"] = [userF objectId];
+//                        [gameScore addUniqueObjectsFromArray:@[pointer] forKey:@"places"];
+//                        [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//                            if (succeeded) {
+//                                NSLog(@"PRA SALVAR salvou");
+//                            } else {
+//                                // There was a problem, check error.description
+//                                NSLog(@"PRA SALVAR Error");
+//                                
+//                            }
+//                        }];
+//                    }
+//                } else {
+//                    NSLog(@"Error: %@", error);
+//                }
+//            }];
+            
         });
         dispatch_async(dispatch_get_main_queue() , ^{
-            NSString *objectId = [place objectId];
-            //NSLog(objectId);
-            PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Place" objectId:objectId];
-            PFObject *gameScore = [PFObject objectWithClassName:@"FavoritePlaces"];
-            gameScore[@"user"] = [userF objectId];
-            gameScore[@"place"] = pointer;
-            gameScore[@"places"] = @[pointer];
-            [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    NSLog(@"salvou");
-                } else {
-                    // There was a problem, check error.description
-                    NSLog(@"Error");
-                    
-                }
-            }];
+            //Do stuff
         });
         // do stuff with the user
         NSLog(@"Logado, querido");
@@ -109,40 +116,40 @@
     NSLog(@"logou eh tetraaa");
     
     //Check if place is in favoritePlaces list
-    NSString *id_place = place[@"id_place"];
-    PFQuery *queryPlace = [PFQuery queryWithClassName:@"Place"];
-    [queryPlace whereKey:@"id_place" equalTo:id_place];
-    PFQuery *queryUser = [PFUser query];
-    [queryUser whereKey:@"username" equalTo:[[PFUser currentUser]username]];
-    [queryUser whereKey:@"favoritePlaces" matchesQuery:queryPlace];
-    [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            if([objects count] > 0){
-                NSLog(@"Está na lista de favoritos");
-            }else{
-                NSLog(@"NAAAO ESTAAAH NA LISTAAA");
-                NSString *objectId = [place objectId];
-                NSLog(objectId);
-                PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Place" objectId:objectId];
-                PFObject *gameScore = [PFObject objectWithClassName:@"FavoritePlaces"];
-                PFObject *usuario = [PFUser currentUser];
-                gameScore[@"userrr"] = usuario;
-                gameScore[@"place"] = pointer;
-                gameScore[@"places"] = @[pointer];
-                [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    if (succeeded) {
-                        NSLog(@"salvou");
-                    } else {
-                        // There was a problem, check error.description
-                        NSLog(@"Error");
-                        
-                    }
-                }];
-            }
-        } else {
-            NSLog(@"Error: %@", error);
-        }
-    }];
+//    NSString *id_place = place[@"id_place"];
+//    PFQuery *queryPlace = [PFQuery queryWithClassName:@"Place"];
+//    [queryPlace whereKey:@"id_place" equalTo:id_place];
+//    PFQuery *queryUser = [PFUser query];
+//    [queryUser whereKey:@"username" equalTo:[[PFUser currentUser]username]];
+//    [queryUser whereKey:@"favoritePlaces" matchesQuery:queryPlace];
+//    [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            if([objects count] > 0){
+//                NSLog(@"Está na lista de favoritos");
+//            }else{
+//                NSLog(@"NAAAO ESTAAAH NA LISTAAA");
+//                NSString *objectId = [place objectId];
+//                NSLog(objectId);
+//                PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Place" objectId:objectId];
+//                PFObject *gameScore = [PFObject objectWithClassName:@"FavoritePlaces"];
+//                PFObject *usuario = [PFUser currentUser];
+//                gameScore[@"userrr"] = usuario;
+//                gameScore[@"place"] = pointer;
+//                gameScore[@"places"] = @[pointer];
+//                [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//                    if (succeeded) {
+//                        NSLog(@"salvou");
+//                    } else {
+//                        // There was a problem, check error.description
+//                        NSLog(@"Error");
+//                        
+//                    }
+//                }];
+//            }
+//        } else {
+//            NSLog(@"Error: %@", error);
+//        }
+//    }];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
