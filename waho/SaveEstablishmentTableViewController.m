@@ -49,7 +49,6 @@
     }];
     
     
-    
     //savedEstablishments = [NSArray arrayWithObjects:@"Biruta Bar", @"Paço do Frevo", nil];
     
 }
@@ -58,11 +57,13 @@
 {
     if ([segue.identifier isEqualToString:@"pushFavorite"]) {
         NSLog(@"preparou");
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        // NSLog(%i, indexPath.row);
         // Get destination view
         EstablishmentViewController *vc = [segue destinationViewController];
         
         // Get button tag number (or do whatever you need to do here, based on your object
-        vc.place = favoritePlaces[0];
+        vc.place = favoritePlaces[(int) indexPath.row];
         
         // Pass the information to your destination view
         //[vc setSelectedButton:tagIndex];
