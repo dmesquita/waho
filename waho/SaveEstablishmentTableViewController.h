@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
+#import "ParseUI/ParseUI.h"
 #import "MapViewController.h"
 #import "EstablishmentViewController.h"
 
@@ -15,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoadingFavs;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *favoritePlaces;
+@property (nonatomic) NSMutableArray *favoriteImages;
 
 @end

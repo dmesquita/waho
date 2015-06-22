@@ -18,7 +18,7 @@
 
 }
 
-@synthesize activityLoadingFavs, tableView, favoritePlaces;
+@synthesize activityLoadingFavs, tableView, favoritePlaces, favoriteImages;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +26,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(triggerAction:) name:@"NotificationMessageEvent" object:nil];
     [activityLoadingFavs startAnimating];
     savedEstablishments = [[NSMutableArray alloc] init];
+    favoriteImages = [[NSMutableArray alloc] init];;
     PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
     [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
     [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -36,6 +37,8 @@
                 for (int i = 0; i < [objects count]; i++){
                     NSString *nome = objects[i][@"name"];
                     [savedEstablishments addObject:nome];
+                    PFFile *imagem = objects[i][@"picture1"];
+                    [favoriteImages addObject:imagem];
                 };
                 [self.tableView reloadData];
             }else{
@@ -113,6 +116,13 @@
     }
     
     cell.textLabel.text = [savedEstablishments objectAtIndex:indexPath.row];
+    //cell.imageView.image = [UIImage imageNamed:@"pin"];
+    
+    PFImageView *placeImageView = (PFImageView *)[cell viewWithTag:100];
+    PFFile *imageFile = [favoriteImages objectAtIndex:indexPath.row];
+    placeImageView.file = imageFile;
+    [placeImageView loadInBackground];
+    
     return cell;
 }
 
