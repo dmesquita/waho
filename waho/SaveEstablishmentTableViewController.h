@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
 #import "MapViewController.h"
+#import "EstablishmentViewController.h"
 
 @interface SaveEstablishmentTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoadingFavs;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSArray *favoritePlaces;
 
 @end

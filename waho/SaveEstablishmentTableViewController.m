@@ -18,7 +18,7 @@
 
 }
 
-@synthesize activityLoadingFavs, tableView;
+@synthesize activityLoadingFavs, tableView, favoritePlaces;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,11 +26,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(triggerAction:) name:@"NotificationMessageEvent" object:nil];
     [activityLoadingFavs startAnimating];
     savedEstablishments = [[NSMutableArray alloc] init];
-    
     PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
     [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
     [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
+            favoritePlaces = objects;
             if([objects count] > 0){
                 NSLog(@"Está na lista de favoritos -------------------------------------");
                 for (int i = 0; i < [objects count]; i++){
@@ -52,6 +52,21 @@
     
     //savedEstablishments = [NSArray arrayWithObjects:@"Biruta Bar", @"Paço do Frevo", nil];
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"pushFavorite"]) {
+        NSLog(@"preparou");
+        // Get destination view
+        EstablishmentViewController *vc = [segue destinationViewController];
+        
+        // Get button tag number (or do whatever you need to do here, based on your object
+        vc.place = favoritePlaces[0];
+        
+        // Pass the information to your destination view
+        //[vc setSelectedButton:tagIndex];
+    }
 }
 
 

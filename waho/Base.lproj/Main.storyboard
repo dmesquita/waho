@@ -29,7 +29,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="zpd-wd-7Up" kind="push" id="VPT-o9-Eyj"/>
+                                            <segue destination="zpd-wd-7Up" kind="push" identifier="pushFavorite" id="3w4-G5-FtX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
