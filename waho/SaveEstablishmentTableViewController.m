@@ -23,10 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(triggerAction:) name:@"NotificationMessageEvent" object:nil];
     [activityLoadingFavs startAnimating];
     savedEstablishments = [[NSMutableArray alloc] init];
-    favoriteImages = [[NSMutableArray alloc] init];;
+    favoriteImages = [[NSMutableArray alloc] init];
+    if ([PFUser currentUser] != nil) {
     PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
     [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
     [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -37,7 +37,7 @@
                 for (int i = 0; i < [objects count]; i++){
                     NSString *nome = objects[i][@"name"];
                     [savedEstablishments addObject:nome];
-                    PFFile *imagem = objects[i][@"picture1"];
+                    PFFile *imagem = objects[i][@"pictureSalvos"];
                     [favoriteImages addObject:imagem];
                 };
                 [self.tableView reloadData];
@@ -50,6 +50,10 @@
         activityLoadingFavs.hidesWhenStopped = true;
         [activityLoadingFavs stopAnimating];
     }];
+    }else{
+        activityLoadingFavs.hidesWhenStopped = true;
+        [activityLoadingFavs stopAnimating];
+    };
     
     
     //savedEstablishments = [NSArray arrayWithObjects:@"Biruta Bar", @"Paço do Frevo", nil];
@@ -74,26 +78,6 @@
 }
 
 
--(void) triggerAction:(NSNotification *) notification{
-//    if ([notification.object isKindOfClass:[NSArray class]])
-//    {
-//        NSLog(@"jksdhfkjsdhafkjhsadkljfhskadjhfkjsahdfkljhsdakfjhsadkjhfkjsdahfkjshdakjf");
-//        NSArray *message = [notification object];
-//        NSLog(@"jksdhfkjsdhafkjhsadkljfhskadjhfkjsahdfkljhsdakfjhsadkjhfkjsdahfkjshdakjf");
-//        // do stuff here with your message data
-//    }
-//    else
-//    {
-//        NSLog(@"Error, object not recognised.");
-//    }
-    NSLog(@"oi");
-    if ([[notification name]  isEqualToString:@"NotificationMessageEvent"]){
-        NSLog(@"rodou a notification");
-    }else{
-        NSLog(@"socorro");
-    }
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -108,17 +92,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"SavedEstablishmentCell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [savedEstablishments objectAtIndex:indexPath.row];
+    //cell.textLabel.text = [savedEstablishments objectAtIndex:indexPath.row];
     //cell.imageView.image = [UIImage imageNamed:@"pin"];
     
     PFImageView *placeImageView = (PFImageView *)[cell viewWithTag:100];
+    
+    UILabel *nomeLabel = (UILabel *)[cell viewWithTag:102];
+    nomeLabel.text = [savedEstablishments objectAtIndex:indexPath.row];
+    
     PFFile *imageFile = [favoriteImages objectAtIndex:indexPath.row];
     placeImageView.file = imageFile;
     [placeImageView loadInBackground];

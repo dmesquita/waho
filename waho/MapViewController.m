@@ -16,13 +16,14 @@
 
 @synthesize activityLoadingMarkers;
 @synthesize mapView;
-@synthesize placesArray, favoritedPlaces;
+@synthesize placesArray, favoritedPlaces, tableView;
 
 - (void)viewDidLoad {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
-    
+    tableView.delegate = self;
+    tableView.dataSource = self;
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
                                 [UIColor blackColor], NSForegroundColorAttributeName, nil];
     [_segmentedControlMap setTitleTextAttributes:attributes forState:UIControlStateSelected];
@@ -75,7 +76,7 @@
                 annotationPointCustom.id_place = i;
                 
                 [mapView addAnnotation:annotationPointCustom];
-            };
+            };[tableView reloadData];
             activityLoadingMarkers.hidesWhenStopped = true;
             [activityLoadingMarkers stopAnimating];
         } else {
@@ -84,21 +85,6 @@
         }
     }];
     [self getFavoritedPlaces];
-    [self createNotification];
-    
-}
-
-- (void)createNotification{
-//    NSDictionary* userInfo = placesArray;
-//    
-//    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-//    [nc postNotificationName:@"eRXReceived" object:self userInfo:userInfo];
-    dispatch_async(dispatch_get_main_queue(),^{
-        //[[NSNotificationCenter defaultCenter] postNotificationName:@"logout" object:nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationMessageEvent" object:self];
-        NSLog(@"Post notification");
-    });
-    
     
 }
 
@@ -212,6 +198,51 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section.
+    return  [placesArray count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *simpleTableIdentifier = @"tablePeopleMapa";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    //cell.textLabel.text = [placesArray objectAtIndex:indexPath.row][@"name"];
+    UILabel *nomeLabel = (UILabel *)[cell viewWithTag:101];
+    nomeLabel.text = [placesArray objectAtIndex:indexPath.row][@"name"];
+    //cell.textLabel.text = [placesArray objectAtIndex:indexPath.row][@"picture1"];
+    //cell.imageView.image = [UIImage imageNamed:@"pin"];
+    
+    PFImageView *placeImageView = (PFImageView *)[cell viewWithTag:100];
+    PFFile *imageFile = [placesArray objectAtIndex:indexPath.row][@"picture1"];
+    placeImageView.file = imageFile;
+    [placeImageView loadInBackground];
+    
+    return cell;
+}
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier isEqualToString:@"pushFavorite2"]) {
+//        NSLog(@"preparou");
+//        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//        // NSLog(%i, indexPath.row);
+//        // Get destination view
+//        EstablishmentViewController *vc = [segue destinationViewController];
+//        
+//        // Get button tag number (or do whatever you need to do here, based on your object
+//        vc.place = placesArray[(int) indexPath.row];
+//        
+//        // Pass the information to your destination view
+//        //[vc setSelectedButton:tagIndex];
+//    }
+//}
 
 /*
 #pragma mark - Navigation

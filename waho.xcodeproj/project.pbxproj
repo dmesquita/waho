@@ -10,6 +10,7 @@
 		423E1D971B374B3900BEA446 /* faixa.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D961B374B3900BEA446 /* faixa.png */; };
 		423E1D991B3766B800BEA446 /* terra vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D981B3766B800BEA446 /* terra vazia.png */; };
 		428830821B38447F004FCAB3 /* bandeirinha vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 428830811B38447F004FCAB3 /* bandeirinha vazia.png */; };
+		428830841B388509004FCAB3 /* xib.png in Resources */ = {isa = PBXBuildFile; fileRef = 428830831B388509004FCAB3 /* xib.png */; };
 		42C1F3EF1B37691500C71D23 /* terra vazia2.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1F3EE1B37691500C71D23 /* terra vazia2.png */; };
 		42C1F3F31B376D2400C71D23 /* terra cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1F3F21B376D2400C71D23 /* terra cheia.png */; };
 		42C1F3FB1B37762000C71D23 /* bandeirinha cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1F3FA1B37762000C71D23 /* bandeirinha cheia.png */; };
@@ -40,6 +41,9 @@
 		42E4C5901B2E5337002F79E2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C58F1B2E5337002F79E2 /* FBSDKCoreKit.framework */; };
 		42E4C5921B2E5355002F79E2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */; };
 		42E4C5941B2E5363002F79E2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */; };
+		42E73A7C1B388B94003E466C /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E73A781B388B94003E466C /* Comfortaa-Bold.ttf */; };
+		42E73A7D1B388B94003E466C /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E73A791B388B94003E466C /* Comfortaa-Light.ttf */; };
+		42E73A7E1B388B94003E466C /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E73A7A1B388B94003E466C /* Comfortaa-Regular.ttf */; };
 		491F24E61B2B3876008CD3F2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 491F24E51B2B3876008CD3F2 /* README.md */; };
 		499CEC921B2B36AC00DF341A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC911B2B36AC00DF341A /* main.m */; };
 		499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC941B2B36AC00DF341A /* AppDelegate.m */; };
@@ -66,6 +70,7 @@
 		423E1D961B374B3900BEA446 /* faixa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faixa.png; sourceTree = "<group>"; };
 		423E1D981B3766B800BEA446 /* terra vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra vazia.png"; sourceTree = "<group>"; };
 		428830811B38447F004FCAB3 /* bandeirinha vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha vazia.png"; sourceTree = "<group>"; };
+		428830831B388509004FCAB3 /* xib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xib.png; sourceTree = "<group>"; };
 		42C1F3EE1B37691500C71D23 /* terra vazia2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra vazia2.png"; sourceTree = "<group>"; };
 		42C1F3F21B376D2400C71D23 /* terra cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra cheia.png"; sourceTree = "<group>"; };
 		42C1F3FA1B37762000C71D23 /* bandeirinha cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha cheia.png"; sourceTree = "<group>"; };
@@ -98,6 +103,9 @@
 		42E4C58F1B2E5337002F79E2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		42E73A781B388B94003E466C /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		42E73A791B388B94003E466C /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
+		42E73A7A1B388B94003E466C /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		491F24E51B2B3876008CD3F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49543A821B2B6109005E9164 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		49543A831B2B6109005E9164 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
@@ -182,6 +190,16 @@
 			path = "../../../Downloads/parse-library-1.7.4";
 			sourceTree = "<group>";
 		};
+		42E73A771B388B94003E466C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				42E73A781B388B94003E466C /* Comfortaa-Bold.ttf */,
+				42E73A791B388B94003E466C /* Comfortaa-Light.ttf */,
+				42E73A7A1B388B94003E466C /* Comfortaa-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		49543A8C1B2B68DB005E9164 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +237,7 @@
 				428830811B38447F004FCAB3 /* bandeirinha vazia.png */,
 				42C1F3FA1B37762000C71D23 /* bandeirinha cheia.png */,
 				42C1F3FE1B37783B00C71D23 /* icone pequeno.png */,
+				428830831B388509004FCAB3 /* xib.png */,
 				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
 				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
 				B9A952211B2B5F5100485EC8 /* MapKit.framework */,
@@ -242,6 +261,7 @@
 		499CEC8E1B2B36AC00DF341A /* waho */ = {
 			isa = PBXGroup;
 			children = (
+				42E73A771B388B94003E466C /* Resources */,
 				499CEC931B2B36AC00DF341A /* AppDelegate.h */,
 				499CEC941B2B36AC00DF341A /* AppDelegate.m */,
 				B9A952271B2B776100485EC8 /* EstablishmentViewController.h */,
@@ -376,14 +396,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				491F24E61B2B3876008CD3F2 /* README.md in Resources */,
+				428830841B388509004FCAB3 /* xib.png in Resources */,
 				423E1D991B3766B800BEA446 /* terra vazia.png in Resources */,
 				499CEC9B1B2B36AC00DF341A /* Main.storyboard in Resources */,
+				42E73A7D1B388B94003E466C /* Comfortaa-Light.ttf in Resources */,
 				42C1F3FF1B37783B00C71D23 /* icone pequeno.png in Resources */,
 				428830821B38447F004FCAB3 /* bandeirinha vazia.png in Resources */,
+				42E73A7C1B388B94003E466C /* Comfortaa-Bold.ttf in Resources */,
 				499CECA01B2B36AC00DF341A /* LaunchScreen.xib in Resources */,
 				42C1F3FB1B37762000C71D23 /* bandeirinha cheia.png in Resources */,
 				42C1F3F31B376D2400C71D23 /* terra cheia.png in Resources */,
 				423E1D971B374B3900BEA446 /* faixa.png in Resources */,
+				42E73A7E1B388B94003E466C /* Comfortaa-Regular.ttf in Resources */,
 				42DF517F1B3091FC00CF0DE2 /* pin.png in Resources */,
 				42C1F3EF1B37691500C71D23 /* terra vazia2.png in Resources */,
 				499CEC9D1B2B36AC00DF341A /* Images.xcassets in Resources */,

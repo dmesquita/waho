@@ -12,7 +12,7 @@
 #import "MyCustomAnnotation.h"
 #import "EstablishmentViewController.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate,UITabBarDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate,UITabBarDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoadingMarkers;
 @property (weak, nonatomic) IBOutlet UITableView *listEstablishmentView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlMap;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

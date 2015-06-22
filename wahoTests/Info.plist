@@ -20,5 +20,11 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Comfortaa-Bold.ttf</string>
+		<string>Confortaa-Light.ttf</string>
+		<string>Comfortaa-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

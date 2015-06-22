@@ -93,6 +93,20 @@
                       otherButtonTitles:nil] show];
     return NO; // Interrupt login process
 }
+- (IBAction)favoritarNovo:(UIButton *)sender {
+    NSLog(@"hahaha");
+    //[PFUser logOut];
+    PFUser *userF = [PFUser currentUser];
+    //[PFUser logOut];
+    if (userF) {
+        [self likePlace:place];
+    } else {
+        // show the signup or login page
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        [logInViewController setDelegate:self];
+        [self presentViewController:logInViewController animated:YES completion:NULL];
+    }
+}
 
 - (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
     [[[UIAlertView alloc] initWithTitle:@"Error"

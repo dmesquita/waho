@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblName;
 @property (weak, nonatomic) IBOutlet UILabel *lblQuote;
 @property (weak, nonatomic) IBOutlet UITextView *txtStory;
+@property (weak, nonatomic) IBOutlet UIButton *btFavoritar;
 
 - (IBAction)segmentValeuChanged:(id)sender;
 
