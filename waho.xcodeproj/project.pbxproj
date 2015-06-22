@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423E1D971B374B3900BEA446 /* faixa.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D961B374B3900BEA446 /* faixa.png */; };
+		423E1D991B3766B800BEA446 /* terra vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D981B3766B800BEA446 /* terra vazia.png */; };
+		42C1F3EF1B37691500C71D23 /* terra vazia2.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1F3EE1B37691500C71D23 /* terra vazia2.png */; };
+		42C1F3F31B376D2400C71D23 /* terra cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1F3F21B376D2400C71D23 /* terra cheia.png */; };
+		42C1F3F91B37759E00C71D23 /* bandeirinha vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1F3F81B37759E00C71D23 /* bandeirinha vazia.png */; };
+		42C1F3FB1B37762000C71D23 /* bandeirinha cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1F3FA1B37762000C71D23 /* bandeirinha cheia.png */; };
+		42C1F3FF1B37783B00C71D23 /* icone pequeno.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1F3FE1B37783B00C71D23 /* icone pequeno.png */; };
 		42DF51771B308E9400CF0DE2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49543A881B2B68C0005E9164 /* MapKit.framework */; };
 		42DF517A1B308F2300CF0DE2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF51791B308F2300CF0DE2 /* MapViewController.m */; };
 		42DF517D1B308F7900CF0DE2 /* MyCustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF517C1B308F7900CF0DE2 /* MyCustomAnnotation.m */; };
@@ -56,6 +63,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		423E1D961B374B3900BEA446 /* faixa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faixa.png; sourceTree = "<group>"; };
+		423E1D981B3766B800BEA446 /* terra vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra vazia.png"; sourceTree = "<group>"; };
+		42C1F3EE1B37691500C71D23 /* terra vazia2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra vazia2.png"; sourceTree = "<group>"; };
+		42C1F3F21B376D2400C71D23 /* terra cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra cheia.png"; sourceTree = "<group>"; };
+		42C1F3F81B37759E00C71D23 /* bandeirinha vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha vazia.png"; sourceTree = "<group>"; };
+		42C1F3FA1B37762000C71D23 /* bandeirinha cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha cheia.png"; sourceTree = "<group>"; };
+		42C1F3FE1B37783B00C71D23 /* icone pequeno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icone pequeno.png"; sourceTree = "<group>"; };
 		42DF51781B308F2300CF0DE2 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		42DF51791B308F2300CF0DE2 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		42DF517B1B308F7900CF0DE2 /* MyCustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomAnnotation.h; sourceTree = "<group>"; };
@@ -198,6 +212,13 @@
 			isa = PBXGroup;
 			children = (
 				42DF517E1B3091FC00CF0DE2 /* pin.png */,
+				423E1D961B374B3900BEA446 /* faixa.png */,
+				423E1D981B3766B800BEA446 /* terra vazia.png */,
+				42C1F3EE1B37691500C71D23 /* terra vazia2.png */,
+				42C1F3F21B376D2400C71D23 /* terra cheia.png */,
+				42C1F3F81B37759E00C71D23 /* bandeirinha vazia.png */,
+				42C1F3FA1B37762000C71D23 /* bandeirinha cheia.png */,
+				42C1F3FE1B37783B00C71D23 /* icone pequeno.png */,
 				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
 				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
 				B9A952211B2B5F5100485EC8 /* MapKit.framework */,
@@ -355,9 +376,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				491F24E61B2B3876008CD3F2 /* README.md in Resources */,
+				423E1D991B3766B800BEA446 /* terra vazia.png in Resources */,
 				499CEC9B1B2B36AC00DF341A /* Main.storyboard in Resources */,
+				42C1F3FF1B37783B00C71D23 /* icone pequeno.png in Resources */,
 				499CECA01B2B36AC00DF341A /* LaunchScreen.xib in Resources */,
+				42C1F3FB1B37762000C71D23 /* bandeirinha cheia.png in Resources */,
+				42C1F3F31B376D2400C71D23 /* terra cheia.png in Resources */,
+				423E1D971B374B3900BEA446 /* faixa.png in Resources */,
+				42C1F3F91B37759E00C71D23 /* bandeirinha vazia.png in Resources */,
 				42DF517F1B3091FC00CF0DE2 /* pin.png in Resources */,
+				42C1F3EF1B37691500C71D23 /* terra vazia2.png in Resources */,
 				499CEC9D1B2B36AC00DF341A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

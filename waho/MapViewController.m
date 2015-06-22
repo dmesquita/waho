@@ -44,10 +44,10 @@
     viewRegion.span.latitudeDelta = 0.2;
     viewRegion.span.longitudeDelta = 0.2;
     **/
-//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userCoordinate, 500, 500);
-//    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
-//    
-//    [self.mapView setRegion:adjustedRegion animated:YES];
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userCoordinate, 15500, 15500);
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+    
+    [self.mapView setRegion:adjustedRegion animated:YES];
     
     [activityLoadingMarkers startAnimating];
     
@@ -78,7 +78,24 @@
         }
     }];
     [self getFavoritedPlaces];
+    [self createNotification];
+    
 }
+
+- (void)createNotification{
+//    NSDictionary* userInfo = placesArray;
+//    
+//    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+//    [nc postNotificationName:@"eRXReceived" object:self userInfo:userInfo];
+    dispatch_async(dispatch_get_main_queue(),^{
+        //[[NSNotificationCenter defaultCenter] postNotificationName:@"logout" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationMessageEvent" object:self];
+        NSLog(@"Post notification");
+    });
+    
+    
+}
+
 
 - (void) getFavoritedPlaces {
     favoritedPlaces = [[NSMutableArray alloc] init];
@@ -112,7 +129,7 @@
         MyCustomAnnotation *myLocation = (MyCustomAnnotation *)annotation;
         MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MyCustomAnnotation"];
         if(annotationView == nil){
-            annotationView = myLocation.annotationView;
+            annotationView = myLocation.annotationView;            
         }else{
             annotationView.annotation = annotation;
         }
@@ -123,14 +140,22 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+}
+
+
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    // --- To show the navbar tab
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:nil];
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     EstablishmentViewController *establishmentVC = (EstablishmentViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Establishment"];
     MyCustomAnnotation *annotation = (MyCustomAnnotation *)view.annotation;
     establishmentVC.place = placesArray[annotation.id_place];
-    establishmentVC.lbName = placesArray[annotation.id_place][@"name"];
-    establishmentVC.lbAbout = placesArray[annotation.id_place][@"about"];
     establishmentVC.favoritedPlaces = favoritedPlaces;
     [self.navigationController pushViewController:establishmentVC animated:YES];
 }
@@ -140,16 +165,33 @@
     [alert show];
 }
 
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{ NSLog(@"hdkjfhsdkjhfkjs");
+    if(item.tag==1)
+    {
+        NSLog(@"hdkjfhsdkjhfkjs");
+    }
+    else
+    {
+        //your code
+    }
+}
+
 - (IBAction)valueChangedMap:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
             //map
         case 0:
+            [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+            [self.navigationController.navigationBar setShadowImage:[UIImage new]];
             self.mapView.hidden = NO;
             self.listEstablishmentView.hidden = YES;
             break;
             
             //list establishment
         case 1:
+            [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+            [self.navigationController.navigationBar setShadowImage:nil];
+            
             self.mapView.hidden = YES;
             self.listEstablishmentView.hidden = NO;
             break;

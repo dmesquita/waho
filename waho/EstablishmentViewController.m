@@ -13,18 +13,20 @@
 @end
 
 @implementation EstablishmentViewController
-@synthesize storyView, localView, lbName, lbNameLocal, lbNameStory, lbAbout, txtAboutLocal, lblFavoritado ,txtAboutStory, place, favoritedPlaces;
+@synthesize storyView, localView, lblFavoritado, lblName, txtStory, lblQuote, place, favoritedPlaces, imgPerson;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    lbNameLocal.text = lbName;
-    lbNameStory.text = lbName;
-    txtAboutLocal.text = lbAbout;
-    txtAboutStory.text = lbAbout;
     
     if([favoritedPlaces containsObject:place]){
         lblFavoritado.text = @"FAVORITOU!";
     }
+    lblName.text = place[@"name"];
+    lblQuote.text = place[@"quote"];
+    txtStory.text = place[@"about"];
+    PFFile *imageFile = place[@"picture1"];
+    imgPerson.file = imageFile;
+    [imgPerson loadInBackground];
 
     // Do any additional setup after loading the view.
 }

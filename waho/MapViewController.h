@@ -12,7 +12,7 @@
 #import "MyCustomAnnotation.h"
 #import "EstablishmentViewController.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate,UITabBarDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
+#import "MapViewController.h"
 
 @interface SaveEstablishmentTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoadingFavs;

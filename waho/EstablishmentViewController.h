@@ -16,17 +16,15 @@
 @property (strong, nonatomic) IBOutlet UIView *storyView;
 @property (strong, nonatomic) IBOutlet UIView *localView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlEstablishment;
-@property (weak, nonatomic) IBOutlet UILabel *lbNameStory;
-@property (weak, nonatomic) IBOutlet UILabel *lbNameLocal;
-@property (weak, nonatomic) IBOutlet UITextView *txtAboutStory;
-@property (weak, nonatomic) IBOutlet UITextView *txtAboutLocal;
 
-@property (nonatomic) IBOutlet NSString *lbName;
-@property (nonatomic) IBOutlet NSString *lbAbout;
-@property (weak, nonatomic) IBOutlet UIButton *btFav;
 @property (weak, nonatomic) IBOutlet UILabel *lblFavoritado;
 @property(nonatomic) PFObject *place;
 @property(nonatomic) NSMutableArray *favoritedPlaces;
+
+@property (weak, nonatomic) IBOutlet PFImageView *imgPerson;
+@property (weak, nonatomic) IBOutlet UILabel *lblName;
+@property (weak, nonatomic) IBOutlet UILabel *lblQuote;
+@property (weak, nonatomic) IBOutlet UITextView *txtStory;
 
 - (IBAction)segmentValeuChanged:(id)sender;
 
