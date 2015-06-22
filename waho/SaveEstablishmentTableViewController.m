@@ -26,30 +26,34 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(triggerAction:) name:@"NotificationMessageEvent" object:nil];
     [activityLoadingFavs startAnimating];
     savedEstablishments = [[NSMutableArray alloc] init];
+    
     PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
     [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
     [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             if([objects count] > 0){
-                NSLog(@"Está na lista de favoritos");
+                NSLog(@"Está na lista de favoritos -------------------------------------");
                 for (int i = 0; i < [objects count]; i++){
                     NSString *nome = objects[i][@"name"];
-                     NSLog(objects[i][@"name"]);
                     [savedEstablishments addObject:nome];
                 };
+                [self.tableView reloadData];
             }else{
-                NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+                 NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
             }
         } else {
-            NSLog(@"Error: %@", error);
+             NSLog(@"Error: %@", error);
         }
         activityLoadingFavs.hidesWhenStopped = true;
         [activityLoadingFavs stopAnimating];
     }];
-    [self.tableView reloadData];
+    
+    
+    
     //savedEstablishments = [NSArray arrayWithObjects:@"Biruta Bar", @"Paço do Frevo", nil];
     
 }
+
 
 -(void) triggerAction:(NSNotification *) notification{
 //    if ([notification.object isKindOfClass:[NSArray class]])
