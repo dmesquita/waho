@@ -23,6 +23,27 @@
     [PFImageView class];
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(16452420)];
     
+    //Customizing tabBarController
+    UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    
+    // repeat for every tab, but increment the index each time
+    UITabBarItem *firstTab = [tabBar.items objectAtIndex:0];
+    UITabBarItem *secondTab = [tabBar.items objectAtIndex:1];
+    
+    // also repeat for every tab
+    firstTab.image = [[UIImage imageNamed:@"terra"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+    firstTab.selectedImage = [[UIImage imageNamed:@"terra_cheia"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    // also repeat for every tab
+    secondTab.image = [[UIImage imageNamed:@"bandeira_vazia"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+    secondTab.selectedImage = [[UIImage imageNamed:@"bandeira"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor grayColor] }
+                                             forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:251.0/255.0 green:11.0/255.0 blue:68.0/255.0 alpha:1.0] }
+                                             forState:UIControlStateSelected];
+    
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];

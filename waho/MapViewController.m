@@ -22,6 +22,12 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
+    
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
+                                [UIColor blackColor], NSForegroundColorAttributeName, nil];
+    [_segmentedControlMap setTitleTextAttributes:attributes forState:UIControlStateSelected];
+    [_segmentedControlMap setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
     [super viewDidLoad];
     
     // --- To show custom annotations ---

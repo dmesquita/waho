@@ -18,7 +18,7 @@
 
 }
 
-@synthesize activityLoadingFavs;
+@synthesize activityLoadingFavs, tableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,6 +46,7 @@
         activityLoadingFavs.hidesWhenStopped = true;
         [activityLoadingFavs stopAnimating];
     }];
+    [self.tableView reloadData];
     //savedEstablishments = [NSArray arrayWithObjects:@"Biruta Bar", @"Paço do Frevo", nil];
     
 }

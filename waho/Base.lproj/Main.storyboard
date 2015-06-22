@@ -45,6 +45,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="activityLoadingFavs" destination="Pwe-9U-nHz" id="aAg-WD-VJT"/>
+                        <outlet property="tableView" destination="6oQ-sw-QO6" id="wcH-YZ-oE5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-7U-zpI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -166,7 +167,7 @@
                     <navigationItem key="navigationItem" id="0TX-ji-kRK">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Q6y-UF-TRs">
-                            <rect key="frame" x="112.5" y="7.5" width="150" height="29"/>
+                            <rect key="frame" x="113" y="8" width="150" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Mapa"/>
@@ -211,6 +212,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="5Lr-qQ-rqJ" kind="relationship" relationship="viewControllers" id="1Gc-lh-XYb"/>

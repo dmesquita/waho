@@ -12,5 +12,6 @@
 
 @interface SaveEstablishmentTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoadingFavs;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
