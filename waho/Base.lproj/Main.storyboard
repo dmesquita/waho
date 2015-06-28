@@ -9,6 +9,7 @@
             <string>Comfortaa</string>
             <string>Comfortaa</string>
             <string>Comfortaa</string>
+            <string>Comfortaa</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -116,11 +117,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1g-TF-eU0">
-                                <rect key="frame" x="0.0" y="-65" width="375" height="1037"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H1g-TF-eU0">
+                                <rect key="frame" x="0.0" y="-65" width="375" height="1500"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-3d-Skd">
-                                        <rect key="frame" x="0.0" y="64" width="375" height="1146"/>
+                                        <rect key="frame" x="0.0" y="-18" width="375" height="1500"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mG-EX-Gdd">
                                                 <rect key="frame" x="69" y="238" width="253" height="62"/>
@@ -131,7 +132,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRv-q3-Qf1" customClass="PFImageView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdw-VT-RnH">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdw-VT-RnH">
                                                 <rect key="frame" x="24" y="308" width="343" height="203"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -142,20 +143,17 @@
                                                 <rect key="frame" x="-17" y="149" width="409" height="37"/>
                                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPy-Qa-85R">
-                                                <rect key="frame" x="314" y="213" width="40" height="40"/>
-                                                <state key="normal" image="bandeirinha cheia.png">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPy-Qa-85R">
+                                                <rect key="frame" x="311" y="146" width="20" height="40"/>
+                                                <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="favoritarNovo:" destination="zpd-wd-7Up" eventType="touchUpInside" id="ACI-Lz-qii"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNy-QV-88t">
-                                                <rect key="frame" x="8" y="551" width="171" height="128"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uc7-r1-Izo">
-                                                <rect key="frame" x="200" y="551" width="167" height="128"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNy-QV-88t" customClass="PFImageView">
+                                                <rect key="frame" x="14" y="508" width="171" height="128"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O que você vai encontrar lá" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaI-hm-1wp">
                                                 <rect key="frame" x="24" y="708" width="250" height="21"/>
@@ -169,6 +167,24 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnX-Bg-kv9">
+                                                <rect key="frame" x="63" y="749" width="259" height="21"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uc7-r1-Izo" customClass="PFImageView">
+                                                <rect key="frame" x="196" y="508" width="171" height="128"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1i7-LE-7ct">
+                                                <rect key="frame" x="269" y="218" width="77" height="39"/>
+                                                <state key="normal" title="Já visitei!">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="visitarNovo:" destination="zpd-wd-7Up" eventType="touchUpInside" id="RYK-QY-RVA"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -201,15 +217,19 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="btFavoritar" destination="gPy-Qa-85R" id="WDJ-s9-AnC"/>
+                        <outlet property="btVisitei" destination="1i7-LE-7ct" id="lga-cy-Z1k"/>
+                        <outlet property="img2" destination="vNy-QV-88t" id="F0N-Qd-JfG"/>
+                        <outlet property="img3" destination="Uc7-r1-Izo" id="mDc-mE-r84"/>
                         <outlet property="imgPerson" destination="pRv-q3-Qf1" id="uNe-5m-mZc"/>
                         <outlet property="lblName" destination="ALz-vU-Lky" id="mMj-To-8Q6"/>
                         <outlet property="lblQuote" destination="3mG-EX-Gdd" id="EqT-0h-DkS"/>
                         <outlet property="txtStory" destination="pdw-VT-RnH" id="ckm-Rr-WvD"/>
+                        <outlet property="viewPrincipal" destination="KC8-3d-Skd" id="LVj-Pa-sZA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oP-pO-toa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="459.5" y="3222.5"/>
+            <point key="canvasLocation" x="459.5" y="3576.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="QPR-6x-pjJ">
@@ -302,8 +322,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7o-l7-PMS">
-                                                    <rect key="frame" x="8" y="120" width="359" height="47"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="21" y="134" width="359" height="47"/>
+                                                    <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -321,7 +341,7 @@
                     <navigationItem key="navigationItem" id="0TX-ji-kRK">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Q6y-UF-TRs">
-                            <rect key="frame" x="112.5" y="7.5" width="150" height="29"/>
+                            <rect key="frame" x="113" y="8" width="150" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Mapa"/>
@@ -543,7 +563,6 @@
     </scenes>
     <resources>
         <image name="bandeira" width="25" height="25"/>
-        <image name="bandeirinha cheia.png" width="50" height="51"/>
         <image name="faixa.png" width="3125" height="304"/>
         <image name="terra" width="25" height="25"/>
     </resources>
@@ -553,6 +572,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3w4-G5-FtX"/>
+        <segue reference="C3G-WR-eP3"/>
     </inferredMetricsTieBreakers>
 </document>

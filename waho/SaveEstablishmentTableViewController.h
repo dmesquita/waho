@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *favoritePlaces;
 @property (nonatomic) NSMutableArray *favoriteImages;
+@property (nonatomic) NSMutableArray *visitedPlaces;
 
 @end

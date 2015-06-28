@@ -41,6 +41,11 @@
 		42E4C5901B2E5337002F79E2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C58F1B2E5337002F79E2 /* FBSDKCoreKit.framework */; };
 		42E4C5921B2E5355002F79E2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */; };
 		42E4C5941B2E5363002F79E2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */; };
+		42E5ED3F1B40935400815B4E /* bandeirinha verde cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5ED3E1B40935400815B4E /* bandeirinha verde cheia.png */; };
+		42E5ED411B40940A00815B4E /* bandeirinha verde vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5ED401B40940A00815B4E /* bandeirinha verde vazia.png */; };
+		42E5ED431B40AE6D00815B4E /* artesanato check.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5ED421B40AE6D00815B4E /* artesanato check.png */; };
+		42E5ED451B40AE7600815B4E /* feira check.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5ED441B40AE7600815B4E /* feira check.png */; };
+		42E5ED471B40AE7F00815B4E /* restaurante check.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5ED461B40AE7F00815B4E /* restaurante check.png */; };
 		42E73A7C1B388B94003E466C /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E73A781B388B94003E466C /* Comfortaa-Bold.ttf */; };
 		42E73A7D1B388B94003E466C /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E73A791B388B94003E466C /* Comfortaa-Light.ttf */; };
 		42E73A7E1B388B94003E466C /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E73A7A1B388B94003E466C /* Comfortaa-Regular.ttf */; };
@@ -103,6 +108,11 @@
 		42E4C58F1B2E5337002F79E2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		42E5ED3E1B40935400815B4E /* bandeirinha verde cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha verde cheia.png"; sourceTree = "<group>"; };
+		42E5ED401B40940A00815B4E /* bandeirinha verde vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha verde vazia.png"; sourceTree = "<group>"; };
+		42E5ED421B40AE6D00815B4E /* artesanato check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "artesanato check.png"; sourceTree = "<group>"; };
+		42E5ED441B40AE7600815B4E /* feira check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feira check.png"; sourceTree = "<group>"; };
+		42E5ED461B40AE7F00815B4E /* restaurante check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restaurante check.png"; sourceTree = "<group>"; };
 		42E73A781B388B94003E466C /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		42E73A791B388B94003E466C /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
 		42E73A7A1B388B94003E466C /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
@@ -237,6 +247,11 @@
 				428830811B38447F004FCAB3 /* bandeirinha vazia.png */,
 				42C1F3FA1B37762000C71D23 /* bandeirinha cheia.png */,
 				42C1F3FE1B37783B00C71D23 /* icone pequeno.png */,
+				42E5ED3E1B40935400815B4E /* bandeirinha verde cheia.png */,
+				42E5ED401B40940A00815B4E /* bandeirinha verde vazia.png */,
+				42E5ED421B40AE6D00815B4E /* artesanato check.png */,
+				42E5ED441B40AE7600815B4E /* feira check.png */,
+				42E5ED461B40AE7F00815B4E /* restaurante check.png */,
 				428830831B388509004FCAB3 /* xib.png */,
 				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
 				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
@@ -400,11 +415,16 @@
 				423E1D991B3766B800BEA446 /* terra vazia.png in Resources */,
 				499CEC9B1B2B36AC00DF341A /* Main.storyboard in Resources */,
 				42E73A7D1B388B94003E466C /* Comfortaa-Light.ttf in Resources */,
+				42E5ED431B40AE6D00815B4E /* artesanato check.png in Resources */,
 				42C1F3FF1B37783B00C71D23 /* icone pequeno.png in Resources */,
+				42E5ED451B40AE7600815B4E /* feira check.png in Resources */,
+				42E5ED411B40940A00815B4E /* bandeirinha verde vazia.png in Resources */,
 				428830821B38447F004FCAB3 /* bandeirinha vazia.png in Resources */,
 				42E73A7C1B388B94003E466C /* Comfortaa-Bold.ttf in Resources */,
+				42E5ED3F1B40935400815B4E /* bandeirinha verde cheia.png in Resources */,
 				499CECA01B2B36AC00DF341A /* LaunchScreen.xib in Resources */,
 				42C1F3FB1B37762000C71D23 /* bandeirinha cheia.png in Resources */,
+				42E5ED471B40AE7F00815B4E /* restaurante check.png in Resources */,
 				42C1F3F31B376D2400C71D23 /* terra cheia.png in Resources */,
 				423E1D971B374B3900BEA446 /* faixa.png in Resources */,
 				42E73A7E1B388B94003E466C /* Comfortaa-Regular.ttf in Resources */,

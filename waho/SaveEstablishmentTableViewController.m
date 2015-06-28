@@ -18,45 +18,63 @@
 
 }
 
-@synthesize activityLoadingFavs, tableView, favoritePlaces, favoriteImages;
+@synthesize activityLoadingFavs, tableView, favoritePlaces, visitedPlaces, favoriteImages;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidLoad];
     // Do any additional setup after loading the view.
     [activityLoadingFavs startAnimating];
+    activityLoadingFavs.hidesWhenStopped = true;
+    
     savedEstablishments = [[NSMutableArray alloc] init];
     favoriteImages = [[NSMutableArray alloc] init];
     if ([PFUser currentUser] != nil) {
-    PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
-    [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
-    [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            favoritePlaces = objects;
-            if([objects count] > 0){
-                NSLog(@"Está na lista de favoritos -------------------------------------");
-                for (int i = 0; i < [objects count]; i++){
-                    NSString *nome = objects[i][@"name"];
-                    [savedEstablishments addObject:nome];
-                    PFFile *imagem = objects[i][@"pictureSalvos"];
-                    [favoriteImages addObject:imagem];
-                };
-                [self.tableView reloadData];
-            }else{
-                 NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+        PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
+        [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
+        [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                favoritePlaces = objects;
+                if([objects count] > 0){
+                    NSLog(@"Está na lista de favoritos -------------------------------------");
+                    for (int i = 0; i < [objects count]; i++){
+                        NSString *nome = objects[i][@"name"];
+                        [savedEstablishments addObject:nome];
+                        PFFile *imagem = objects[i][@"pictureSalvos"];
+                        [favoriteImages addObject:imagem];
+                    };
+                    [self.tableView reloadData];
+                }else{
+                    NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+                }
+            } else {
+                NSLog(@"Error: %@", error);
             }
-        } else {
-             NSLog(@"Error: %@", error);
-        }
-        activityLoadingFavs.hidesWhenStopped = true;
-        [activityLoadingFavs stopAnimating];
-    }];
+            [activityLoadingFavs stopAnimating];
+        }];
     }else{
-        activityLoadingFavs.hidesWhenStopped = true;
         [activityLoadingFavs stopAnimating];
     };
     
-    
-    //savedEstablishments = [NSArray arrayWithObjects:@"Biruta Bar", @"Paço do Frevo", nil];
+    //Get visited Places
+    if ([PFUser currentUser] != nil) {
+        PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
+        [queryUser whereKey:@"visited" equalTo:[[PFUser currentUser] objectId]];
+        [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                visitedPlaces = objects;
+            } else {
+                NSLog(@"Error: %@", error);
+            }
+            [activityLoadingFavs stopAnimating];
+        }];
+    }else{
+        [activityLoadingFavs stopAnimating];
+    };
     
 }
 
@@ -71,6 +89,8 @@
         
         // Get button tag number (or do whatever you need to do here, based on your object
         vc.place = favoritePlaces[(int) indexPath.row];
+        vc.favoritedPlaces = favoritePlaces;
+        vc.visitedPlaces = visitedPlaces;
         
         // Pass the information to your destination view
         //[vc setSelectedButton:tagIndex];

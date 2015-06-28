@@ -13,26 +13,61 @@
 @end
 
 @implementation EstablishmentViewController
-@synthesize storyView, localView, lblFavoritado, lblName, txtStory, lblQuote, place, favoritedPlaces, imgPerson;
+@synthesize viewPrincipal, storyView, localView, lblFavoritado, lblName, txtStory, lblQuote, place, favoritedPlaces, visitedPlaces, imgPerson, img2, img3, btFavoritar, btVisitei;
+
+- (void)changeFavButtonToSaved{
+    UIImage *bandeiraSalva = [UIImage imageNamed:@"bandeira_salvar"];
+    [btFavoritar setBackgroundImage:bandeiraSalva forState:UIControlStateNormal];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     if([favoritedPlaces containsObject:place]){
-        lblFavoritado.text = @"FAVORITOU!";
+        [self changeFavButtonToSaved];
+        //NSLog(@"%d",[favoritedPlaces count]);
+    }else{
+        UIImage *bandeiraSalva = [UIImage imageNamed:@"bandeira_nao_salvo"];
+        [btFavoritar setBackgroundImage:bandeiraSalva forState:UIControlStateNormal];
     }
+    NSLog(@"%d",[visitedPlaces count]);
+    if([visitedPlaces containsObject:place]){
+        [btVisitei setEnabled:NO];
+        NSLog(@"aAaaaaaaaaaaaaaaaaaa");
+    }
+    
     lblName.text = place[@"name"];
     lblQuote.text = place[@"quote"];
     txtStory.text = place[@"about"];
+    NSArray *features = place[@"features"];
+    for(int i = 0; i < [features count]; i++){
+        UILabel *feat;
+        //= [[UILabel alloc] initWithFrame:CGRectMake(63, 749+(i*24), 259, 21)];;
+        //NSLog(@"imprimindo as features");
+        [feat setFrame:CGRectMake(0,0, 259, 21)];
+        [feat setFont:[UIFont fontNamesForFamilyName:@"Avenir"]];
+        [feat setTextColor:[UIColor blackColor]];
+        [feat setText:[features objectAtIndex:i]];
+        [viewPrincipal addSubview:feat];
+        //[features objectAtIndex:i];
+    }
+    //NSLog(objectAtIndex:0]);
+    
     PFFile *imageFile = place[@"picture1"];
     imgPerson.file = imageFile;
     [imgPerson loadInBackground];
+    
+    PFFile *imageFile2 = place[@"picture2"];
+    img2.file = imageFile2;
+    [img2 loadInBackground];
+    
+    PFFile *imageFile3 = place[@"picture3"];
+    img3.file = imageFile3;
+    [img3 loadInBackground];
 
     // Do any additional setup after loading the view.
 }
-- (IBAction)favBtPressed:(id)sender {
-    NSLog(@"oi");
-}
+
 
 - (void) likePlace:(PFObject *)object{
     [object addUniqueObject:[[PFUser currentUser] objectId] forKey:@"favorites"];
@@ -48,7 +83,23 @@
     }];
 }
 
+- (IBAction)favoritarNovo:(UIButton *)sender {
+    NSLog(@"hahaha");
+    //[PFUser logOut];
+    PFUser *userF = [PFUser currentUser];
+    //[PFUser logOut];
+    if (userF) {
+        [self likePlace:place];
+    } else {
+        // show the signup or login page
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        [logInViewController setDelegate:self];
+        [self presentViewController:logInViewController animated:YES completion:NULL];
+    }
+}
+
 - (void) favoritedSuccess{
+    [self changeFavButtonToSaved];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sucesso!" message:@"Local favoritado com sucesso" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
 }
@@ -58,14 +109,11 @@
     [alert show];
 }
 
-
-- (IBAction)irPressed:(id)sender {
-    NSLog(@"hahaha");
-   //[PFUser logOut];
+- (IBAction)visitarNovo:(UIButton *)sender {
     PFUser *userF = [PFUser currentUser];
-    //[PFUser logOut];
     if (userF) {
-        [self likePlace:place];       
+        //[self changeFavButtonToSaved];
+        [self visitPlace:place];
     } else {
         // show the signup or login page
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
@@ -74,6 +122,31 @@
     }
     
 }
+
+- (void) visitPlace:(PFObject *)object{
+    [object addUniqueObject:[[PFUser currentUser] objectId] forKey:@"visited"];
+    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            NSLog(@"local visitado!");
+            [self visitedSuccess];
+        } else {
+            [self visitedFail];
+            NSLog(@"Error: %@", error);
+        }
+    }];
+}
+
+- (void) visitedSuccess{
+    [btVisitei setEnabled:NO];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sucesso!" message:@"Local visitado!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
+- (void) visitedFail{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooooops!" message:@"Erro ao tentar visitar local" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     NSLog(@"logou eh tetraaa");
@@ -93,20 +166,7 @@
                       otherButtonTitles:nil] show];
     return NO; // Interrupt login process
 }
-- (IBAction)favoritarNovo:(UIButton *)sender {
-    NSLog(@"hahaha");
-    //[PFUser logOut];
-    PFUser *userF = [PFUser currentUser];
-    //[PFUser logOut];
-    if (userF) {
-        [self likePlace:place];
-    } else {
-        // show the signup or login page
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        [logInViewController setDelegate:self];
-        [self presentViewController:logInViewController animated:YES completion:NULL];
-    }
-}
+
 
 - (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
     [[[UIAlertView alloc] initWithTitle:@"Error"
@@ -124,7 +184,7 @@
 
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info {
     BOOL informationComplete = YES;
-    
+    [signUpController setDelegate:self];
     // loop through all of the submitted data
     for (id key in info) {
         NSString *field = [info objectForKey:key];
@@ -158,6 +218,7 @@
 
 // Sent to the delegate when the sign up screen is dismissed.
 - (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
+    [self.navigationController popViewControllerAnimated:YES];
     NSLog(@"User dismissed the signUpViewController");
 }
 

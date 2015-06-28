@@ -16,7 +16,7 @@
 
 @synthesize activityLoadingMarkers;
 @synthesize mapView;
-@synthesize placesArray, favoritedPlaces, tableView;
+@synthesize placesArray, favoritedPlaces, visitedPlaces, tableView;
 
 - (void)viewDidLoad {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
@@ -24,6 +24,7 @@
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     tableView.delegate = self;
     tableView.dataSource = self;
+    //[PFUser logOut];
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
                                 [UIColor blackColor], NSForegroundColorAttributeName, nil];
     [_segmentedControlMap setTitleTextAttributes:attributes forState:UIControlStateSelected];
@@ -85,6 +86,7 @@
         }
     }];
     [self getFavoritedPlaces];
+    [self getVisitedPlaces];
     
 }
 
@@ -105,6 +107,33 @@
                     };
                 }else{
                     NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+                }
+            } else {
+                NSLog(@"Error: %@", error);
+            }
+        }];
+    } else {
+        NSLog(@"Usuario nao esta logado");
+    }
+    
+}
+
+- (void) getVisitedPlaces {
+    visitedPlaces = [[NSMutableArray alloc] init];
+    if ([PFUser currentUser] != nil) {
+        PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
+        [queryUser whereKey:@"visited" equalTo:[[PFUser currentUser] objectId]];
+        [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                if([objects count] > 0){
+                    NSLog(@"Lista de visitados encontrada");
+                    for (int i = 0; i < [objects count]; i++) {
+                        NSLog(objects[i][@"name"]);
+                        //int id_place = objects[i][@"id_place"];
+                        [visitedPlaces addObject:objects[i]];
+                    };
+                }else{
+                    NSLog(@"Nenhum local visitado encontrado ao procurar lista");
                 }
             } else {
                 NSLog(@"Error: %@", error);
@@ -149,6 +178,7 @@
     MyCustomAnnotation *annotation = (MyCustomAnnotation *)view.annotation;
     establishmentVC.place = placesArray[annotation.id_place];
     establishmentVC.favoritedPlaces = favoritedPlaces;
+    establishmentVC.visitedPlaces = visitedPlaces;
     [self.navigationController pushViewController:establishmentVC animated:YES];
 }
 
@@ -167,6 +197,16 @@
     {
         //your code
     }
+}
+
+- (void)showNavigationBarColor{
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:nil];
+}
+
+- (void)hideNavigationBarColor{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
 
 - (IBAction)valueChangedMap:(UISegmentedControl *)sender {
@@ -220,29 +260,30 @@
     //cell.imageView.image = [UIImage imageNamed:@"pin"];
     
     PFImageView *placeImageView = (PFImageView *)[cell viewWithTag:100];
-    PFFile *imageFile = [placesArray objectAtIndex:indexPath.row][@"picture1"];
+    PFFile *imageFile = [placesArray objectAtIndex:indexPath.row][@"pictureSombra"];
     placeImageView.file = imageFile;
     [placeImageView loadInBackground];
     
     return cell;
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"pushFavorite2"]) {
-//        NSLog(@"preparou");
-//        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-//        // NSLog(%i, indexPath.row);
-//        // Get destination view
-//        EstablishmentViewController *vc = [segue destinationViewController];
-//        
-//        // Get button tag number (or do whatever you need to do here, based on your object
-//        vc.place = placesArray[(int) indexPath.row];
-//        
-//        // Pass the information to your destination view
-//        //[vc setSelectedButton:tagIndex];
-//    }
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"pushFavorite2"]) {
+        NSLog(@"preparou");
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        EstablishmentViewController *vc = [segue destinationViewController];
+        
+        // Get button tag number (or do whatever you need to do here, based on your object
+        vc.place = placesArray[(int) indexPath.row];
+        vc.favoritedPlaces = favoritedPlaces;
+        vc.visitedPlaces = visitedPlaces;
+        
+    }
+}
+
+
+
 
 /*
 #pragma mark - Navigation
