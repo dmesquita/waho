@@ -20,52 +20,48 @@
     [btFavoritar setBackgroundImage:bandeiraSalva forState:UIControlStateNormal];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    if([favoritedPlaces containsObject:place]){
-        [self changeFavButtonToSaved];
-        //NSLog(@"%d",[favoritedPlaces count]);
-    }else{
-        UIImage *bandeiraSalva = [UIImage imageNamed:@"bandeira_nao_salvo"];
-        [btFavoritar setBackgroundImage:bandeiraSalva forState:UIControlStateNormal];
-    }
-    NSLog(@"%d",[visitedPlaces count]);
-    if([visitedPlaces containsObject:place]){
-        [btVisitei setEnabled:NO];
-        NSLog(@"aAaaaaaaaaaaaaaaaaaa");
-    }
-    
-    lblName.text = place[@"name"];
-    lblQuote.text = place[@"quote"];
-    txtStory.text = place[@"about"];
-    NSArray *features = place[@"features"];
+- (void)showEstablishmentData:(PFObject *) thisPlace {
+    lblName.text = thisPlace[@"name"];
+    lblQuote.text = thisPlace[@"quote"];
+    txtStory.text = thisPlace[@"about"];
+    NSArray *features = thisPlace[@"features"];
     for(int i = 0; i < [features count]; i++){
         UILabel *feat;
-        //= [[UILabel alloc] initWithFrame:CGRectMake(63, 749+(i*24), 259, 21)];;
-        //NSLog(@"imprimindo as features");
         [feat setFrame:CGRectMake(0,0, 259, 21)];
         [feat setFont:[UIFont fontNamesForFamilyName:@"Avenir"]];
         [feat setTextColor:[UIColor blackColor]];
         [feat setText:[features objectAtIndex:i]];
         [viewPrincipal addSubview:feat];
-        //[features objectAtIndex:i];
     }
-    //NSLog(objectAtIndex:0]);
     
+    /* Images appearing in the view */
     PFFile *imageFile = place[@"picture1"];
     imgPerson.file = imageFile;
     [imgPerson loadInBackground];
-    
     PFFile *imageFile2 = place[@"picture2"];
     img2.file = imageFile2;
     [img2 loadInBackground];
-    
     PFFile *imageFile3 = place[@"picture3"];
     img3.file = imageFile3;
     [img3 loadInBackground];
+    
+}
 
-    // Do any additional setup after loading the view.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    if([favoritedPlaces containsObject:place]){
+        [self changeFavButtonToSaved];
+    }else{
+        UIImage *bandeiraSalva = [UIImage imageNamed:@"bandeira_nao_salvo"];
+        [btFavoritar setBackgroundImage:bandeiraSalva forState:UIControlStateNormal];
+    }
+    
+    if([visitedPlaces containsObject:place]){
+        [btVisitei setEnabled:NO];
+    }
+    
+    [self showEstablishmentData:place];
 }
 
 
