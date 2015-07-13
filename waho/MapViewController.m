@@ -19,9 +19,6 @@
 @synthesize placesArray, favoritedPlaces, visitedPlaces, tableView;
 
 - (void)viewDidLoad {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
     tableView.delegate = self;
     tableView.dataSource = self;
     //[PFUser logOut];
@@ -44,15 +41,7 @@
     
     CLLocation *location = [self.locationManager location];
     CLLocationCoordinate2D userCoordinate = [location coordinate];
-    
-    // --- Zooming into users region ---
-    /**
-    MKCoordinateRegion viewRegion;
-    viewRegion.center = [location coordinate];
-    viewRegion.span.latitudeDelta = 0.2;
-    viewRegion.span.longitudeDelta = 0.2;
-    **/
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userCoordinate, 15500, 15500);
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userCoordinate, 15500, 15500);
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
     
     [self.mapView setRegion:adjustedRegion animated:YES];
@@ -187,18 +176,6 @@
     [alert show];
 }
 
--(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
-{ NSLog(@"hdkjfhsdkjhfkjs");
-    if(item.tag==1)
-    {
-        NSLog(@"hdkjfhsdkjhfkjs");
-    }
-    else
-    {
-        //your code
-    }
-}
-
 - (void)showNavigationBarColor{
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:nil];
@@ -253,11 +230,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    //cell.textLabel.text = [placesArray objectAtIndex:indexPath.row][@"name"];
     UILabel *nomeLabel = (UILabel *)[cell viewWithTag:101];
     nomeLabel.text = [placesArray objectAtIndex:indexPath.row][@"name"];
-    //cell.textLabel.text = [placesArray objectAtIndex:indexPath.row][@"picture1"];
-    //cell.imageView.image = [UIImage imageNamed:@"pin"];
     
     PFImageView *placeImageView = (PFImageView *)[cell viewWithTag:100];
     PFFile *imageFile = [placesArray objectAtIndex:indexPath.row][@"pictureSombra"];
@@ -272,13 +246,11 @@
     if ([segue.identifier isEqualToString:@"pushFavorite2"]) {
         NSLog(@"preparou");
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        EstablishmentViewController *vc = [segue destinationViewController];
         
-        // Get button tag number (or do whatever you need to do here, based on your object
+        EstablishmentViewController *vc = [segue destinationViewController];
         vc.place = placesArray[(int) indexPath.row];
         vc.favoritedPlaces = favoritedPlaces;
         vc.visitedPlaces = visitedPlaces;
-        
     }
 }
 

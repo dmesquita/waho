@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TabViewController.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -20,32 +21,37 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [PFImageView class];
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(16452420)];
+     [PFImageView class];
     
-    //Customizing tabBarController
-    UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
-    UITabBar *tabBar = tabBarController.tabBar;
+        [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(16452420)];
     
-    // repeat for every tab, but increment the index each time
-    UITabBarItem *firstTab = [tabBar.items objectAtIndex:0];
-    UITabBarItem *secondTab = [tabBar.items objectAtIndex:1];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    // also repeat for every tab
-    firstTab.image = [[UIImage imageNamed:@"terra"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
-    firstTab.selectedImage = [[UIImage imageNamed:@"terra_cheia"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    TabViewController *tabBarVC = (TabViewController *)[storyboard instantiateViewControllerWithIdentifier:@"tabBar"];
     
-    // also repeat for every tab
-    secondTab.image = [[UIImage imageNamed:@"bandeira_vazia"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
-    secondTab.selectedImage = [[UIImage imageNamed:@"bandeira"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        //Customizing tabBarController
+        UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
+        UITabBar *tabBar = tabBarController.tabBar;
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor grayColor] }
-                                             forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:251.0/255.0 green:11.0/255.0 blue:68.0/255.0 alpha:1.0] }
-                                             forState:UIControlStateSelected];
+        // repeat for every tab, but increment the index each time
+        UITabBarItem *firstTab = [tabBar.items objectAtIndex:0];
+        UITabBarItem *secondTab = [tabBar.items objectAtIndex:1];
     
-    // [Optional] Power your app with Local Datastore. For more info, go to
-    // https://parse.com/docs/ios_guide#localdatastore/iOS
+        // also repeat for every tab
+        firstTab.image = [[UIImage imageNamed:@"terra"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+        firstTab.selectedImage = [[UIImage imageNamed:@"terra_cheia"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+        // also repeat for every tab
+        secondTab.image = [[UIImage imageNamed:@"bandeira_vazia"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+        secondTab.selectedImage = [[UIImage imageNamed:@"bandeira"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+        [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor grayColor] }
+                                                 forState:UIControlStateNormal];
+        [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:251.0/255.0 green:11.0/255.0 blue:68.0/255.0 alpha:1.0] }
+                                                 forState:UIControlStateSelected];
+
+//    // [Optional] Power your app with Local Datastore. For more info, go to
+//    // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];
     
     // Initialize Parse.
@@ -68,6 +74,12 @@
                                                            [UIFont fontWithName:@"Comfortaa-Light" size:21.0], NSFontAttributeName, nil]];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    //Page control
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor blackColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor colorWithRed:251.0/255.0 green:11.0/255.0 blue:68.0/255.0 alpha:1.0];
+    pageControl.backgroundColor = [UIColor clearColor];
 
     
     return YES;

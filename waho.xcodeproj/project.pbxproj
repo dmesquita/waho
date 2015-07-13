@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4223F6271B41BE7C003E0632 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223F6261B41BE7C003E0632 /* TabBarViewController.m */; };
+		4223F62A1B41BF21003E0632 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223F6291B41BF21003E0632 /* TabViewController.m */; };
 		423E1D971B374B3900BEA446 /* faixa.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D961B374B3900BEA446 /* faixa.png */; };
 		423E1D991B3766B800BEA446 /* terra vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D981B3766B800BEA446 /* terra vazia.png */; };
 		428830821B38447F004FCAB3 /* bandeirinha vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 428830811B38447F004FCAB3 /* bandeirinha vazia.png */; };
 		428830841B388509004FCAB3 /* xib.png in Resources */ = {isa = PBXBuildFile; fileRef = 428830831B388509004FCAB3 /* xib.png */; };
+		42B803901B41B21A00F281D4 /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B8038C1B41B21A00F281D4 /* startButton.png */; };
+		42B803911B41B21A00F281D4 /* imagem2.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B8038D1B41B21A00F281D4 /* imagem2.png */; };
+		42B803921B41B21A00F281D4 /* imagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B8038E1B41B21A00F281D4 /* imagem.png */; };
+		42B803931B41B21A00F281D4 /* imagem3.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B8038F1B41B21A00F281D4 /* imagem3.png */; };
+		42B803961B41B44A00F281D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B803951B41B44A00F281D4 /* ViewController.m */; };
+		42B803991B41B4D800F281D4 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B803981B41B4D800F281D4 /* PageContentViewController.m */; };
 		42C1F3EF1B37691500C71D23 /* terra vazia2.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1F3EE1B37691500C71D23 /* terra vazia2.png */; };
 		42C1F3F31B376D2400C71D23 /* terra cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1F3F21B376D2400C71D23 /* terra cheia.png */; };
 		42C1F3FB1B37762000C71D23 /* bandeirinha cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1F3FA1B37762000C71D23 /* bandeirinha cheia.png */; };
@@ -72,10 +80,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4223F6251B41BE7C003E0632 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		4223F6261B41BE7C003E0632 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		4223F6281B41BF21003E0632 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
+		4223F6291B41BF21003E0632 /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
 		423E1D961B374B3900BEA446 /* faixa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faixa.png; sourceTree = "<group>"; };
 		423E1D981B3766B800BEA446 /* terra vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra vazia.png"; sourceTree = "<group>"; };
 		428830811B38447F004FCAB3 /* bandeirinha vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha vazia.png"; sourceTree = "<group>"; };
 		428830831B388509004FCAB3 /* xib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xib.png; sourceTree = "<group>"; };
+		42B8038C1B41B21A00F281D4 /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton.png; sourceTree = "<group>"; };
+		42B8038D1B41B21A00F281D4 /* imagem2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagem2.png; sourceTree = "<group>"; };
+		42B8038E1B41B21A00F281D4 /* imagem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagem.png; sourceTree = "<group>"; };
+		42B8038F1B41B21A00F281D4 /* imagem3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagem3.png; sourceTree = "<group>"; };
+		42B803941B41B44A00F281D4 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		42B803951B41B44A00F281D4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		42B803971B41B4D800F281D4 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		42B803981B41B4D800F281D4 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		42C1F3EE1B37691500C71D23 /* terra vazia2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra vazia2.png"; sourceTree = "<group>"; };
 		42C1F3F21B376D2400C71D23 /* terra cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra cheia.png"; sourceTree = "<group>"; };
 		42C1F3FA1B37762000C71D23 /* bandeirinha cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha cheia.png"; sourceTree = "<group>"; };
@@ -117,10 +137,6 @@
 		42E73A791B388B94003E466C /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
 		42E73A7A1B388B94003E466C /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		491F24E51B2B3876008CD3F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		49543A821B2B6109005E9164 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
-		49543A831B2B6109005E9164 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
-		49543A841B2B6109005E9164 /* WelcomeFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeFlowController.h; sourceTree = "<group>"; };
-		49543A851B2B6109005E9164 /* WelcomeFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeFlowController.m; sourceTree = "<group>"; };
 		49543A881B2B68C0005E9164 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		49543A8A1B2B68C5005E9164 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		49543A8D1B2B68E4005E9164 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -239,6 +255,10 @@
 		499CEC831B2B36AC00DF341A = {
 			isa = PBXGroup;
 			children = (
+				4223F6251B41BE7C003E0632 /* TabBarViewController.h */,
+				4223F6261B41BE7C003E0632 /* TabBarViewController.m */,
+				4223F6281B41BF21003E0632 /* TabViewController.h */,
+				4223F6291B41BF21003E0632 /* TabViewController.m */,
 				42DF517E1B3091FC00CF0DE2 /* pin.png */,
 				423E1D961B374B3900BEA446 /* faixa.png */,
 				423E1D981B3766B800BEA446 /* terra vazia.png */,
@@ -252,6 +272,10 @@
 				42E5ED421B40AE6D00815B4E /* artesanato check.png */,
 				42E5ED441B40AE7600815B4E /* feira check.png */,
 				42E5ED461B40AE7F00815B4E /* restaurante check.png */,
+				42B8038C1B41B21A00F281D4 /* startButton.png */,
+				42B8038D1B41B21A00F281D4 /* imagem2.png */,
+				42B8038E1B41B21A00F281D4 /* imagem.png */,
+				42B8038F1B41B21A00F281D4 /* imagem3.png */,
 				428830831B388509004FCAB3 /* xib.png */,
 				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
 				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
@@ -283,10 +307,6 @@
 				B9A952281B2B776100485EC8 /* EstablishmentViewController.m */,
 				42DF517B1B308F7900CF0DE2 /* MyCustomAnnotation.h */,
 				42DF517C1B308F7900CF0DE2 /* MyCustomAnnotation.m */,
-				49543A821B2B6109005E9164 /* PageContentViewController.h */,
-				49543A831B2B6109005E9164 /* PageContentViewController.m */,
-				49543A841B2B6109005E9164 /* WelcomeFlowController.h */,
-				49543A851B2B6109005E9164 /* WelcomeFlowController.m */,
 				B9F430761B2F4D84007CB828 /* ListEstablishmentTableViewController.h */,
 				B9F430771B2F4D84007CB828 /* ListEstablishmentTableViewController.m */,
 				B9F430791B2F5EEC007CB828 /* SaveEstablishmentTableViewController.h */,
@@ -296,6 +316,10 @@
 				42E0F00F1B333D4B00DA42DF /* LogInViewController.m */,
 				42DF51781B308F2300CF0DE2 /* MapViewController.h */,
 				42DF51791B308F2300CF0DE2 /* MapViewController.m */,
+				42B803941B41B44A00F281D4 /* ViewController.h */,
+				42B803951B41B44A00F281D4 /* ViewController.m */,
+				42B803971B41B4D800F281D4 /* PageContentViewController.h */,
+				42B803981B41B4D800F281D4 /* PageContentViewController.m */,
 				499CEC9C1B2B36AC00DF341A /* Images.xcassets */,
 				499CEC9E1B2B36AC00DF341A /* LaunchScreen.xib */,
 				499CEC8F1B2B36AC00DF341A /* Supporting Files */,
@@ -414,6 +438,8 @@
 				428830841B388509004FCAB3 /* xib.png in Resources */,
 				423E1D991B3766B800BEA446 /* terra vazia.png in Resources */,
 				499CEC9B1B2B36AC00DF341A /* Main.storyboard in Resources */,
+				42B803911B41B21A00F281D4 /* imagem2.png in Resources */,
+				42B803931B41B21A00F281D4 /* imagem3.png in Resources */,
 				42E73A7D1B388B94003E466C /* Comfortaa-Light.ttf in Resources */,
 				42E5ED431B40AE6D00815B4E /* artesanato check.png in Resources */,
 				42C1F3FF1B37783B00C71D23 /* icone pequeno.png in Resources */,
@@ -422,6 +448,7 @@
 				428830821B38447F004FCAB3 /* bandeirinha vazia.png in Resources */,
 				42E73A7C1B388B94003E466C /* Comfortaa-Bold.ttf in Resources */,
 				42E5ED3F1B40935400815B4E /* bandeirinha verde cheia.png in Resources */,
+				42B803901B41B21A00F281D4 /* startButton.png in Resources */,
 				499CECA01B2B36AC00DF341A /* LaunchScreen.xib in Resources */,
 				42C1F3FB1B37762000C71D23 /* bandeirinha cheia.png in Resources */,
 				42E5ED471B40AE7F00815B4E /* restaurante check.png in Resources */,
@@ -429,6 +456,7 @@
 				423E1D971B374B3900BEA446 /* faixa.png in Resources */,
 				42E73A7E1B388B94003E466C /* Comfortaa-Regular.ttf in Resources */,
 				42DF517F1B3091FC00CF0DE2 /* pin.png in Resources */,
+				42B803921B41B21A00F281D4 /* imagem.png in Resources */,
 				42C1F3EF1B37691500C71D23 /* terra vazia2.png in Resources */,
 				499CEC9D1B2B36AC00DF341A /* Images.xcassets in Resources */,
 			);
@@ -448,12 +476,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4223F62A1B41BF21003E0632 /* TabViewController.m in Sources */,
+				42B803961B41B44A00F281D4 /* ViewController.m in Sources */,
 				42E0F0101B333D4B00DA42DF /* LogInViewController.m in Sources */,
 				499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */,
 				B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */,
 				499CEC921B2B36AC00DF341A /* main.m in Sources */,
 				42DF517A1B308F2300CF0DE2 /* MapViewController.m in Sources */,
 				42DF517D1B308F7900CF0DE2 /* MyCustomAnnotation.m in Sources */,
+				4223F6271B41BE7C003E0632 /* TabBarViewController.m in Sources */,
+				42B803991B41B4D800F281D4 /* PageContentViewController.m in Sources */,
 				B9F4307B1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m in Sources */,
 				B9F430781B2F4D84007CB828 /* ListEstablishmentTableViewController.m in Sources */,
 			);

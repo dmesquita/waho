@@ -1,20 +1,20 @@
 //
-//  ViewController.h
-//  PageViewController
+//  PageContentViewController.h
+//  waho
 //
-//  Created by Tom Fewster on 11/01/2012.
+//  Created by Déborah Mesquita on 29/06/15.
+//  Copyright (c) 2015 Miguel Araújo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface PageContentViewController : UIViewController <UIScrollViewDelegate>
-
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
-
-- (IBAction)changePage:(id)sender;
-
-- (void)previousPage;
-- (void)nextPage;
+@interface PageContentViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property NSUInteger pageIndex;
+@property NSString *titleText;
+@property NSString *descriptionText;
+@property NSString *imageFile;
 
 @end
