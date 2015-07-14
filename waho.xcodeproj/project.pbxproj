@@ -229,6 +229,9 @@
 		49543A8C1B2B68DB005E9164 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
+				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
+				B9A952211B2B5F5100485EC8 /* MapKit.framework */,
 				42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */,
 				42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */,
 				42E4C58F1B2E5337002F79E2 /* FBSDKCoreKit.framework */,
@@ -277,9 +280,6 @@
 				42B8038E1B41B21A00F281D4 /* imagem.png */,
 				42B8038F1B41B21A00F281D4 /* imagem3.png */,
 				428830831B388509004FCAB3 /* xib.png */,
-				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
-				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
-				B9A952211B2B5F5100485EC8 /* MapKit.framework */,
 				491F24E51B2B3876008CD3F2 /* README.md */,
 				49543A8C1B2B68DB005E9164 /* Frameworks */,
 				499CEC8E1B2B36AC00DF341A /* waho */,
