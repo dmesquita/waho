@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		420172CA1B5850AC00019518 /* MapAndListContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420172C91B5850AC00019518 /* MapAndListContainerViewController.m */; };
+		420172CD1B58645000019518 /* TableListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420172CC1B58645000019518 /* TableListViewController.m */; };
 		4223F6271B41BE7C003E0632 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223F6261B41BE7C003E0632 /* TabBarViewController.m */; };
 		4223F62A1B41BF21003E0632 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223F6291B41BF21003E0632 /* TabViewController.m */; };
 		423E1D971B374B3900BEA446 /* faixa.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D961B374B3900BEA446 /* faixa.png */; };
@@ -83,6 +84,8 @@
 /* Begin PBXFileReference section */
 		420172C81B5850AC00019518 /* MapAndListContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAndListContainerViewController.h; sourceTree = "<group>"; };
 		420172C91B5850AC00019518 /* MapAndListContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAndListContainerViewController.m; sourceTree = "<group>"; };
+		420172CB1B58645000019518 /* TableListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableListViewController.h; sourceTree = "<group>"; };
+		420172CC1B58645000019518 /* TableListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableListViewController.m; sourceTree = "<group>"; };
 		4223F6251B41BE7C003E0632 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		4223F6261B41BE7C003E0632 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		4223F6281B41BF21003E0632 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
@@ -315,6 +318,8 @@
 				B9F430791B2F5EEC007CB828 /* SaveEstablishmentTableViewController.h */,
 				B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */,
 				499CEC991B2B36AC00DF341A /* Main.storyboard */,
+				420172CB1B58645000019518 /* TableListViewController.h */,
+				420172CC1B58645000019518 /* TableListViewController.m */,
 				420172C81B5850AC00019518 /* MapAndListContainerViewController.h */,
 				420172C91B5850AC00019518 /* MapAndListContainerViewController.m */,
 				42E0F00E1B333D4B00DA42DF /* LogInViewController.h */,
@@ -482,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4223F62A1B41BF21003E0632 /* TabViewController.m in Sources */,
+				420172CD1B58645000019518 /* TableListViewController.m in Sources */,
 				42B803961B41B44A00F281D4 /* ViewController.m in Sources */,
 				42E0F0101B333D4B00DA42DF /* LogInViewController.m in Sources */,
 				499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */,

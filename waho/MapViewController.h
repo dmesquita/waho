@@ -14,8 +14,8 @@
 
 @interface MapViewController : UIViewController <MKMapViewDelegate,UITabBarDelegate, UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @property(nonatomic) NSArray *placesArray;
 @property(nonatomic) NSMutableArray *favoritedPlaces;
 @property(nonatomic) NSMutableArray *visitedPlaces;

@@ -14,7 +14,7 @@
 
 @implementation MapAndListContainerViewController
 
-@synthesize segmentControl, containerMap, containerList;
+@synthesize segmentControl, containerMap, containerList, placesArray, activityLoadingMarkers;
 
 - (IBAction)segmentChanged:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
@@ -33,10 +33,44 @@
 }
 
 - (void)viewDidLoad {
+    //NSLog(@"children : %@", self.childViewControllers);
+    MapViewController *mapView = [self.childViewControllers objectAtIndex:0];
+    TableListViewController *tableView = [self.childViewControllers objectAtIndex:1];
+    
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
+                                [UIColor blackColor], NSForegroundColorAttributeName, nil];
+    [segmentControl setTitleTextAttributes:attributes forState:UIControlStateSelected];
+    [segmentControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
     [super viewDidLoad];
-    containerMap.hidden = true;
-    containerList.hidden = false;
-    // Do any additional setup after loading the view.
+    [activityLoadingMarkers startAnimating];
+    
+    // --- Loading markers ---
+    PFQuery *query = [PFQuery queryWithClassName:@"Place"];
+    //query.cachePolicy = kPFCachePolicyNetworkElseCache;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
+        if (!error) {
+            placesArray = places;
+            CLLocationCoordinate2D annotationCoord;
+            PFGeoPoint * point;
+            tableView.placesArray = placesArray;
+            activityLoadingMarkers.hidesWhenStopped = true;
+            [activityLoadingMarkers stopAnimating];
+        } else {
+            [self loadMarkersFail];
+            NSLog(@"Erro ao carregar marcadores");
+        }
+    }];
+}
+
+- (void) loadMarkersFail {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooooops!" message:@"Erro ao carregar locais" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    containerMap.hidden = false;
+    containerList.hidden = true;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BTX-5j-DIn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5DW-Td-SPd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -13,6 +13,7 @@
             <string>Comfortaa-Light</string>
         </mutableArray>
         <mutableArray key="Comfortaa-Regular.ttf">
+            <string>Comfortaa</string>
             <string>Comfortaa</string>
             <string>Comfortaa</string>
             <string>Comfortaa</string>
@@ -356,10 +357,8 @@
                     <connections>
                         <outlet property="activityLoadingMarkers" destination="jAA-Pk-Oby" id="bLE-CZ-MvD"/>
                         <outlet property="listEstablishmentView" destination="fdM-lt-Uxw" id="4CY-Yd-TOX"/>
-                        <outlet property="mapView" destination="Ztm-YU-o1E" id="UUY-qT-3Hh"/>
                         <outlet property="searchDisplayController" destination="ybm-fV-R1x" id="g2V-ma-8K0"/>
                         <outlet property="segmentedControlMap" destination="Q6y-UF-TRs" id="UcY-Id-1do"/>
-                        <outlet property="tableView" destination="fdM-lt-Uxw" id="Xhg-wp-2cR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09E-BF-fSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -398,6 +397,9 @@
                                     <segue destination="Eu7-eK-d39" kind="embed" id="cys-q7-9ux"/>
                                 </connections>
                             </containerView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eeJ-us-zy6">
+                                <rect key="frame" x="177" y="171" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -417,6 +419,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityLoadingMarkers" destination="eeJ-us-zy6" id="Ex9-iP-7OK"/>
                         <outlet property="containerList" destination="z3r-Eb-oaw" id="vyx-At-eRo"/>
                         <outlet property="containerMap" destination="Q06-Rt-IQw" id="Hje-tq-Dsm"/>
                         <outlet property="segmentControl" destination="qYb-vm-WXu" id="9hM-yf-I0p"/>
@@ -442,6 +445,7 @@
                     <connections>
                         <segue destination="5Lr-qQ-rqJ" kind="relationship" relationship="viewControllers" id="1Gc-lh-XYb"/>
                         <segue destination="ogF-Sy-w7R" kind="relationship" relationship="viewControllers" id="94q-K3-lEw"/>
+                        <segue destination="BTX-5j-DIn" kind="relationship" relationship="viewControllers" id="dNn-rZ-WNR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvi-Z8-oQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -569,10 +573,10 @@
             </objects>
             <point key="canvasLocation" x="-112.5" y="778.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="d3D-NU-OG9">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zZa-VH-AmO" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zZa-VH-AmO" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7lv-OY-iKx"/>
                         <viewControllerLayoutGuide type="bottom" id="nZI-p7-O8V"/>
@@ -581,26 +585,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sou" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pZ-5J-Nn7">
-                                <rect key="frame" x="171" y="323" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NPT-Xr-kYQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="NPT-Xr-kYQ" id="Zj7-AR-Gf9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcc-X3-PyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1397.5" y="1454.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Table List View Controller-->
         <scene sceneID="WnK-Sd-1Ef">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Eu7-eK-d39" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Eu7-eK-d39" customClass="TableListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SMJ-id-Mnb"/>
                         <viewControllerLayoutGuide type="bottom" id="Rqt-u9-dvo"/>
@@ -615,20 +619,49 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="175" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tO8-Is-LOD">
+                                <rect key="frame" x="0.0" y="55" width="375" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tablePeopleMapa" id="JEI-pO-abh">
+                                        <rect key="frame" x="0.0" y="22" width="375" height="175"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JEI-pO-abh" id="6Ui-VJ-dwm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="174.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KiA-SS-Dud" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkU-Lh-F5s">
+                                                    <rect key="frame" x="21" y="134" width="359" height="47"/>
+                                                    <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="tO8-Is-LOD" id="tWQ-R6-QcK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zft-fC-4FC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1397.5" y="2221.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="zLJ-OX-irQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BTX-5j-DIn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="SPX-0k-dOo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iB4-d3-zcd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -641,7 +674,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6l-yf-yio" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="208" y="1897"/>
+            <point key="canvasLocation" x="-112.5" y="1564.5"/>
         </scene>
     </scenes>
     <resources>
@@ -656,6 +689,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="C3G-WR-eP3"/>
+        <segue reference="3w4-G5-FtX"/>
     </inferredMetricsTieBreakers>
 </document>
