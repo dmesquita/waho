@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5DW-Td-SPd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BTX-5j-DIn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -285,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G50-2H-jW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1514.5" y="1604"/>
+            <point key="canvasLocation" x="2046.5" y="1604"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="Tba-4x-uin">
@@ -387,30 +387,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q06-Rt-IQw">
-                                <rect key="frame" x="0.0" y="97" width="375" height="347"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="624"/>
                                 <connections>
                                     <segue destination="zZa-VH-AmO" kind="embed" id="YsF-Lp-g4f"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3r-Eb-oaw">
-                                <rect key="frame" x="55" y="470" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
                                     <segue destination="Eu7-eK-d39" kind="embed" id="cys-q7-9ux"/>
                                 </connections>
                             </containerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qYb-vm-WXu">
-                                <rect key="frame" x="114" y="36" width="123" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentChanged:" destination="Jch-xR-vmS" eventType="valueChanged" id="5ju-OG-KT6"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="64h-EU-jDG">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="qYb-vm-WXu">
+                            <rect key="frame" x="126" y="7.5" width="123" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentChanged:" destination="Jch-xR-vmS" eventType="valueChanged" id="5ju-OG-KT6"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="containerList" destination="z3r-Eb-oaw" id="vyx-At-eRo"/>
@@ -420,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2l-VQ-ezd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="208.5" y="1897.5"/>
+            <point key="canvasLocation" x="740.5" y="1897.5"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="rf9-RZ-9Id">
@@ -591,7 +595,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcc-X3-PyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865.5" y="1454.5"/>
+            <point key="canvasLocation" x="1397.5" y="1454.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="WnK-Sd-1Ef">
@@ -619,7 +623,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zft-fC-4FC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865.5" y="2221.5"/>
+            <point key="canvasLocation" x="1397.5" y="2221.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zLJ-OX-irQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BTX-5j-DIn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iB4-d3-zcd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jch-xR-vmS" kind="relationship" relationship="rootViewController" id="X7w-fA-DEh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6l-yf-yio" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208" y="1897"/>
         </scene>
     </scenes>
     <resources>

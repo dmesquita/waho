@@ -20,7 +20,7 @@
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    /**
      [PFImageView class];
     
         [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(16452420)];
@@ -81,7 +81,7 @@
     pageControl.currentPageIndicatorTintColor = [UIColor colorWithRed:251.0/255.0 green:11.0/255.0 blue:68.0/255.0 alpha:1.0];
     pageControl.backgroundColor = [UIColor clearColor];
 
-    
+    **/
     return YES;
 }
 

@@ -21,9 +21,11 @@
     case 0 :
             containerMap.hidden = false;
             containerList.hidden = true;
+            break;
     case 1:
             containerMap.hidden = true;
             containerList.hidden = false;
+            break;
             
     default:
             break;
@@ -32,6 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    containerMap.hidden = true;
+    containerList.hidden = false;
     // Do any additional setup after loading the view.
 }
 
