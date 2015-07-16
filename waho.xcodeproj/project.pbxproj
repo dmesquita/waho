@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420172CA1B5850AC00019518 /* MapAndListContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420172C91B5850AC00019518 /* MapAndListContainerViewController.m */; };
 		4223F6271B41BE7C003E0632 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223F6261B41BE7C003E0632 /* TabBarViewController.m */; };
 		4223F62A1B41BF21003E0632 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223F6291B41BF21003E0632 /* TabViewController.m */; };
 		423E1D971B374B3900BEA446 /* faixa.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D961B374B3900BEA446 /* faixa.png */; };
@@ -80,6 +81,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		420172C81B5850AC00019518 /* MapAndListContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAndListContainerViewController.h; sourceTree = "<group>"; };
+		420172C91B5850AC00019518 /* MapAndListContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAndListContainerViewController.m; sourceTree = "<group>"; };
 		4223F6251B41BE7C003E0632 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		4223F6261B41BE7C003E0632 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		4223F6281B41BF21003E0632 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 				B9F430791B2F5EEC007CB828 /* SaveEstablishmentTableViewController.h */,
 				B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */,
 				499CEC991B2B36AC00DF341A /* Main.storyboard */,
+				420172C81B5850AC00019518 /* MapAndListContainerViewController.h */,
+				420172C91B5850AC00019518 /* MapAndListContainerViewController.m */,
 				42E0F00E1B333D4B00DA42DF /* LogInViewController.h */,
 				42E0F00F1B333D4B00DA42DF /* LogInViewController.m */,
 				42DF51781B308F2300CF0DE2 /* MapViewController.h */,
@@ -485,6 +490,7 @@
 				42DF517A1B308F2300CF0DE2 /* MapViewController.m in Sources */,
 				42DF517D1B308F7900CF0DE2 /* MyCustomAnnotation.m in Sources */,
 				4223F6271B41BE7C003E0632 /* TabBarViewController.m in Sources */,
+				420172CA1B5850AC00019518 /* MapAndListContainerViewController.m in Sources */,
 				42B803991B41B4D800F281D4 /* PageContentViewController.m in Sources */,
 				B9F4307B1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m in Sources */,
 				B9F430781B2F4D84007CB828 /* ListEstablishmentTableViewController.m in Sources */,
