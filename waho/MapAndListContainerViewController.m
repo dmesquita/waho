@@ -14,7 +14,7 @@
 
 @implementation MapAndListContainerViewController
 
-@synthesize segmentControl, containerMap, containerList, placesArray, activityLoadingMarkers;
+@synthesize segmentControl, containerMap, containerList, placesArray, favoritedPlaces, visitedPlaces ,activityLoadingMarkers;
 
 - (IBAction)segmentChanged:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
@@ -34,8 +34,8 @@
 
 - (void)viewDidLoad {
     //NSLog(@"children : %@", self.childViewControllers);
-    MapViewController *mapView = [self.childViewControllers objectAtIndex:0];
-    TableListViewController *tableView = [self.childViewControllers objectAtIndex:1];
+    PlacesFromParse *placesFromParse;
+    [PlacesFromParse init];
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
                                 [UIColor blackColor], NSForegroundColorAttributeName, nil];
@@ -51,9 +51,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
         if (!error) {
             placesArray = places;
-            CLLocationCoordinate2D annotationCoord;
-            PFGeoPoint * point;
-            tableView.placesArray = placesArray;
+            [[PlacesFromParse sharedPlacesFromParse]setPlacesArray:places];
             activityLoadingMarkers.hidesWhenStopped = true;
             [activityLoadingMarkers stopAnimating];
         } else {
@@ -61,6 +59,63 @@
             NSLog(@"Erro ao carregar marcadores");
         }
     }];
+    
+    [self getFavoritedPlaces];
+    [self getVisitedPlaces];
+}
+
+- (void) getFavoritedPlaces {
+    favoritedPlaces = [[NSMutableArray alloc] init];
+    if ([PFUser currentUser] != nil) {
+        PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
+        [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
+        [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                if([objects count] > 0){
+                    NSLog(@"Lista de favoritos encontrada");
+                    for (int i = 0; i < [objects count]; i++) {
+                        NSLog(objects[i][@"name"]);
+                        //int id_place = objects[i][@"id_place"];
+                        [favoritedPlaces addObject:objects[i]];
+                    };
+                }else{
+                    NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+                }
+            } else {
+                NSLog(@"Error: %@", error);
+            }
+        }];
+    } else {
+        NSLog(@"Usuario nao esta logado");
+    }
+    
+}
+
+- (void) getVisitedPlaces {
+    visitedPlaces = [[NSMutableArray alloc] init];
+    if ([PFUser currentUser] != nil) {
+        PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
+        [queryUser whereKey:@"visited" equalTo:[[PFUser currentUser] objectId]];
+        [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                if([objects count] > 0){
+                    NSLog(@"Lista de visitados encontrada");
+                    for (int i = 0; i < [objects count]; i++) {
+                        NSLog(objects[i][@"name"]);
+                        //int id_place = objects[i][@"id_place"];
+                        [visitedPlaces addObject:objects[i]];
+                    };
+                }else{
+                    NSLog(@"Nenhum local visitado encontrado ao procurar lista");
+                }
+            } else {
+                NSLog(@"Error: %@", error);
+            }
+        }];
+    } else {
+        NSLog(@"Usuario nao esta logado");
+    }
+    
 }
 
 - (void) loadMarkersFail {

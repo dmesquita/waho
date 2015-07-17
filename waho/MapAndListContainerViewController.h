@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
-#import "MapViewController.h"
-#import "TableListViewController.h"
+#import "PlacesFromParse.h"
 
 @interface MapAndListContainerViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UIView *containerMap;
 @property (weak, nonatomic) IBOutlet UIView *containerList;
 @property(nonatomic) NSArray *placesArray;
+@property(nonatomic) NSMutableArray *favoritedPlaces;
+@property(nonatomic) NSMutableArray *visitedPlaces;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoadingMarkers;
 
 
