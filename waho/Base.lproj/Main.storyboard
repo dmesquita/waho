@@ -397,9 +397,6 @@
                                     <segue destination="Eu7-eK-d39" kind="embed" id="cys-q7-9ux"/>
                                 </connections>
                             </containerView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eeJ-us-zy6">
-                                <rect key="frame" x="177" y="171" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -419,7 +416,6 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="activityLoadingMarkers" destination="eeJ-us-zy6" id="Ex9-iP-7OK"/>
                         <outlet property="containerList" destination="z3r-Eb-oaw" id="vyx-At-eRo"/>
                         <outlet property="containerMap" destination="Q06-Rt-IQw" id="Hje-tq-Dsm"/>
                         <outlet property="segmentControl" destination="qYb-vm-WXu" id="9hM-yf-I0p"/>

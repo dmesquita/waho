@@ -18,25 +18,6 @@
 @synthesize mapView;
 @synthesize placesArray, favoritedPlaces, visitedPlaces, tableView;
 
-- (void)viewDidAppear:(BOOL)animated{
-    CLLocationCoordinate2D annotationCoord;
-    PFGeoPoint * point;
-    NSArray *placesClass = [[PlacesFromParse sharedPlacesFromParse]placesArray];
-    NSLog(@"PLACES DA CLASSE %i", [placesClass count]);
-    for(int i = 0; i < [placesClass count]; i++){
-        NSLog(@"ESTA CARREGANDO DA CLASSE !!!!!!!!!!!!!!!");
-        point = placesClass[i][@"location"];
-        double lat = point.latitude;
-        double lon = point.longitude;
-        annotationCoord.latitude = lat;
-        annotationCoord.longitude = lon;
-        MyCustomAnnotation *annotationPointCustom = [[MyCustomAnnotation alloc] initWithTitle:placesClass[i][@"name"] Location:annotationCoord Type:placesClass[i][@"categoria"] ];
-        annotationPointCustom.id_place = i;
-        
-        [mapView addAnnotation:annotationPointCustom];
-    };
-    
-}
 
 - (void)viewDidLoad {
     tableView.delegate = self;
@@ -68,28 +49,14 @@
     
     [activityLoadingMarkers startAnimating];
     
-    CLLocationCoordinate2D annotationCoord;
-    PFGeoPoint * point;
-    NSArray *placesClass = [[PlacesFromParse sharedPlacesFromParse]placesArray];
-    for(int i = 0; i < [placesClass count]; i++){
-        NSLog(@"ESTA CARREGANDO DA CLASSE !!!!!!!!!!!!!!!");
-        point = placesClass[i][@"location"];
-        double lat = point.latitude;
-        double lon = point.longitude;
-        annotationCoord.latitude = lat;
-        annotationCoord.longitude = lon;
-        MyCustomAnnotation *annotationPointCustom = [[MyCustomAnnotation alloc] initWithTitle:placesClass[i][@"name"] Location:annotationCoord Type:placesClass[i][@"categoria"] ];
-        annotationPointCustom.id_place = i;
-        
-        [mapView addAnnotation:annotationPointCustom];
-    };
-    /**
+    
     // --- Loading markers ---
     PFQuery *query = [PFQuery queryWithClassName:@"Place"];
     //query.cachePolicy = kPFCachePolicyNetworkElseCache;
     [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
         if (!error) {
             placesArray = places;
+            [[PlacesFromParse sharedPlacesFromParse]setPlacesArray:places];
             CLLocationCoordinate2D annotationCoord;
             PFGeoPoint * point;
             for(int i = 0; i < [places count]; i++){
@@ -110,7 +77,7 @@
             NSLog(@"Erro ao carregar marcadores");
         }
     }];
-     **/
+     
     [self getFavoritedPlaces];
     [self getVisitedPlaces];
     
@@ -124,8 +91,9 @@
         [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
         [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
+                [[PlacesFromParse sharedPlacesFromParse]setFavoritedPlaces:objects];
                 if([objects count] > 0){
-                    NSLog(@"Lista de favoritos encontrada");
+                    NSLog(@"Lista de favoritos encontrada");                    
                     for (int i = 0; i < [objects count]; i++) {
                         NSLog(objects[i][@"name"]);
                         //int id_place = objects[i][@"id_place"];
@@ -151,6 +119,7 @@
         [queryUser whereKey:@"visited" equalTo:[[PFUser currentUser] objectId]];
         [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
+                [[PlacesFromParse sharedPlacesFromParse]setVisitedPlaces:objects];
                 if([objects count] > 0){
                     NSLog(@"Lista de visitados encontrada");
                     for (int i = 0; i < [objects count]; i++) {
