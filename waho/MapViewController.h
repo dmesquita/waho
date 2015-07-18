@@ -11,6 +11,7 @@
 #import "Parse/Parse.h"
 #import "MyCustomAnnotation.h"
 #import "EstablishmentViewController.h"
+#import "PlacesFromParse.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate,UITabBarDelegate, UITableViewDelegate, UITableViewDataSource>
 

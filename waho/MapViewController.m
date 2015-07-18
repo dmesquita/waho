@@ -18,6 +18,26 @@
 @synthesize mapView;
 @synthesize placesArray, favoritedPlaces, visitedPlaces, tableView;
 
+- (void)viewDidAppear:(BOOL)animated{
+    CLLocationCoordinate2D annotationCoord;
+    PFGeoPoint * point;
+    NSArray *placesClass = [[PlacesFromParse sharedPlacesFromParse]placesArray];
+    NSLog(@"PLACES DA CLASSE %i", [placesClass count]);
+    for(int i = 0; i < [placesClass count]; i++){
+        NSLog(@"ESTA CARREGANDO DA CLASSE !!!!!!!!!!!!!!!");
+        point = placesClass[i][@"location"];
+        double lat = point.latitude;
+        double lon = point.longitude;
+        annotationCoord.latitude = lat;
+        annotationCoord.longitude = lon;
+        MyCustomAnnotation *annotationPointCustom = [[MyCustomAnnotation alloc] initWithTitle:placesClass[i][@"name"] Location:annotationCoord Type:placesClass[i][@"categoria"] ];
+        annotationPointCustom.id_place = i;
+        
+        [mapView addAnnotation:annotationPointCustom];
+    };
+    
+}
+
 - (void)viewDidLoad {
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -48,6 +68,22 @@
     
     [activityLoadingMarkers startAnimating];
     
+    CLLocationCoordinate2D annotationCoord;
+    PFGeoPoint * point;
+    NSArray *placesClass = [[PlacesFromParse sharedPlacesFromParse]placesArray];
+    for(int i = 0; i < [placesClass count]; i++){
+        NSLog(@"ESTA CARREGANDO DA CLASSE !!!!!!!!!!!!!!!");
+        point = placesClass[i][@"location"];
+        double lat = point.latitude;
+        double lon = point.longitude;
+        annotationCoord.latitude = lat;
+        annotationCoord.longitude = lon;
+        MyCustomAnnotation *annotationPointCustom = [[MyCustomAnnotation alloc] initWithTitle:placesClass[i][@"name"] Location:annotationCoord Type:placesClass[i][@"categoria"] ];
+        annotationPointCustom.id_place = i;
+        
+        [mapView addAnnotation:annotationPointCustom];
+    };
+    /**
     // --- Loading markers ---
     PFQuery *query = [PFQuery queryWithClassName:@"Place"];
     //query.cachePolicy = kPFCachePolicyNetworkElseCache;
@@ -74,6 +110,7 @@
             NSLog(@"Erro ao carregar marcadores");
         }
     }];
+     **/
     [self getFavoritedPlaces];
     [self getVisitedPlaces];
     

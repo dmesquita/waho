@@ -34,8 +34,7 @@
 
 - (void)viewDidLoad {
     //NSLog(@"children : %@", self.childViewControllers);
-    PlacesFromParse *placesFromParse;
-    [PlacesFromParse init];
+    //[[PlacesFromParse alloc] init];
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
                                 [UIColor blackColor], NSForegroundColorAttributeName, nil];
@@ -52,6 +51,7 @@
         if (!error) {
             placesArray = places;
             [[PlacesFromParse sharedPlacesFromParse]setPlacesArray:places];
+            NSLog(@"DEIXOU MORRER FLORES QUE PLANTEI NO JARDIM DO NOSSO AMOR");
             activityLoadingMarkers.hidesWhenStopped = true;
             [activityLoadingMarkers stopAnimating];
         } else {
@@ -73,6 +73,7 @@
             if (!error) {
                 if([objects count] > 0){
                     NSLog(@"Lista de favoritos encontrada");
+                    [[PlacesFromParse sharedPlacesFromParse]setFavoritedPlaces:objects];
                     for (int i = 0; i < [objects count]; i++) {
                         NSLog(objects[i][@"name"]);
                         //int id_place = objects[i][@"id_place"];
@@ -99,6 +100,7 @@
         [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 if([objects count] > 0){
+                    [[PlacesFromParse sharedPlacesFromParse]setVisitedPlaces:objects];
                     NSLog(@"Lista de visitados encontrada");
                     for (int i = 0; i < [objects count]; i++) {
                         NSLog(objects[i][@"name"]);
