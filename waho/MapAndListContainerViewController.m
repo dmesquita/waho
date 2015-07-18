@@ -14,7 +14,7 @@
 
 @implementation MapAndListContainerViewController
 
-@synthesize segmentControl, containerMap, containerList, placesArray, favoritedPlaces, visitedPlaces ,activityLoadingMarkers;
+@synthesize segmentControl, containerMap, containerList;
 
 - (IBAction)segmentChanged:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
@@ -25,6 +25,9 @@
     case 1:
             containerMap.hidden = true;
             containerList.hidden = false;
+            //[[self.childViewControllers objectAtIndex:1]setPlacesArray:[[PlacesFromParse sharedPlacesFromParse]placesArray]];
+            [[self.childViewControllers objectAtIndex:1]setItems:@[@"cinco",@"patinhos"]];
+            [[[self.childViewControllers objectAtIndex:1]tableView] reloadData];
             break;
             
     default:
@@ -32,10 +35,7 @@
     }
 }
 
-- (void)viewDidLoad {
-    //NSLog(@"children : %@", self.childViewControllers);
-    //[[PlacesFromParse alloc] init];
-    
+- (void)viewDidLoad {    
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
                                 [UIColor blackColor], NSForegroundColorAttributeName, nil];
     [segmentControl setTitleTextAttributes:attributes forState:UIControlStateSelected];

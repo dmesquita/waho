@@ -18,7 +18,6 @@
             <string>Comfortaa</string>
             <string>Comfortaa</string>
             <string>Comfortaa</string>
-            <string>Comfortaa</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -403,11 +402,11 @@
                     <navigationItem key="navigationItem" id="64h-EU-jDG">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="qYb-vm-WXu">
-                            <rect key="frame" x="126" y="7.5" width="123" height="29"/>
+                            <rect key="frame" x="120" y="6.5" width="135" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
+                                <segment title="Mapa"/>
+                                <segment title="Histórias"/>
                             </segments>
                             <connections>
                                 <action selector="segmentChanged:" destination="Jch-xR-vmS" eventType="valueChanged" id="5ju-OG-KT6"/>
@@ -609,36 +608,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Foda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRV-iq-bU7">
-                                <rect key="frame" x="166" y="234" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="175" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tO8-Is-LOD">
-                                <rect key="frame" x="0.0" y="55" width="375" height="557"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Gtu-QG-HT9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tablePeopleMapa" id="JEI-pO-abh">
-                                        <rect key="frame" x="0.0" y="22" width="375" height="175"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JEI-pO-abh" id="6Ui-VJ-dwm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="174.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KiA-SS-Dud" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkU-Lh-F5s">
-                                                    <rect key="frame" x="21" y="134" width="359" height="47"/>
-                                                    <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -646,7 +618,7 @@
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="tableView" destination="tO8-Is-LOD" id="tWQ-R6-QcK"/>
+                        <outlet property="tableView" destination="Gtu-QG-HT9" id="lyw-a6-9jA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zft-fC-4FC" userLabel="First Responder" sceneMemberID="firstResponder"/>

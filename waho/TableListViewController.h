@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
 #import "ParseUI/ParseUI.h"
+#import "PlacesFromParse.h"
 
-@interface TableListViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface TableListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic) NSArray *placesArray;
+@property(nonatomic) NSArray *items;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

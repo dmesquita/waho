@@ -16,6 +16,7 @@
 		423E1D991B3766B800BEA446 /* terra vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D981B3766B800BEA446 /* terra vazia.png */; };
 		428830821B38447F004FCAB3 /* bandeirinha vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 428830811B38447F004FCAB3 /* bandeirinha vazia.png */; };
 		428830841B388509004FCAB3 /* xib.png in Resources */ = {isa = PBXBuildFile; fileRef = 428830831B388509004FCAB3 /* xib.png */; };
+		42AE1FAD1B5B02DB00169DAF /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42AE1FAC1B5B02DB00169DAF /* ListViewCell.xib */; };
 		42B803901B41B21A00F281D4 /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B8038C1B41B21A00F281D4 /* startButton.png */; };
 		42B803911B41B21A00F281D4 /* imagem2.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B8038D1B41B21A00F281D4 /* imagem2.png */; };
 		42B803921B41B21A00F281D4 /* imagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B8038E1B41B21A00F281D4 /* imagem.png */; };
@@ -97,6 +98,7 @@
 		423E1D981B3766B800BEA446 /* terra vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra vazia.png"; sourceTree = "<group>"; };
 		428830811B38447F004FCAB3 /* bandeirinha vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha vazia.png"; sourceTree = "<group>"; };
 		428830831B388509004FCAB3 /* xib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xib.png; sourceTree = "<group>"; };
+		42AE1FAC1B5B02DB00169DAF /* ListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
 		42B8038C1B41B21A00F281D4 /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton.png; sourceTree = "<group>"; };
 		42B8038D1B41B21A00F281D4 /* imagem2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagem2.png; sourceTree = "<group>"; };
 		42B8038E1B41B21A00F281D4 /* imagem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagem.png; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				B9F430791B2F5EEC007CB828 /* SaveEstablishmentTableViewController.h */,
 				B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */,
 				499CEC991B2B36AC00DF341A /* Main.storyboard */,
+				42AE1FAC1B5B02DB00169DAF /* ListViewCell.xib */,
 				420172CB1B58645000019518 /* TableListViewController.h */,
 				420172CC1B58645000019518 /* TableListViewController.m */,
 				420172C81B5850AC00019518 /* MapAndListContainerViewController.h */,
@@ -453,6 +456,7 @@
 				428830841B388509004FCAB3 /* xib.png in Resources */,
 				423E1D991B3766B800BEA446 /* terra vazia.png in Resources */,
 				499CEC9B1B2B36AC00DF341A /* Main.storyboard in Resources */,
+				42AE1FAD1B5B02DB00169DAF /* ListViewCell.xib in Resources */,
 				42B803911B41B21A00F281D4 /* imagem2.png in Resources */,
 				42B803931B41B21A00F281D4 /* imagem3.png in Resources */,
 				42E73A7D1B388B94003E466C /* Comfortaa-Light.ttf in Resources */,

@@ -14,16 +14,19 @@
 
 @implementation TableListViewController
 
-@synthesize tableView, placesArray;
+@synthesize tableView, placesArray, items = _items;
 
 - (void)viewDidLoad {
     tableView.delegate = self;
     tableView.dataSource = self;
     [super viewDidLoad];
+    placesArray = [[PlacesFromParse sharedPlacesFromParse]placesArray];
     // Do any additional setup after loading the view.
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    NSLog(@"esta no loop de estabelecimentos");
+    placesArray = [[PlacesFromParse sharedPlacesFromParse]placesArray];
     for (int i = 0; i < [placesArray count]; i++){
         NSLog(@"esta no loop de estabelecimentos");
     }
@@ -34,9 +37,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSArray *)items{
+    if(!_items){
+        _items = @[@"Item1", @"Item2"];
+    }
+    return _items;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return  [placesArray count];
+    //return  [placesArray count];
+    return [self.items count];
 }
 
 
@@ -47,14 +58,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
-    UILabel *nomeLabel = (UILabel *)[cell viewWithTag:101];
-    nomeLabel.text = [placesArray objectAtIndex:indexPath.row][@"name"];
-    
-    PFImageView *placeImageView = (PFImageView *)[cell viewWithTag:100];
-    PFFile *imageFile = [placesArray objectAtIndex:indexPath.row][@"pictureSombra"];
-    placeImageView.file = imageFile;
-    [placeImageView loadInBackground];
+    cell.textLabel.text = [self.items objectAtIndex:indexPath.row];
     
     return cell;
 }
