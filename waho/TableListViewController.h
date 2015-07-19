@@ -10,6 +10,7 @@
 #import "Parse/Parse.h"
 #import "ParseUI/ParseUI.h"
 #import "PlacesFromParse.h"
+#import "ListViewTableViewCell.h"
 
 @interface TableListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic) NSArray *placesArray;

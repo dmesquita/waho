@@ -39,7 +39,9 @@
 
 - (NSArray *)items{
     if(!_items){
+        
         _items = @[@"Item1", @"Item2"];
+        _items = [[PlacesFromParse sharedPlacesFromParse]placesArray];
     }
     return _items;
 }
@@ -52,17 +54,27 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *simpleTableIdentifier = @"tablePeopleMapa";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    //static NSString *simpleTableIdentifier = @"tablePeopleMapa";
+    ListViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LVCell"];
+    
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        [tableView registerNib:[UINib nibWithNibName:@"ListViewCell" bundle:nil ] forCellReuseIdentifier:@"LVCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"LVCell"];
+        //cell.lbTitlePlace = [self.items objectAtIndex:indexPath.row];
+        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    cell.textLabel.text = [self.items objectAtIndex:indexPath.row];
-    
-    return cell;
+    //cell.textLabel.text = [self.items objectAtIndex:indexPath.row];
+       return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(ListViewTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.lbTitlePlace.text = [self.items objectAtIndex:indexPath.row][@"name"];
+    PFFile *imageFile = [self.items objectAtIndex:indexPath.row][@"pictureSombra"];
+    cell.imgBackground.file = imageFile;
+    [cell.imgBackground loadInBackground];
+}
 /*
 #pragma mark - Navigation
 

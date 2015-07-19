@@ -26,7 +26,7 @@
             containerMap.hidden = true;
             containerList.hidden = false;
             //[[self.childViewControllers objectAtIndex:1]setPlacesArray:[[PlacesFromParse sharedPlacesFromParse]placesArray]];
-            [[self.childViewControllers objectAtIndex:1]setItems:@[@"cinco",@"patinhos"]];
+            [[self.childViewControllers objectAtIndex:1]setItems:[[PlacesFromParse sharedPlacesFromParse]placesArray]];
             [[[self.childViewControllers objectAtIndex:1]tableView] reloadData];
             break;
             

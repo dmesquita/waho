@@ -61,6 +61,7 @@
 		42E73A7C1B388B94003E466C /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E73A781B388B94003E466C /* Comfortaa-Bold.ttf */; };
 		42E73A7D1B388B94003E466C /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E73A791B388B94003E466C /* Comfortaa-Light.ttf */; };
 		42E73A7E1B388B94003E466C /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E73A7A1B388B94003E466C /* Comfortaa-Regular.ttf */; };
+		42E8A6E61B5C225500B37429 /* ListViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8A6E51B5C225500B37429 /* ListViewTableViewCell.m */; };
 		491F24E61B2B3876008CD3F2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 491F24E51B2B3876008CD3F2 /* README.md */; };
 		499CEC921B2B36AC00DF341A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC911B2B36AC00DF341A /* main.m */; };
 		499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC941B2B36AC00DF341A /* AppDelegate.m */; };
@@ -147,6 +148,8 @@
 		42E73A781B388B94003E466C /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		42E73A791B388B94003E466C /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
 		42E73A7A1B388B94003E466C /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
+		42E8A6E41B5C225500B37429 /* ListViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewTableViewCell.h; sourceTree = "<group>"; };
+		42E8A6E51B5C225500B37429 /* ListViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewTableViewCell.m; sourceTree = "<group>"; };
 		491F24E51B2B3876008CD3F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49543A881B2B68C0005E9164 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		49543A8A1B2B68C5005E9164 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -324,6 +327,8 @@
 				B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */,
 				499CEC991B2B36AC00DF341A /* Main.storyboard */,
 				42AE1FAC1B5B02DB00169DAF /* ListViewCell.xib */,
+				42E8A6E41B5C225500B37429 /* ListViewTableViewCell.h */,
+				42E8A6E51B5C225500B37429 /* ListViewTableViewCell.m */,
 				420172CB1B58645000019518 /* TableListViewController.h */,
 				420172CC1B58645000019518 /* TableListViewController.m */,
 				420172C81B5850AC00019518 /* MapAndListContainerViewController.h */,
@@ -507,6 +512,7 @@
 				42DF517D1B308F7900CF0DE2 /* MyCustomAnnotation.m in Sources */,
 				4223F6271B41BE7C003E0632 /* TabBarViewController.m in Sources */,
 				420172CA1B5850AC00019518 /* MapAndListContainerViewController.m in Sources */,
+				42E8A6E61B5C225500B37429 /* ListViewTableViewCell.m in Sources */,
 				42B803991B41B4D800F281D4 /* PageContentViewController.m in Sources */,
 				B9F4307B1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m in Sources */,
 				B9F430781B2F4D84007CB828 /* ListEstablishmentTableViewController.m in Sources */,
