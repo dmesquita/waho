@@ -75,6 +75,12 @@
     cell.imgBackground.file = imageFile;
     [cell.imgBackground loadInBackground];
 }
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 175;
+}
+
 /*
 #pragma mark - Navigation
 
