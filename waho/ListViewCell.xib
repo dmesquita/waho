@@ -20,9 +20,6 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bz7-lg-K0e" customClass="PFImageView">
                         <rect key="frame" x="0.0" y="0.5" width="375" height="175"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JC2-d8-Jk4">
-                        <rect key="frame" x="288" y="97" width="44" height="40"/>
-                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="21Q-Xx-2I7">
                         <rect key="frame" x="288" y="15" width="42" height="39"/>
                     </imageView>
@@ -32,6 +29,9 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone artesanato" translatesAutoresizingMaskIntoConstraints="NO" id="JC2-d8-Jk4">
+                        <rect key="frame" x="288" y="115" width="44" height="40"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -43,4 +43,7 @@
             <point key="canvasLocation" x="564.5" y="291.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icone artesanato" width="80" height="80"/>
+    </resources>
 </document>
