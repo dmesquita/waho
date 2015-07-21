@@ -74,12 +74,22 @@
     PFFile *imageFile = [self.items objectAtIndex:indexPath.row][@"pictureSombra"];
     cell.imgBackground.file = imageFile;
     [cell.imgBackground loadInBackground];
+    
+    /* Category icon */
     if([[self.items objectAtIndex:indexPath.row][@"categoria"]  isEqual: @"Feira"]){
         cell.imgCategory.image = [UIImage imageNamed:@"icone feira"];
     }else if([[self.items objectAtIndex:indexPath.row][@"categoria"]  isEqual: @"Mercado"]){
         cell.imgCategory.image = [UIImage imageNamed:@"icone artesanato"];
     }else if([[self.items objectAtIndex:indexPath.row][@"categoria"]  isEqual: @"Restaurante"]){
         cell.imgCategory.image = [UIImage imageNamed:@"icone restaurante"];
+    }
+    
+    if ([PFUser currentUser] != nil) {
+        if([[self.items objectAtIndex:indexPath.row][@"favorites"] containsObject:[[PFUser currentUser] objectId]]){
+            cell.imgFav.image = [UIImage imageNamed:@"bandeira_salvar"];
+        }else{
+            cell.imgFav.image = [UIImage imageNamed:@"bandeira_nao_salvo"];
+        }
     }
     
 }
