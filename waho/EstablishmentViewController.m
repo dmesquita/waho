@@ -13,7 +13,7 @@
 @end
 
 @implementation EstablishmentViewController
-@synthesize viewPrincipal, storyView, localView, lblFavoritado, lblName, txtStory, lblQuote, place, favoritedPlaces, visitedPlaces, imgPerson, img2, img3, btFavoritar, btVisitei;
+@synthesize viewPrincipal, storyView, localView, lblFavoritado, lblName, txtStory, lblQuote, place, favoritedPlaces, visitedPlaces, imgPerson, img2, img3, btFavoritar, btVisitei, scrollView;
 
 - (void)changeFavButtonToSaved{
     UIImage *bandeiraSalva = [UIImage imageNamed:@"bandeira_salvar"];
@@ -26,12 +26,17 @@
     txtStory.text = thisPlace[@"about"];
     NSArray *features = thisPlace[@"features"];
     for(int i = 0; i < [features count]; i++){
-        UILabel *feat;
-        [feat setFrame:CGRectMake(0,0, 259, 21)];
-        [feat setFont:[UIFont fontNamesForFamilyName:@"Avenir"]];
-        [feat setTextColor:[UIColor blackColor]];
-        [feat setText:[features objectAtIndex:i]];
-        [viewPrincipal addSubview:feat];
+        UILabel *label =  [[UILabel alloc] initWithFrame: CGRectMake(58, 710+(25*i), 259, 21) ];
+        label.text = features[i];
+        label.font = [UIFont fontWithName:@"Avenir" size:15];
+        [scrollView addSubview:label];
+//        UILabel *feat;
+//        [feat setFrame:CGRectMake(30,50, 259, 21)];
+//        [feat setFont:[UIFont fontNamesForFamilyName:@"Avenir"]];
+//        [feat setTextColor:[UIColor blackColor]];
+//        [feat setText:[features objectAtIndex:i]];
+//        [feat setBackgroundColor:[UIColor redColor]];
+//        [viewPrincipal addSubview:feat];
     }
     
     /* Images appearing in the view */
@@ -63,6 +68,7 @@
     
     [self showEstablishmentData:place];
 }
+
 
 
 - (void) likePlace:(PFObject *)object{

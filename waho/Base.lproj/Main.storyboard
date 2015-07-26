@@ -15,7 +15,6 @@
             <string>Comfortaa</string>
             <string>Comfortaa</string>
             <string>Comfortaa</string>
-            <string>Comfortaa</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -120,11 +119,11 @@
                         <viewControllerLayoutGuide type="bottom" id="TJf-1K-jeH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VlG-uG-hga">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1g-TF-eU0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-3d-Skd">
                                         <rect key="frame" x="0.0" y="-18" width="375" height="1500"/>
@@ -191,15 +190,6 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnX-Bg-kv9">
-                                                <rect key="frame" x="58" y="757" width="259" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="weX-gq-oak"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uc7-r1-Izo" customClass="PFImageView">
                                                 <rect key="frame" x="196" y="514" width="171" height="128"/>
                                                 <constraints>
@@ -233,13 +223,10 @@
                                             <constraint firstItem="pdw-VT-RnH" firstAttribute="trailing" secondItem="Uc7-r1-Izo" secondAttribute="trailing" id="Ljl-Xp-r6Y"/>
                                             <constraint firstItem="ALz-vU-Lky" firstAttribute="top" secondItem="pRv-q3-Qf1" secondAttribute="bottom" constant="19" id="MUe-S0-XY7"/>
                                             <constraint firstItem="Uc7-r1-Izo" firstAttribute="leading" secondItem="vNy-QV-88t" secondAttribute="trailing" constant="8" symbolic="YES" id="OJl-tE-Uas"/>
-                                            <constraint firstItem="3mG-EX-Gdd" firstAttribute="trailing" secondItem="VnX-Bg-kv9" secondAttribute="trailing" id="OQm-AC-C2I"/>
                                             <constraint firstItem="Uc7-r1-Izo" firstAttribute="top" secondItem="pdw-VT-RnH" secondAttribute="bottom" constant="3" id="P5k-0y-cRl"/>
                                             <constraint firstAttribute="trailing" secondItem="gPy-Qa-85R" secondAttribute="trailing" constant="44" id="Q3E-fn-ZxA"/>
                                             <constraint firstItem="ALz-vU-Lky" firstAttribute="centerX" secondItem="3mG-EX-Gdd" secondAttribute="centerX" id="RZr-6d-RLe"/>
-                                            <constraint firstItem="VnX-Bg-kv9" firstAttribute="top" secondItem="EaI-hm-1wp" secondAttribute="bottom" constant="42" id="TJ6-1e-PR8"/>
                                             <constraint firstItem="EaI-hm-1wp" firstAttribute="top" secondItem="Uc7-r1-Izo" secondAttribute="bottom" constant="52" id="Xdz-bY-fEU"/>
-                                            <constraint firstItem="VnX-Bg-kv9" firstAttribute="leading" secondItem="KC8-3d-Skd" secondAttribute="leading" constant="63" id="Z9y-E0-gKh"/>
                                             <constraint firstItem="vNy-QV-88t" firstAttribute="top" secondItem="Uc7-r1-Izo" secondAttribute="top" id="cGV-4g-hht"/>
                                             <constraint firstAttribute="height" constant="1500" id="ftI-lz-APv"/>
                                             <constraint firstItem="ALz-vU-Lky" firstAttribute="top" secondItem="nNA-s3-Syj" secondAttribute="bottom" constant="8" symbolic="YES" id="gzL-b5-JSk"/>
@@ -271,7 +258,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1500"/>
+                    <size key="freeformSize" width="375" height="1300"/>
                     <connections>
                         <outlet property="btFavoritar" destination="gPy-Qa-85R" id="WDJ-s9-AnC"/>
                         <outlet property="img2" destination="vNy-QV-88t" id="F0N-Qd-JfG"/>
@@ -279,6 +266,7 @@
                         <outlet property="imgPerson" destination="pRv-q3-Qf1" id="uNe-5m-mZc"/>
                         <outlet property="lblName" destination="ALz-vU-Lky" id="mMj-To-8Q6"/>
                         <outlet property="lblQuote" destination="3mG-EX-Gdd" id="EqT-0h-DkS"/>
+                        <outlet property="scrollView" destination="H1g-TF-eU0" id="mRY-Bd-1ee"/>
                         <outlet property="txtStory" destination="pdw-VT-RnH" id="ckm-Rr-WvD"/>
                         <outlet property="viewPrincipal" destination="KC8-3d-Skd" id="LVj-Pa-sZA"/>
                     </connections>
@@ -286,64 +274,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oP-pO-toa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1283.5" y="398"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="QPR-6x-pjJ">
-            <objects>
-                <viewController id="HFo-0Z-iLg" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1mR-7H-Kah"/>
-                        <viewControllerLayoutGuide type="bottom" id="ysQ-Xy-T5f"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZM4-nU-t19">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gkt-xz-DJQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvW-O9-fov">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="faixa.png" translatesAutoresizingMaskIntoConstraints="NO" id="dwE-WT-Ice">
-                                        <rect key="frame" x="0.0" y="130" width="375" height="45"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaG-XL-RSP">
-                                        <rect key="frame" x="31" y="216" width="336" height="21"/>
-                                        <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="19"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3au-Uy-u4K">
-                                        <rect key="frame" x="25" y="338" width="328" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYa-v8-mRY">
-                                        <rect key="frame" x="88" y="269" width="232" height="21"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wie-AC-4Ms">
-                                        <rect key="frame" x="8" y="520" width="177" height="128"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S72-iQ-3kr">
-                                        <rect key="frame" x="200" y="520" width="167" height="128"/>
-                                    </imageView>
-                                </subviews>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1000"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G50-2H-jW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2046.5" y="1604"/>
         </scene>
         <!--Map And List Container View Controller-->
         <scene sceneID="Mpp-W2-PJ5">
