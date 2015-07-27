@@ -31,6 +31,7 @@
 		42DF517A1B308F2300CF0DE2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF51791B308F2300CF0DE2 /* MapViewController.m */; };
 		42DF517D1B308F7900CF0DE2 /* MyCustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF517C1B308F7900CF0DE2 /* MyCustomAnnotation.m */; };
 		42DF517F1B3091FC00CF0DE2 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DF517E1B3091FC00CF0DE2 /* pin.png */; };
+		42DF57AC1B6586CA00C2ABF6 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF57AB1B6586CA00C2ABF6 /* iCarousel.m */; };
 		42E0F0101B333D4B00DA42DF /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E0F00F1B333D4B00DA42DF /* LogInViewController.m */; };
 		42E4C5711B2E4A3D002F79E2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C56B1B2E4A3D002F79E2 /* Bolts.framework */; };
 		42E4C5721B2E4A3D002F79E2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C56C1B2E4A3D002F79E2 /* Parse.framework */; };
@@ -117,6 +118,8 @@
 		42DF517B1B308F7900CF0DE2 /* MyCustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomAnnotation.h; sourceTree = "<group>"; };
 		42DF517C1B308F7900CF0DE2 /* MyCustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomAnnotation.m; sourceTree = "<group>"; };
 		42DF517E1B3091FC00CF0DE2 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		42DF57AA1B6586CA00C2ABF6 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		42DF57AB1B6586CA00C2ABF6 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		42E0F00E1B333D4B00DA42DF /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		42E0F00F1B333D4B00DA42DF /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		42E4C56B1B2E4A3D002F79E2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -216,6 +219,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42DF57A81B65854D00C2ABF6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				428830811B38447F004FCAB3 /* bandeirinha vazia.png */,
+				42C1F3FA1B37762000C71D23 /* bandeirinha cheia.png */,
+				42C1F3FE1B37783B00C71D23 /* icone pequeno.png */,
+				42E5ED3E1B40935400815B4E /* bandeirinha verde cheia.png */,
+				42E5ED401B40940A00815B4E /* bandeirinha verde vazia.png */,
+				42E5ED421B40AE6D00815B4E /* artesanato check.png */,
+				42E5ED441B40AE7600815B4E /* feira check.png */,
+				42E5ED461B40AE7F00815B4E /* restaurante check.png */,
+				42B8038C1B41B21A00F281D4 /* startButton.png */,
+				42B8038D1B41B21A00F281D4 /* imagem2.png */,
+				42B8038E1B41B21A00F281D4 /* imagem.png */,
+				42B8038F1B41B21A00F281D4 /* imagem3.png */,
+				428830831B388509004FCAB3 /* xib.png */,
+				42DF517E1B3091FC00CF0DE2 /* pin.png */,
+				423E1D961B374B3900BEA446 /* faixa.png */,
+				423E1D981B3766B800BEA446 /* terra vazia.png */,
+				42C1F3EE1B37691500C71D23 /* terra vazia2.png */,
+				42C1F3F21B376D2400C71D23 /* terra cheia.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		42DF57A91B6586CA00C2ABF6 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				42DF57AA1B6586CA00C2ABF6 /* iCarousel.h */,
+				42DF57AB1B6586CA00C2ABF6 /* iCarousel.m */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
 		42E4C56A1B2E4A3D002F79E2 /* parse-library-1.7.4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +280,10 @@
 		49543A8C1B2B68DB005E9164 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42DF57A91B6586CA00C2ABF6 /* iCarousel */,
+				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
+				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
+				B9A952211B2B5F5100485EC8 /* MapKit.framework */,
 				42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */,
 				42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */,
 				42E4C58F1B2E5337002F79E2 /* FBSDKCoreKit.framework */,
@@ -273,27 +314,7 @@
 				4223F6261B41BE7C003E0632 /* TabBarViewController.m */,
 				4223F6281B41BF21003E0632 /* TabViewController.h */,
 				4223F6291B41BF21003E0632 /* TabViewController.m */,
-				42DF517E1B3091FC00CF0DE2 /* pin.png */,
-				423E1D961B374B3900BEA446 /* faixa.png */,
-				423E1D981B3766B800BEA446 /* terra vazia.png */,
-				42C1F3EE1B37691500C71D23 /* terra vazia2.png */,
-				42C1F3F21B376D2400C71D23 /* terra cheia.png */,
-				428830811B38447F004FCAB3 /* bandeirinha vazia.png */,
-				42C1F3FA1B37762000C71D23 /* bandeirinha cheia.png */,
-				42C1F3FE1B37783B00C71D23 /* icone pequeno.png */,
-				42E5ED3E1B40935400815B4E /* bandeirinha verde cheia.png */,
-				42E5ED401B40940A00815B4E /* bandeirinha verde vazia.png */,
-				42E5ED421B40AE6D00815B4E /* artesanato check.png */,
-				42E5ED441B40AE7600815B4E /* feira check.png */,
-				42E5ED461B40AE7F00815B4E /* restaurante check.png */,
-				42B8038C1B41B21A00F281D4 /* startButton.png */,
-				42B8038D1B41B21A00F281D4 /* imagem2.png */,
-				42B8038E1B41B21A00F281D4 /* imagem.png */,
-				42B8038F1B41B21A00F281D4 /* imagem3.png */,
-				428830831B388509004FCAB3 /* xib.png */,
-				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
-				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
-				B9A952211B2B5F5100485EC8 /* MapKit.framework */,
+				42DF57A81B65854D00C2ABF6 /* Images */,
 				491F24E51B2B3876008CD3F2 /* README.md */,
 				49543A8C1B2B68DB005E9164 /* Frameworks */,
 				499CEC8E1B2B36AC00DF341A /* waho */,
@@ -507,6 +528,7 @@
 				499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */,
 				B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */,
 				499CEC921B2B36AC00DF341A /* main.m in Sources */,
+				42DF57AC1B6586CA00C2ABF6 /* iCarousel.m in Sources */,
 				42DF517A1B308F2300CF0DE2 /* MapViewController.m in Sources */,
 				420172D01B5879D400019518 /* PlacesFromParse.m in Sources */,
 				42DF517D1B308F7900CF0DE2 /* MyCustomAnnotation.m in Sources */,

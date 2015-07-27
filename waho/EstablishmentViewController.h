@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
 #import "LogInViewController.h"
+#import "iCarousel.h"
 
-@interface EstablishmentViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface EstablishmentViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, iCarouselDataSource, iCarouselDelegate>
 
+
+@property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic) NSArray *pictures;
 
 @property (strong, nonatomic) IBOutlet UIView *storyView;
 @property (strong, nonatomic) IBOutlet UIView *localView;
