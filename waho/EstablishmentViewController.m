@@ -77,16 +77,44 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
+//    UIButton *button = (UIButton *)view;
+//    if (button == nil)
+//    {
+//        //no button available to recycle, so create new one
+//        PFImageView* img = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 230.0f, 150.0f)];
+//        img.file = pictures[index];
+//        [img loadInBackground];
+//        //UIImage *image = [UIImage imageNamed:@"page.png"];
+//        button = [UIButton buttonWithType:UIButtonTypeCustom];
+//        button.frame = CGRectMake(0.0f, 0.0f, 230, 150);
+//        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        [button setBackgroundImage:img.image forState:UIControlStateNormal];
+//        //button.titleLabel.font = [button.titleLabel.font fontWithSize:50];
+//        [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+//    }
+    
     if (view == nil){
-        view = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 171.0f, 128.0f)];
+        view = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 230.0f, 150.0f)];
         ((PFImageView *)view).file = pictures[index];
         [((PFImageView *)view) loadInBackground];
+        view.userInteractionEnabled = YES;
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button addTarget:self action:@selector(singleTapping:) forControlEvents:UIControlEventAllEvents];
+        [button setTitle:@"point" forState:UIControlStateNormal];
+        button.frame = CGRectMake(0.0, 0.0, 230.0, 150.0);
+        [view addSubview:button];
     }
     else
     {
-        view = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 171.0f, 128.0f)];
+        view = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 230.0f, 150.0f)];
         ((PFImageView *)view).file = pictures[index];
         [((PFImageView *)view) loadInBackground];
+        view.userInteractionEnabled = YES;
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button addTarget:self action:@selector(singleTapping:) forControlEvents:UIControlEventAllEvents];
+        [button setTitle:@"point" forState:UIControlStateNormal];
+        button.frame = CGRectMake(0.0, 0.0, 230.0, 150.0);
+        [view addSubview:button];
     }
     
     //set item label
@@ -97,6 +125,12 @@
     //label.text = [pictures[index] stringValue];
 
     return view;
+    //return button;
+}
+
+-(void)singleTapping:(UIGestureRecognizer *)recognizer
+{
+    NSLog(@"image click");
 }
 
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
