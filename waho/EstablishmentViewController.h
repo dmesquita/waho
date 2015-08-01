@@ -33,8 +33,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblQuote;
 @property (weak, nonatomic) IBOutlet UITextView *txtStory;
 @property (weak, nonatomic) IBOutlet UIButton *btFavoritar;
-@property (weak, nonatomic) IBOutlet PFImageView *img2;
-@property (weak, nonatomic) IBOutlet PFImageView *img3;
 @property (weak, nonatomic) IBOutlet UIButton *btVisitei;
 
 - (IBAction)segmentValeuChanged:(id)sender;

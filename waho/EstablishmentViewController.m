@@ -13,7 +13,7 @@
 @end
 
 @implementation EstablishmentViewController
-@synthesize viewPrincipal, storyView, localView, lblFavoritado, lblName, txtStory, lblQuote, place, favoritedPlaces, visitedPlaces, imgPerson, img2, img3, btFavoritar, btVisitei, scrollView, pictures;
+@synthesize viewPrincipal, storyView, localView, lblFavoritado, lblName, txtStory, lblQuote, place, favoritedPlaces, visitedPlaces, imgPerson, btFavoritar, btVisitei, scrollView, pictures;
 
 - (void)changeFavButtonToSaved{
     UIImage *bandeiraSalva = [UIImage imageNamed:@"bandeira_salvar"];
@@ -33,23 +33,18 @@
     }
     
     /* Images appearing in the view */
-    PFFile *imageFile = place[@"picture1"];
+    PFFile *imageFile = thisPlace[@"picture1"];
     imgPerson.file = imageFile;
+    
     [imgPerson loadInBackground];
-    PFFile *imageFile2 = place[@"picture2"];
-    img2.file = imageFile2;
-    [img2 loadInBackground];
-    PFFile *imageFile3 = place[@"picture3"];
-    img3.file = imageFile3;
-    [img3 loadInBackground];
-    
-    pictures = @[img2, img3];
-    
+    PFFile *imageFile2 = thisPlace[@"picture2"];
+    PFFile *imageFile3 = thisPlace[@"picture3"];
+    pictures = @[imageFile2, imageFile3];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self showEstablishmentData:place];
     
     //create carousel
     //_carousel = [[iCarousel alloc] initWithFrame:self.view.bounds];
@@ -72,8 +67,6 @@
     if([visitedPlaces containsObject:place]){
         [btVisitei setEnabled:NO];
     }
-    
-    [self showEstablishmentData:place];
 }
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
@@ -86,13 +79,13 @@
 {
     if (view == nil){
         view = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 171.0f, 128.0f)];
-        ((PFImageView *)view).file = img3.file;
+        ((PFImageView *)view).file = pictures[index];
         [((PFImageView *)view) loadInBackground];
     }
     else
     {
         view = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 171.0f, 128.0f)];
-        ((PFImageView *)view).file = img2.file;
+        ((PFImageView *)view).file = pictures[index];
         [((PFImageView *)view) loadInBackground];
     }
     
@@ -113,6 +106,25 @@
         return value * 1.1;
     }
     return value;
+}
+
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    
+    //free up memory by releasing subviews
+    self.carousel = nil;
+}
+
+- (void)dealloc
+{
+    //it's a good idea to set these to nil here to avoid
+    //sending messages to a deallocated viewcontroller
+    //this is true even if your project is using ARC, unless
+    //you are targeting iOS 5 as a minimum deployment target
+    _carousel.delegate = nil;
+    _carousel.dataSource = nil;
 }
 
 
