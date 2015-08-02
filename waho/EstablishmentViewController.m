@@ -26,7 +26,7 @@
     txtStory.text = thisPlace[@"about"];
     NSArray *features = thisPlace[@"features"];
     for(int i = 0; i < [features count]; i++){
-        UILabel *label =  [[UILabel alloc] initWithFrame: CGRectMake(58, 710+(25*i), 259, 21) ];
+        UILabel *label =  [[UILabel alloc] initWithFrame: CGRectMake(58, 760+(25*i), 259, 21) ];
         label.text = features[i];
         label.font = [UIFont fontWithName:@"Avenir" size:15];
         [scrollView addSubview:label];
@@ -77,43 +77,25 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-//    UIButton *button = (UIButton *)view;
-//    if (button == nil)
-//    {
-//        //no button available to recycle, so create new one
-//        PFImageView* img = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 230.0f, 150.0f)];
-//        img.file = pictures[index];
-//        [img loadInBackground];
-//        //UIImage *image = [UIImage imageNamed:@"page.png"];
-//        button = [UIButton buttonWithType:UIButtonTypeCustom];
-//        button.frame = CGRectMake(0.0f, 0.0f, 230, 150);
-//        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        [button setBackgroundImage:img.image forState:UIControlStateNormal];
-//        //button.titleLabel.font = [button.titleLabel.font fontWithSize:50];
-//        [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    }
-    
     if (view == nil){
-        view = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 230.0f, 150.0f)];
+        view = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 330.0, 200.0)];
         ((PFImageView *)view).file = pictures[index];
         [((PFImageView *)view) loadInBackground];
         view.userInteractionEnabled = YES;
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button addTarget:self action:@selector(singleTapping:) forControlEvents:UIControlEventAllEvents];
-        [button setTitle:@"point" forState:UIControlStateNormal];
-        button.frame = CGRectMake(0.0, 0.0, 230.0, 150.0);
+        button.frame = CGRectMake(0.0, 0.0,330.0, 200.0);
         [view addSubview:button];
     }
     else
     {
-        view = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 230.0f, 150.0f)];
+        view = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 330.0, 200.0)];
         ((PFImageView *)view).file = pictures[index];
         [((PFImageView *)view) loadInBackground];
         view.userInteractionEnabled = YES;
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button addTarget:self action:@selector(singleTapping:) forControlEvents:UIControlEventAllEvents];
-        [button setTitle:@"point" forState:UIControlStateNormal];
-        button.frame = CGRectMake(0.0, 0.0, 230.0, 150.0);
+        button.frame = CGRectMake(0.0, 0.0, 330.0, 200.0);
         [view addSubview:button];
     }
     
@@ -125,7 +107,6 @@
     //label.text = [pictures[index] stringValue];
 
     return view;
-    //return button;
 }
 
 -(void)singleTapping:(UIGestureRecognizer *)recognizer
