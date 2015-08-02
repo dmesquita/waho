@@ -26,7 +26,7 @@
     txtStory.text = thisPlace[@"about"];
     NSArray *features = thisPlace[@"features"];
     for(int i = 0; i < [features count]; i++){
-        UILabel *label =  [[UILabel alloc] initWithFrame: CGRectMake(58, 760+(25*i), 259, 21) ];
+        UILabel *label =  [[UILabel alloc] initWithFrame: CGRectMake(58, 775+(25*i), 259, 21) ];
         label.text = features[i];
         label.font = [UIFont fontWithName:@"Avenir" size:15];
         [scrollView addSubview:label];

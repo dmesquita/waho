@@ -33,10 +33,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6oQ-sw-QO6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="Pwe-9U-nHz">
-                                    <rect key="frame" x="0.0" y="130" width="375" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SavedEstablishmentCell" id="KS1-ON-k12">
                                         <rect key="frame" x="0.0" y="86" width="375" height="100"/>
@@ -72,7 +68,6 @@
                     <navigationItem key="navigationItem" title="Lugares Salvos" id="wXE-lx-i5p"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="activityLoadingFavs" destination="Pwe-9U-nHz" id="aAg-WD-VJT"/>
                         <outlet property="tableView" destination="6oQ-sw-QO6" id="wcH-YZ-oE5"/>
                     </connections>
                 </viewController>
@@ -125,8 +120,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1g-TF-eU0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-3d-Skd">
-                                        <rect key="frame" x="0.0" y="-18" width="375" height="1000"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-3d-Skd">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mG-EX-Gdd">
                                                 <rect key="frame" x="69" y="238" width="253" height="62"/>
@@ -215,7 +210,7 @@
                                             <constraint firstItem="ALz-vU-Lky" firstAttribute="top" secondItem="pRv-q3-Qf1" secondAttribute="bottom" constant="19" id="MUe-S0-XY7"/>
                                             <constraint firstAttribute="trailing" secondItem="gPy-Qa-85R" secondAttribute="trailing" constant="44" id="Q3E-fn-ZxA"/>
                                             <constraint firstItem="ALz-vU-Lky" firstAttribute="centerX" secondItem="3mG-EX-Gdd" secondAttribute="centerX" id="RZr-6d-RLe"/>
-                                            <constraint firstAttribute="height" constant="1500" id="ftI-lz-APv"/>
+                                            <constraint firstAttribute="height" constant="1000" id="ftI-lz-APv"/>
                                             <constraint firstItem="ALz-vU-Lky" firstAttribute="top" secondItem="nNA-s3-Syj" secondAttribute="bottom" constant="8" symbolic="YES" id="gzL-b5-JSk"/>
                                             <constraint firstItem="pdw-VT-RnH" firstAttribute="top" secondItem="3mG-EX-Gdd" secondAttribute="bottom" constant="8" symbolic="YES" id="qGD-Bz-j0d"/>
                                             <constraint firstItem="nNA-s3-Syj" firstAttribute="leading" secondItem="KC8-3d-Skd" secondAttribute="leading" constant="-17" id="uBd-r5-kCe"/>
@@ -224,10 +219,10 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="KC8-3d-Skd" secondAttribute="trailing" id="ArZ-dy-dVM"/>
-                                    <constraint firstAttribute="bottom" secondItem="KC8-3d-Skd" secondAttribute="bottom" constant="18" id="TL8-BL-qwU"/>
+                                    <constraint firstAttribute="bottom" secondItem="KC8-3d-Skd" secondAttribute="bottom" id="TL8-BL-qwU"/>
                                     <constraint firstItem="KC8-3d-Skd" firstAttribute="centerX" secondItem="H1g-TF-eU0" secondAttribute="centerX" id="gz4-9w-TBC"/>
                                     <constraint firstItem="KC8-3d-Skd" firstAttribute="leading" secondItem="H1g-TF-eU0" secondAttribute="leading" id="lge-Ci-QqL"/>
-                                    <constraint firstItem="KC8-3d-Skd" firstAttribute="top" secondItem="H1g-TF-eU0" secondAttribute="top" constant="-18" id="wE4-lu-Eb3"/>
+                                    <constraint firstItem="KC8-3d-Skd" firstAttribute="top" secondItem="H1g-TF-eU0" secondAttribute="top" id="wE4-lu-Eb3"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

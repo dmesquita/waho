@@ -18,7 +18,7 @@
 
 }
 
-@synthesize activityLoadingFavs, tableView, favoritePlaces, visitedPlaces, favoriteImages;
+@synthesize tableView, favoritePlaces, visitedPlaces, favoriteImages;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,54 +28,20 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [activityLoadingFavs startAnimating];
-    activityLoadingFavs.hidesWhenStopped = true;
     
     savedEstablishments = [[NSMutableArray alloc] init];
     favoriteImages = [[NSMutableArray alloc] init];
-    if ([PFUser currentUser] != nil) {
-        PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
-        [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
-        [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            if (!error) {
-                favoritePlaces = objects;
-                if([objects count] > 0){
-                    NSLog(@"Está na lista de favoritos -------------------------------------");
-                    for (int i = 0; i < [objects count]; i++){
-                        NSString *nome = objects[i][@"name"];
-                        [savedEstablishments addObject:nome];
-                        PFFile *imagem = objects[i][@"pictureSalvos"];
-                        [favoriteImages addObject:imagem];
-                    };
-                    [self.tableView reloadData];
-                }else{
-                    NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
-                }
-            } else {
-                NSLog(@"Error: %@", error);
-            }
-            [activityLoadingFavs stopAnimating];
-        }];
-    }else{
-        [activityLoadingFavs stopAnimating];
+    favoritePlaces = [[PlacesFromParse sharedPlacesFromParse]favoritedPlaces];
+    for (int i = 0; i < [favoritePlaces count]; i++){
+        NSString *nome = favoritePlaces[i][@"name"];
+        [savedEstablishments addObject:nome];
+        PFFile *imagem = favoritePlaces[i][@"pictureSalvos"];
+        [favoriteImages addObject:imagem];
     };
+    [self.tableView reloadData];
     
     //Get visited Places
-    if ([PFUser currentUser] != nil) {
-        PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
-        [queryUser whereKey:@"visited" equalTo:[[PFUser currentUser] objectId]];
-        [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            if (!error) {
-                visitedPlaces = objects;
-            } else {
-                NSLog(@"Error: %@", error);
-            }
-            [activityLoadingFavs stopAnimating];
-        }];
-    }else{
-        [activityLoadingFavs stopAnimating];
-    };
-    
+    visitedPlaces = [[PlacesFromParse sharedPlacesFromParse]visitedPlaces];    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
