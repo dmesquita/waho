@@ -71,7 +71,6 @@
 		499CECA01B2B36AC00DF341A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499CEC9E1B2B36AC00DF341A /* LaunchScreen.xib */; };
 		499CECAC1B2B36AC00DF341A /* wahoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CECAB1B2B36AC00DF341A /* wahoTests.m */; };
 		B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A952281B2B776100485EC8 /* EstablishmentViewController.m */; };
-		B9F430781B2F4D84007CB828 /* ListEstablishmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F430771B2F4D84007CB828 /* ListEstablishmentTableViewController.m */; };
 		B9F4307B1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -173,8 +172,6 @@
 		B9A952251B2B5F7E00485EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B9A952271B2B776100485EC8 /* EstablishmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstablishmentViewController.h; sourceTree = "<group>"; };
 		B9A952281B2B776100485EC8 /* EstablishmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstablishmentViewController.m; sourceTree = "<group>"; };
-		B9F430761B2F4D84007CB828 /* ListEstablishmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListEstablishmentTableViewController.h; sourceTree = "<group>"; };
-		B9F430771B2F4D84007CB828 /* ListEstablishmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListEstablishmentTableViewController.m; sourceTree = "<group>"; };
 		B9F430791B2F5EEC007CB828 /* SaveEstablishmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveEstablishmentTableViewController.h; sourceTree = "<group>"; };
 		B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveEstablishmentTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -342,8 +339,6 @@
 				B9A952281B2B776100485EC8 /* EstablishmentViewController.m */,
 				42DF517B1B308F7900CF0DE2 /* MyCustomAnnotation.h */,
 				42DF517C1B308F7900CF0DE2 /* MyCustomAnnotation.m */,
-				B9F430761B2F4D84007CB828 /* ListEstablishmentTableViewController.h */,
-				B9F430771B2F4D84007CB828 /* ListEstablishmentTableViewController.m */,
 				B9F430791B2F5EEC007CB828 /* SaveEstablishmentTableViewController.h */,
 				B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */,
 				499CEC991B2B36AC00DF341A /* Main.storyboard */,
@@ -537,7 +532,6 @@
 				42E8A6E61B5C225500B37429 /* ListViewTableViewCell.m in Sources */,
 				42B803991B41B4D800F281D4 /* PageContentViewController.m in Sources */,
 				B9F4307B1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m in Sources */,
-				B9F430781B2F4D84007CB828 /* ListEstablishmentTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
