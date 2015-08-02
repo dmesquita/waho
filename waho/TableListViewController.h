@@ -11,6 +11,7 @@
 #import "ParseUI/ParseUI.h"
 #import "PlacesFromParse.h"
 #import "ListViewTableViewCell.h"
+#import "EstablishmentViewController.h"
 
 @interface TableListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic) NSArray *placesArray;

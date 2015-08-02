@@ -99,6 +99,18 @@
     return 175;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"oi gente");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    EstablishmentViewController *establishmentVC = (EstablishmentViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Establishment"];
+    establishmentVC.place = [self.items objectAtIndex:indexPath.row];
+    establishmentVC.favoritedPlaces = [[PlacesFromParse sharedPlacesFromParse]favoritedPlaces];
+    establishmentVC.visitedPlaces = [[PlacesFromParse sharedPlacesFromParse]visitedPlaces];
+    [self.navigationController pushViewController:establishmentVC animated:YES];
+}
+
 /*
 #pragma mark - Navigation
 
