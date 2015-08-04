@@ -10,6 +10,7 @@
 		420172CA1B5850AC00019518 /* MapAndListContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420172C91B5850AC00019518 /* MapAndListContainerViewController.m */; };
 		420172CD1B58645000019518 /* TableListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420172CC1B58645000019518 /* TableListViewController.m */; };
 		420172D01B5879D400019518 /* PlacesFromParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 420172CF1B5879D400019518 /* PlacesFromParse.m */; };
+		42023E311B703D2D00EF967E /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42023E301B703D2D00EF967E /* MainTabBarViewController.m */; };
 		4223F6271B41BE7C003E0632 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223F6261B41BE7C003E0632 /* TabBarViewController.m */; };
 		4223F62A1B41BF21003E0632 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223F6291B41BF21003E0632 /* TabViewController.m */; };
 		423E1D971B374B3900BEA446 /* faixa.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D961B374B3900BEA446 /* faixa.png */; };
@@ -91,6 +92,8 @@
 		420172CC1B58645000019518 /* TableListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableListViewController.m; sourceTree = "<group>"; };
 		420172CE1B5879D400019518 /* PlacesFromParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesFromParse.h; sourceTree = "<group>"; };
 		420172CF1B5879D400019518 /* PlacesFromParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesFromParse.m; sourceTree = "<group>"; };
+		42023E2F1B703D2D00EF967E /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
+		42023E301B703D2D00EF967E /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		4223F6251B41BE7C003E0632 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		4223F6261B41BE7C003E0632 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		4223F6281B41BF21003E0632 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 				B9F430791B2F5EEC007CB828 /* SaveEstablishmentTableViewController.h */,
 				B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */,
 				499CEC991B2B36AC00DF341A /* Main.storyboard */,
+				42023E2F1B703D2D00EF967E /* MainTabBarViewController.h */,
+				42023E301B703D2D00EF967E /* MainTabBarViewController.m */,
 				42AE1FAC1B5B02DB00169DAF /* ListViewCell.xib */,
 				42E8A6E41B5C225500B37429 /* ListViewTableViewCell.h */,
 				42E8A6E51B5C225500B37429 /* ListViewTableViewCell.m */,
@@ -523,6 +528,7 @@
 				499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */,
 				B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */,
 				499CEC921B2B36AC00DF341A /* main.m in Sources */,
+				42023E311B703D2D00EF967E /* MainTabBarViewController.m in Sources */,
 				42DF57AC1B6586CA00C2ABF6 /* iCarousel.m in Sources */,
 				42DF517A1B308F2300CF0DE2 /* MapViewController.m in Sources */,
 				420172D01B5879D400019518 /* PlacesFromParse.m in Sources */,

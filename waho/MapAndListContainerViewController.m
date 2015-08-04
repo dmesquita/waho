@@ -42,12 +42,26 @@
     [segmentControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
     
     [super viewDidLoad];
-   
+    containerMap.hidden = false;
+    containerList.hidden = true;
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+    if(item == 0){
+        containerMap.hidden = false;
+        containerList.hidden = true;
+    }else{
+        NSLog(@"aaaaa");
+    }
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    containerMap.hidden = false;
-    containerList.hidden = true;
+    //containerMap.hidden = false;
+    //containerList.hidden = true;
 }
 
 - (void)didReceiveMemoryWarning {

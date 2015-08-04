@@ -15,6 +15,9 @@
             <string>Comfortaa</string>
             <string>Comfortaa</string>
             <string>Comfortaa</string>
+            <string>Comfortaa</string>
+            <string>Comfortaa</string>
+            <string>Comfortaa</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -73,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-7U-zpI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="451.5" y="-43.5"/>
+            <point key="canvasLocation" x="501.5" y="-835.5"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="HHY-Bg-P8l">
@@ -103,7 +106,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBE-cD-uSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2005.5" y="3937.5"/>
+            <point key="canvasLocation" x="-114.5" y="-1712.5"/>
         </scene>
         <!--Estabelecimento-->
         <scene sceneID="Zmh-Wa-Omh">
@@ -253,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oP-pO-toa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1283.5" y="398"/>
+            <point key="canvasLocation" x="1017.5" y="-885"/>
         </scene>
         <!--Map And List Container View Controller-->
         <scene sceneID="Mpp-W2-PJ5">
@@ -305,12 +308,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2l-VQ-ezd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740.5" y="1897.5"/>
+            <point key="canvasLocation" x="441.5" y="195.5"/>
         </scene>
-        <!--Tab View Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="rf9-RZ-9Id">
             <objects>
-                <tabBarController storyboardIdentifier="tabBar" id="5DW-Td-SPd" customClass="TabViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="5DW-Td-SPd" customClass="MainTabBarViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="WOk-uj-tta"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -323,12 +326,12 @@
                     <connections>
                         <segue destination="BTX-5j-DIn" kind="relationship" relationship="viewControllers" id="dNn-rZ-WNR"/>
                         <segue destination="ogF-Sy-w7R" kind="relationship" relationship="viewControllers" id="94q-K3-lEw"/>
-                        <segue destination="NVQ-DR-kOQ" kind="relationship" relationship="viewControllers" id="RXn-Cx-wA1"/>
+                        <segue destination="SJX-QQ-gAt" kind="relationship" relationship="viewControllers" id="RXn-Cx-wA1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvi-Z8-oQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-791.5" y="305.5"/>
+            <point key="canvasLocation" x="-731.5" y="317.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vFf-2f-G2p">
@@ -371,7 +374,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dem-RA-cnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889.5" y="-628.5"/>
+            <point key="canvasLocation" x="511.5" y="-1796.5"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="SDC-do-tRc">
@@ -412,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fju-GV-4O6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1496.5" y="-628.5"/>
+            <point key="canvasLocation" x="1017.5" y="-1796.5"/>
         </scene>
         <!--Salvos-->
         <scene sceneID="d4t-5m-TB9">
@@ -431,7 +434,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Nr-fq-dKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-112.5" y="-43.5"/>
+            <point key="canvasLocation" x="-114.5" y="-835.5"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="d3D-NU-OG9">
@@ -463,7 +466,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcc-X3-PyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397.5" y="1454.5"/>
+            <point key="canvasLocation" x="1017.5" y="13.5"/>
         </scene>
         <!--Table List View Controller-->
         <scene sceneID="WnK-Sd-1Ef">
@@ -498,9 +501,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zft-fC-4FC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397.5" y="2221.5"/>
+            <point key="canvasLocation" x="1017.5" y="775.5"/>
         </scene>
-        <!--Me-->
+        <!--View Controller-->
         <scene sceneID="16x-UW-YlF">
             <objects>
                 <viewController id="NVQ-DR-kOQ" sceneMemberID="viewController">
@@ -511,14 +514,37 @@
                     <view key="view" contentMode="scaleToFill" id="dzY-tk-AMN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Frame usuario" translatesAutoresizingMaskIntoConstraints="NO" id="842-BC-YWd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="270"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sarah Manning" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OA5-pZ-KYT">
+                                <rect key="frame" x="45" y="381" width="165" height="21"/>
+                                <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recomende um local!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRS-BA-Za8">
+                                <rect key="frame" x="45" y="493" width="227" height="21"/>
+                                <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sarah@dyad.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBU-m9-XH6">
+                                <rect key="frame" x="45" y="437" width="183" height="21"/>
+                                <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Me" image="Me" id="9cO-8P-ReU"/>
+                    <navigationItem key="navigationItem" id="elY-a9-TPt"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsL-wa-w5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-645" y="1440"/>
+            <point key="canvasLocation" x="441.5" y="959.5"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="zLJ-OX-irQ">
@@ -537,10 +563,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6l-yf-yio" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144.5" y="1904.5"/>
+            <point key="canvasLocation" x="-114.5" y="195.5"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="1bW-yA-iqq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SJX-QQ-gAt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Me" image="Me" id="9cO-8P-ReU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XX2-4o-gHC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NVQ-DR-kOQ" kind="relationship" relationship="rootViewController" id="IAf-cE-Z8k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFy-mP-hBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114.5" y="959.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Frame usuario" width="1125" height="810"/>
         <image name="Me" width="19" height="27"/>
         <image name="bandeira" width="25" height="25"/>
         <image name="faixa.png" width="3125" height="304"/>
