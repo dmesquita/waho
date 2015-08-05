@@ -83,7 +83,6 @@
     
 }
 
-
 - (void) getFavoritedPlaces {
     favoritedPlaces = [[NSMutableArray alloc] init];
     if ([PFUser currentUser] != nil) {

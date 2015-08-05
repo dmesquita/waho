@@ -12,7 +12,8 @@
 #import "TableListViewController.h"
 #import "PlacesFromParse.h"
 
-@interface MapAndListContainerViewController : UIViewController
+@interface MapAndListContainerViewController : UIViewController <UITabBarControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UIView *containerMap;
 @property (weak, nonatomic) IBOutlet UIView *containerList;

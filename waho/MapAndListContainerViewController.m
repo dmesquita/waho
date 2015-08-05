@@ -43,20 +43,16 @@
     
     [super viewDidLoad];
     containerMap.hidden = false;
-    containerList.hidden = true;
-}
-
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
-    if(item == 0){
-        containerMap.hidden = false;
-        containerList.hidden = true;
-    }else{
-        NSLog(@"aaaaa");
-    }
-}
-
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    containerList.hidden = true;   
     
+    UITabBarController *tabBarController = (UITabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController ;
+    
+    [tabBarController setDelegate:self];
+}
+
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    containerMap.hidden = false;
+    containerList.hidden = true;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
