@@ -514,7 +514,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Frame usuario" translatesAutoresizingMaskIntoConstraints="NO" id="842-BC-YWd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Frame usuário-câmera" translatesAutoresizingMaskIntoConstraints="NO" id="842-BC-YWd">
                                 <rect key="frame" x="0.0" y="64" width="375" height="270"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sarah Manning" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OA5-pZ-KYT">
@@ -595,7 +595,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Frame usuario" width="1125" height="810"/>
+        <image name="Frame usuário-câmera" width="375" height="270"/>
         <image name="Me" width="19" height="27"/>
         <image name="bandeira" width="25" height="25"/>
         <image name="faixa.png" width="3125" height="304"/>

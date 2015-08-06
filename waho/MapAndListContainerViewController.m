@@ -37,8 +37,10 @@
 
 - (void)viewDidLoad {    
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
-                                [UIColor blackColor], NSForegroundColorAttributeName, nil];
-    [segmentControl setTitleTextAttributes:attributes forState:UIControlStateSelected];
+                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    NSDictionary *attributesSelected = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
+                                [UIColor  colorWithRed:253.0/255.0 green:66.0/255.0 blue:107.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+    [segmentControl setTitleTextAttributes:attributesSelected forState:UIControlStateSelected];
     [segmentControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
     
     [super viewDidLoad];

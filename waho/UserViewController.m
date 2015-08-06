@@ -72,7 +72,7 @@
 }
 
 - (void) emailFail{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooooops!" message:@"Você precisa estar logado no app de emails do iPhone!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Eitaaa!" message:@"Você precisa estar logado no app de emails do iPhone!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
 }
 
