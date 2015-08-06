@@ -56,6 +56,8 @@
 		42E4C5921B2E5355002F79E2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */; };
 		42E4C5941B2E5363002F79E2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */; };
 		42E5370D1B738D8100A42C27 /* MyLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E5370C1B738D8100A42C27 /* MyLoginViewController.m */; };
+		42E537101B73978E00A42C27 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E5370F1B73978E00A42C27 /* UserViewController.m */; };
+		42E537121B739FB100A42C27 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E537111B739FB100A42C27 /* MessageUI.framework */; };
 		42E5ED3F1B40935400815B4E /* bandeirinha verde cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5ED3E1B40935400815B4E /* bandeirinha verde cheia.png */; };
 		42E5ED411B40940A00815B4E /* bandeirinha verde vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5ED401B40940A00815B4E /* bandeirinha verde vazia.png */; };
 		42E5ED431B40AE6D00815B4E /* artesanato check.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5ED421B40AE6D00815B4E /* artesanato check.png */; };
@@ -148,6 +150,9 @@
 		42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		42E5370B1B738D8100A42C27 /* MyLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLoginViewController.h; sourceTree = "<group>"; };
 		42E5370C1B738D8100A42C27 /* MyLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLoginViewController.m; sourceTree = "<group>"; };
+		42E5370E1B73978E00A42C27 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		42E5370F1B73978E00A42C27 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		42E537111B739FB100A42C27 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		42E5ED3E1B40935400815B4E /* bandeirinha verde cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha verde cheia.png"; sourceTree = "<group>"; };
 		42E5ED401B40940A00815B4E /* bandeirinha verde vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha verde vazia.png"; sourceTree = "<group>"; };
 		42E5ED421B40AE6D00815B4E /* artesanato check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "artesanato check.png"; sourceTree = "<group>"; };
@@ -187,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E537121B739FB100A42C27 /* MessageUI.framework in Frameworks */,
 				42DF51771B308E9400CF0DE2 /* MapKit.framework in Frameworks */,
 				42E4C58E1B2E50FA002F79E2 /* Accounts.framework in Frameworks */,
 				42E4C58C1B2E50F3002F79E2 /* Social.framework in Frameworks */,
@@ -283,6 +289,7 @@
 		49543A8C1B2B68DB005E9164 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42E537111B739FB100A42C27 /* MessageUI.framework */,
 				42DF57A91B6586CA00C2ABF6 /* iCarousel */,
 				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
 				B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */,
@@ -348,6 +355,8 @@
 				B9F430791B2F5EEC007CB828 /* SaveEstablishmentTableViewController.h */,
 				B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */,
 				499CEC991B2B36AC00DF341A /* Main.storyboard */,
+				42E5370E1B73978E00A42C27 /* UserViewController.h */,
+				42E5370F1B73978E00A42C27 /* UserViewController.m */,
 				42E5370B1B738D8100A42C27 /* MyLoginViewController.h */,
 				42E5370C1B738D8100A42C27 /* MyLoginViewController.m */,
 				42023E2F1B703D2D00EF967E /* MainTabBarViewController.h */,
@@ -526,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E537101B73978E00A42C27 /* UserViewController.m in Sources */,
 				4223F62A1B41BF21003E0632 /* TabViewController.m in Sources */,
 				420172CD1B58645000019518 /* TableListViewController.m in Sources */,
 				42B803961B41B44A00F281D4 /* ViewController.m in Sources */,

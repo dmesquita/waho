@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     tableView.delegate = self;
     tableView.dataSource = self;
-    [PFUser logOut];
+    //[PFUser logOut];
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
                                 [UIColor blackColor], NSForegroundColorAttributeName, nil];
     [_segmentedControlMap setTitleTextAttributes:attributes forState:UIControlStateSelected];

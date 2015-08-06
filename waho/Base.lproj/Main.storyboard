@@ -238,9 +238,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="H59-dw-Yej"/>
-                    <navigationItem key="navigationItem" id="3jj-tR-raQ">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="3jj-tR-raQ"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
@@ -504,10 +502,10 @@
             </objects>
             <point key="canvasLocation" x="1017.5" y="775.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Eu-->
         <scene sceneID="16x-UW-YlF">
             <objects>
-                <viewController id="NVQ-DR-kOQ" sceneMemberID="viewController">
+                <viewController id="NVQ-DR-kOQ" customClass="UserViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jAK-Of-6WA"/>
                         <viewControllerLayoutGuide type="bottom" id="0ml-xy-y6K"/>
@@ -525,23 +523,33 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recomende um local!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRS-BA-Za8">
-                                <rect key="frame" x="45" y="493" width="227" height="21"/>
-                                <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sarah@dyad.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBU-m9-XH6">
                                 <rect key="frame" x="45" y="437" width="183" height="21"/>
                                 <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYl-5H-mKd">
+                                <rect key="frame" x="36" y="489" width="201" height="30"/>
+                                <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="18"/>
+                                <state key="normal" title="Recomende um local!">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recomendarLocal:" destination="NVQ-DR-kOQ" eventType="touchUpInside" id="GjK-DB-qan"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="elY-a9-TPt"/>
+                    <navigationItem key="navigationItem" title="Eu" id="elY-a9-TPt"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="btRecomendarLocal" destination="wYl-5H-mKd" id="GoJ-9W-yGD"/>
+                        <outlet property="lblEmail" destination="YBU-m9-XH6" id="2yA-Up-3XZ"/>
+                        <outlet property="lblNome" destination="OA5-pZ-KYT" id="lyX-aT-hRH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsL-wa-w5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -566,11 +574,11 @@
             </objects>
             <point key="canvasLocation" x="-114.5" y="195.5"/>
         </scene>
-        <!--Me-->
+        <!--Eu-->
         <scene sceneID="1bW-yA-iqq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SJX-QQ-gAt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" image="Me" id="9cO-8P-ReU"/>
+                    <tabBarItem key="tabBarItem" title="Eu" image="Me" id="9cO-8P-ReU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XX2-4o-gHC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

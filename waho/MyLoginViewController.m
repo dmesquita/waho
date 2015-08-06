@@ -20,6 +20,7 @@
     [super viewDidLoad];
     
     [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"artesanato"]]];
+    
 }
 
 - (void)didReceiveMemoryWarning {

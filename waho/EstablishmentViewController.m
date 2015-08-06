@@ -191,7 +191,9 @@
     } else {
         // show the signup or login page
         PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
-        [logInViewController setDelegate:self];
+        [logInViewController setDelegate:self];        
+        [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
+        [logInViewController setFields: PFLogInFieldsTwitter | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
     
