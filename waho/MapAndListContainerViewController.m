@@ -53,6 +53,7 @@
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     containerMap.hidden = false;
     containerList.hidden = true;
+    segmentControl.selectedSegmentIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning {
