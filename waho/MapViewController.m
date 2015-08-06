@@ -41,11 +41,6 @@
     [self.locationManager startUpdatingLocation];
     
     CLLocation *location = [self.locationManager location];
-    CLLocationCoordinate2D userCoordinate = [location coordinate];
-        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userCoordinate, 15500, 15500);
-    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
-    
-    [self.mapView setRegion:adjustedRegion animated:YES];
     
     [activityLoadingMarkers startAnimating];
     
@@ -80,6 +75,11 @@
      
     [self getFavoritedPlaces];
     [self getVisitedPlaces];
+    
+}
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    [self.mapView setRegion:MKCoordinateRegionMake([self.locationManager location].coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
     
 }
 
