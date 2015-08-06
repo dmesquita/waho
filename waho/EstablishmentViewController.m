@@ -166,7 +166,7 @@
         [self likePlace:place];
     } else {
         // show the signup or login page
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
         [logInViewController setDelegate:self];
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
@@ -190,7 +190,7 @@
         [self visitPlace:place];
     } else {
         // show the signup or login page
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
         [logInViewController setDelegate:self];
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }

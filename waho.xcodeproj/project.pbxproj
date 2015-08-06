@@ -55,6 +55,7 @@
 		42E4C5901B2E5337002F79E2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C58F1B2E5337002F79E2 /* FBSDKCoreKit.framework */; };
 		42E4C5921B2E5355002F79E2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */; };
 		42E4C5941B2E5363002F79E2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */; };
+		42E5370D1B738D8100A42C27 /* MyLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E5370C1B738D8100A42C27 /* MyLoginViewController.m */; };
 		42E5ED3F1B40935400815B4E /* bandeirinha verde cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5ED3E1B40935400815B4E /* bandeirinha verde cheia.png */; };
 		42E5ED411B40940A00815B4E /* bandeirinha verde vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5ED401B40940A00815B4E /* bandeirinha verde vazia.png */; };
 		42E5ED431B40AE6D00815B4E /* artesanato check.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5ED421B40AE6D00815B4E /* artesanato check.png */; };
@@ -145,6 +146,8 @@
 		42E4C58F1B2E5337002F79E2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		42E4C5911B2E5355002F79E2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		42E4C5931B2E5363002F79E2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		42E5370B1B738D8100A42C27 /* MyLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLoginViewController.h; sourceTree = "<group>"; };
+		42E5370C1B738D8100A42C27 /* MyLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLoginViewController.m; sourceTree = "<group>"; };
 		42E5ED3E1B40935400815B4E /* bandeirinha verde cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha verde cheia.png"; sourceTree = "<group>"; };
 		42E5ED401B40940A00815B4E /* bandeirinha verde vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha verde vazia.png"; sourceTree = "<group>"; };
 		42E5ED421B40AE6D00815B4E /* artesanato check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "artesanato check.png"; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 				B9F430791B2F5EEC007CB828 /* SaveEstablishmentTableViewController.h */,
 				B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */,
 				499CEC991B2B36AC00DF341A /* Main.storyboard */,
+				42E5370B1B738D8100A42C27 /* MyLoginViewController.h */,
+				42E5370C1B738D8100A42C27 /* MyLoginViewController.m */,
 				42023E2F1B703D2D00EF967E /* MainTabBarViewController.h */,
 				42023E301B703D2D00EF967E /* MainTabBarViewController.m */,
 				42AE1FAC1B5B02DB00169DAF /* ListViewCell.xib */,
@@ -525,6 +530,7 @@
 				420172CD1B58645000019518 /* TableListViewController.m in Sources */,
 				42B803961B41B44A00F281D4 /* ViewController.m in Sources */,
 				42E0F0101B333D4B00DA42DF /* LogInViewController.m in Sources */,
+				42E5370D1B738D8100A42C27 /* MyLoginViewController.m in Sources */,
 				499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */,
 				B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */,
 				499CEC921B2B36AC00DF341A /* main.m in Sources */,

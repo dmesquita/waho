@@ -55,11 +55,6 @@
     containerList.hidden = true;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    //containerMap.hidden = false;
-    //containerList.hidden = true;
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

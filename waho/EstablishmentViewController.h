@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
-#import "LogInViewController.h"
+#import "MyLoginViewController.h"
 #import "iCarousel.h"
 
 @interface EstablishmentViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, iCarouselDataSource, iCarouselDelegate>

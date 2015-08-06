@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     tableView.delegate = self;
     tableView.dataSource = self;
-    //[PFUser logOut];
+    [PFUser logOut];
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
                                 [UIColor blackColor], NSForegroundColorAttributeName, nil];
     [_segmentedControlMap setTitleTextAttributes:attributes forState:UIControlStateSelected];
@@ -176,26 +176,6 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooooops!" message:@"Erro ao carregar locais" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
 }
-
-- (IBAction)valueChangedMap:(UISegmentedControl *)sender {
-    switch (sender.selectedSegmentIndex) {
-            //map
-        case 0:
-            self.mapView.hidden = NO;
-            self.listEstablishmentView.hidden = YES;
-            break;
-            
-            //list establishment
-        case 1:
-            self.mapView.hidden = YES;
-            self.listEstablishmentView.hidden = NO;
-            break;
-            
-        default:
-            break;
-    }
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
