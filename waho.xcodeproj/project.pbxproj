@@ -17,6 +17,8 @@
 		423E1D991B3766B800BEA446 /* terra vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D981B3766B800BEA446 /* terra vazia.png */; };
 		428830821B38447F004FCAB3 /* bandeirinha vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 428830811B38447F004FCAB3 /* bandeirinha vazia.png */; };
 		428830841B388509004FCAB3 /* xib.png in Resources */ = {isa = PBXBuildFile; fileRef = 428830831B388509004FCAB3 /* xib.png */; };
+		42945BC11B76C8F900450360 /* FavViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42945BC01B76C8F900450360 /* FavViewCell.xib */; };
+		42945BC41B76CA5600450360 /* MyFavViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42945BC31B76CA5600450360 /* MyFavViewCell.m */; };
 		42AE1FAD1B5B02DB00169DAF /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42AE1FAC1B5B02DB00169DAF /* ListViewCell.xib */; };
 		42B803901B41B21A00F281D4 /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B8038C1B41B21A00F281D4 /* startButton.png */; };
 		42B803911B41B21A00F281D4 /* imagem2.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B8038D1B41B21A00F281D4 /* imagem2.png */; };
@@ -105,6 +107,9 @@
 		423E1D981B3766B800BEA446 /* terra vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra vazia.png"; sourceTree = "<group>"; };
 		428830811B38447F004FCAB3 /* bandeirinha vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha vazia.png"; sourceTree = "<group>"; };
 		428830831B388509004FCAB3 /* xib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xib.png; sourceTree = "<group>"; };
+		42945BC01B76C8F900450360 /* FavViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavViewCell.xib; sourceTree = "<group>"; };
+		42945BC21B76CA5600450360 /* MyFavViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFavViewCell.h; sourceTree = "<group>"; };
+		42945BC31B76CA5600450360 /* MyFavViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFavViewCell.m; sourceTree = "<group>"; };
 		42AE1FAC1B5B02DB00169DAF /* ListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
 		42B8038C1B41B21A00F281D4 /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton.png; sourceTree = "<group>"; };
 		42B8038D1B41B21A00F281D4 /* imagem2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagem2.png; sourceTree = "<group>"; };
@@ -379,6 +384,9 @@
 				42B803971B41B4D800F281D4 /* PageContentViewController.h */,
 				42B803981B41B4D800F281D4 /* PageContentViewController.m */,
 				499CEC9C1B2B36AC00DF341A /* Images.xcassets */,
+				42945BC01B76C8F900450360 /* FavViewCell.xib */,
+				42945BC21B76CA5600450360 /* MyFavViewCell.h */,
+				42945BC31B76CA5600450360 /* MyFavViewCell.m */,
 				499CEC9E1B2B36AC00DF341A /* LaunchScreen.xib */,
 				499CEC8F1B2B36AC00DF341A /* Supporting Files */,
 			);
@@ -515,6 +523,7 @@
 				423E1D971B374B3900BEA446 /* faixa.png in Resources */,
 				42E73A7E1B388B94003E466C /* Comfortaa-Regular.ttf in Resources */,
 				42DF517F1B3091FC00CF0DE2 /* pin.png in Resources */,
+				42945BC11B76C8F900450360 /* FavViewCell.xib in Resources */,
 				42B803921B41B21A00F281D4 /* imagem.png in Resources */,
 				42C1F3EF1B37691500C71D23 /* terra vazia2.png in Resources */,
 				499CEC9D1B2B36AC00DF341A /* Images.xcassets in Resources */,
@@ -547,6 +556,7 @@
 				42023E311B703D2D00EF967E /* MainTabBarViewController.m in Sources */,
 				42DF57AC1B6586CA00C2ABF6 /* iCarousel.m in Sources */,
 				42DF517A1B308F2300CF0DE2 /* MapViewController.m in Sources */,
+				42945BC41B76CA5600450360 /* MyFavViewCell.m in Sources */,
 				420172D01B5879D400019518 /* PlacesFromParse.m in Sources */,
 				42DF517D1B308F7900CF0DE2 /* MyCustomAnnotation.m in Sources */,
 				4223F6271B41BE7C003E0632 /* TabBarViewController.m in Sources */,

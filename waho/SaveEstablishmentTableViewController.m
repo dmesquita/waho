@@ -95,9 +95,68 @@
     PFFile *imageFile = [favoriteImages objectAtIndex:indexPath.row];
     placeImageView.file = imageFile;
     [placeImageView loadInBackground];
+    UIImageView *imgCategory = (UIImageView *)[cell viewWithTag:103];
+    
+    if([[favoritePlaces objectAtIndex:indexPath.row][@"categoria"]  isEqual: @"Feira"]){
+        imgCategory.image = [UIImage imageNamed:@"icone feira"];
+    }else if([[self.favoritePlaces objectAtIndex:indexPath.row][@"categoria"]  isEqual: @"Mercado"]){
+        imgCategory.image= [UIImage imageNamed:@"icone artesanato"];
+    }else if([[self.favoritePlaces objectAtIndex:indexPath.row][@"categoria"]  isEqual: @"Restaurante"]){
+        imgCategory.image = [UIImage imageNamed:@"icone restaurante"];
+    }
     
     return cell;
+     
+    /**
+    MyFavViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"favCell"];
+    
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        [tableView registerNib:[UINib nibWithNibName:@"FavViewCell" bundle:nil ] forCellReuseIdentifier:@"favell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"favCell"];
+        //cell.lbTitlePlace = [self.items objectAtIndex:indexPath.row];
+        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    //cell.textLabel.text = [self.items objectAtIndex:indexPath.row];
+    return cell;
+    **/
+}
+/**
+- (void)tableView:(UITableView *)tableView willDisplayCell:(MyFavViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.lblPlace.text = [self.favoritePlaces objectAtIndex:indexPath.row][@"name"];
+    PFFile *imageFile = [self.favoritePlaces objectAtIndex:indexPath.row][@"pictureSombra"];
+    cell.imgFav.file = imageFile;
+    [cell.imgFav loadInBackground];
+**/
+
+    /* Category icon */
+/**
+    if([[self.favoritePlaces objectAtIndex:indexPath.row][@"categoria"]  isEqual: @"Feira"]){
+        cell.imgIcon.image = [UIImage imageNamed:@"icone feira"];
+    }else if([[self.favoritePlaces objectAtIndex:indexPath.row][@"categoria"]  isEqual: @"Mercado"]){
+        cell.imgIcon.image = [UIImage imageNamed:@"icone artesanato"];
+    }else if([[self.favoritePlaces objectAtIndex:indexPath.row][@"categoria"]  isEqual: @"Restaurante"]){
+        cell.imgIcon.image = [UIImage imageNamed:@"icone restaurante"];
+    }    
 }
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 175;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"oi gente");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    EstablishmentViewController *establishmentVC = (EstablishmentViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Establishment"];
+    establishmentVC.place = [self.favoritePlaces objectAtIndex:indexPath.row];
+    establishmentVC.favoritedPlaces = [[PlacesFromParse sharedPlacesFromParse]favoritedPlaces];
+    establishmentVC.visitedPlaces = [[PlacesFromParse sharedPlacesFromParse]visitedPlaces];
+    [self.navigationController pushViewController:establishmentVC animated:YES];
+}
+**/
 
 @end

@@ -12,6 +12,7 @@
 #import "MapViewController.h"
 #import "EstablishmentViewController.h"
 #import "PlacesFromParse.h"
+#import "MyFavViewCell.h"
 
 @interface SaveEstablishmentTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
