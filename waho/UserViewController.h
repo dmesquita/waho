@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
 #import "MyLoginViewController.h"
-#import <MessageUI/MessageUI.h> 
+#import "MySignUpViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface UserViewController : UIViewController
+@interface UserViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MFMailComposeViewControllerDelegate, UITabBarControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *lblNome;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmail;
 @property (weak, nonatomic) IBOutlet UIButton *btRecomendarLocal;

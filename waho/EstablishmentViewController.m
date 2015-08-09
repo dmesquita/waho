@@ -284,7 +284,7 @@
 
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
-    [self dismissModalViewControllerAnimated:YES]; // Dismiss the PFSignUpViewController
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 // Sent to the delegate when the sign up attempt fails.

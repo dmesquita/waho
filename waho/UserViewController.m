@@ -28,9 +28,53 @@
         // show the signup or login page
         PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
         [logInViewController setDelegate:self];
+        
+        PFSignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
+        [signUpViewController setDelegate:self];
+        
+        // Assign our sign up controller to be displayed from the login controller
+        [logInViewController setSignUpController:signUpViewController];
+        
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
+    
+    UITabBarController *tabBarController = (UITabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController ;
+    
+    [tabBarController setDelegate:self];
 }
+
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    if (tabBarController.selectedIndex == 2){
+        PFUser *userF = [PFUser currentUser];
+        //[PFUser logOut];
+        if (userF) {
+            lblNome.text = userF[@"username"];
+            lblEmail.text = userF[@"email"];
+        } else {
+            // show the signup or login page
+            PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
+            [logInViewController setDelegate:self];
+            
+            PFSignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
+            [signUpViewController setDelegate:self];
+            
+            // Assign our sign up controller to be displayed from the login controller
+            [logInViewController setSignUpController:signUpViewController];
+            
+            [self presentViewController:logInViewController animated:YES completion:NULL];
+        }
+    }    
+}
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    NSLog(@"logou eh tetraaa");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)logoffClick:(UIButton *)sender {
     [PFUser logOut];
     [self logoffMessage];

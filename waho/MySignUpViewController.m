@@ -1,28 +1,24 @@
 //
-//  MyLoginViewController.m
+//  MySignUpViewController.m
 //  waho
 //
-//  Created by Déborah Mesquita on 06/08/15.
+//  Created by Déborah Mesquita on 09/08/15.
 //  Copyright (c) 2015 Miguel Araújo. All rights reserved.
 //
 
-#import "MyLoginViewController.h"
+#import "MySignUpViewController.h"
 
-@interface MyLoginViewController ()
-@property (nonatomic, strong) UIImageView *fieldsBackground;
+@interface MySignUpViewController ()
+
 @end
 
-@implementation MyLoginViewController
-
-@synthesize fieldsBackground;
+@implementation MySignUpViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
     
-    [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"waho text"]]];
-    [self.logInView.signUpButton setTitle:@"Cadastrar" forState:UIControlStateNormal];
-    [self.logInView.signUpButton setTitle:@"Cadastrar" forState:UIControlStateHighlighted];
-    
+     [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"waho text"]]];
 }
 
 - (void)didReceiveMemoryWarning {

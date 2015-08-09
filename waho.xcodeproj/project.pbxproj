@@ -17,6 +17,7 @@
 		423E1D991B3766B800BEA446 /* terra vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 423E1D981B3766B800BEA446 /* terra vazia.png */; };
 		428830821B38447F004FCAB3 /* bandeirinha vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 428830811B38447F004FCAB3 /* bandeirinha vazia.png */; };
 		428830841B388509004FCAB3 /* xib.png in Resources */ = {isa = PBXBuildFile; fileRef = 428830831B388509004FCAB3 /* xib.png */; };
+		42945BC71B7703E000450360 /* MySignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42945BC61B7703E000450360 /* MySignUpViewController.m */; };
 		42AE1FAD1B5B02DB00169DAF /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42AE1FAC1B5B02DB00169DAF /* ListViewCell.xib */; };
 		42B803901B41B21A00F281D4 /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B8038C1B41B21A00F281D4 /* startButton.png */; };
 		42B803911B41B21A00F281D4 /* imagem2.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B8038D1B41B21A00F281D4 /* imagem2.png */; };
@@ -105,6 +106,8 @@
 		423E1D981B3766B800BEA446 /* terra vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terra vazia.png"; sourceTree = "<group>"; };
 		428830811B38447F004FCAB3 /* bandeirinha vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bandeirinha vazia.png"; sourceTree = "<group>"; };
 		428830831B388509004FCAB3 /* xib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xib.png; sourceTree = "<group>"; };
+		42945BC51B7703E000450360 /* MySignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySignUpViewController.h; sourceTree = "<group>"; };
+		42945BC61B7703E000450360 /* MySignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySignUpViewController.m; sourceTree = "<group>"; };
 		42AE1FAC1B5B02DB00169DAF /* ListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
 		42B8038C1B41B21A00F281D4 /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton.png; sourceTree = "<group>"; };
 		42B8038D1B41B21A00F281D4 /* imagem2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagem2.png; sourceTree = "<group>"; };
@@ -359,6 +362,8 @@
 				42E5370F1B73978E00A42C27 /* UserViewController.m */,
 				42E5370B1B738D8100A42C27 /* MyLoginViewController.h */,
 				42E5370C1B738D8100A42C27 /* MyLoginViewController.m */,
+				42945BC51B7703E000450360 /* MySignUpViewController.h */,
+				42945BC61B7703E000450360 /* MySignUpViewController.m */,
 				42023E2F1B703D2D00EF967E /* MainTabBarViewController.h */,
 				42023E301B703D2D00EF967E /* MainTabBarViewController.m */,
 				42AE1FAC1B5B02DB00169DAF /* ListViewCell.xib */,
@@ -553,6 +558,7 @@
 				420172CA1B5850AC00019518 /* MapAndListContainerViewController.m in Sources */,
 				42E8A6E61B5C225500B37429 /* ListViewTableViewCell.m in Sources */,
 				42B803991B41B4D800F281D4 /* PageContentViewController.m in Sources */,
+				42945BC71B7703E000450360 /* MySignUpViewController.m in Sources */,
 				B9F4307B1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
