@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"artesanato"]]];
+    [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"waho pequeno"]]];
     
 }
 

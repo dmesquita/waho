@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblNome;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmail;
 @property (weak, nonatomic) IBOutlet UIButton *btRecomendarLocal;
+@property (weak, nonatomic) IBOutlet UIButton *btLogoff;
 
 @end

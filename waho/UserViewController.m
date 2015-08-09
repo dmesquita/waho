@@ -31,6 +31,11 @@
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
 }
+- (IBAction)logoffClick:(UIButton *)sender {
+    [PFUser logOut];
+    [self logoffMessage];
+}
+
 - (IBAction)recomendarLocal:(UIButton *)sender {
     if ([MFMailComposeViewController canSendMail]){
     // To address
@@ -73,6 +78,11 @@
 
 - (void) emailFail{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Eitaaa!" message:@"Você precisa estar logado no app de emails do iPhone!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
+- (void) logoffMessage{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Logout" message:@"Logout efetuado com sucesso (feche o app para atualizar)" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
 }
 
