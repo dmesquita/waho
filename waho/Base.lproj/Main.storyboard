@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5DW-Td-SPd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5DW-Td-SPd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -161,13 +161,6 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faixa curvada" translatesAutoresizingMaskIntoConstraints="NO" id="nNA-s3-Syj">
-                                                <rect key="frame" x="0.0" y="150" width="375" height="24"/>
-                                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="24" id="GSU-If-93F"/>
-                                                </constraints>
-                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPy-Qa-85R">
                                                 <rect key="frame" x="311" y="146" width="20" height="40"/>
                                                 <constraints>
@@ -204,6 +197,13 @@
                                                 <rect key="frame" x="17" y="514" width="350" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faixa curvada" translatesAutoresizingMaskIntoConstraints="NO" id="nNA-s3-Syj">
+                                                <rect key="frame" x="5" y="154" width="375" height="24"/>
+                                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="GSU-If-93F"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -216,16 +216,16 @@
                                             <constraint firstItem="ALz-vU-Lky" firstAttribute="leading" secondItem="KC8-3d-Skd" secondAttribute="leading" constant="24" id="F9J-q6-Ncj"/>
                                             <constraint firstItem="pRv-q3-Qf1" firstAttribute="top" secondItem="KC8-3d-Skd" secondAttribute="top" id="FAj-Xh-sGs"/>
                                             <constraint firstAttribute="trailing" secondItem="pRv-q3-Qf1" secondAttribute="trailing" id="Fb2-Lb-o6q"/>
-                                            <constraint firstItem="pRv-q3-Qf1" firstAttribute="centerX" secondItem="nNA-s3-Syj" secondAttribute="centerX" id="GZj-Cl-qDb"/>
+                                            <constraint firstItem="pRv-q3-Qf1" firstAttribute="centerX" secondItem="nNA-s3-Syj" secondAttribute="centerX" constant="-5" id="GZj-Cl-qDb"/>
                                             <constraint firstItem="pdw-VT-RnH" firstAttribute="centerX" secondItem="vv1-7V-XTo" secondAttribute="centerX" constant="3.5" id="HYg-oI-6EE"/>
                                             <constraint firstItem="3mG-EX-Gdd" firstAttribute="top" secondItem="ALz-vU-Lky" secondAttribute="bottom" constant="23" id="IPH-t7-2Qu"/>
                                             <constraint firstItem="ALz-vU-Lky" firstAttribute="top" secondItem="pRv-q3-Qf1" secondAttribute="bottom" constant="19" id="MUe-S0-XY7"/>
                                             <constraint firstAttribute="trailing" secondItem="gPy-Qa-85R" secondAttribute="trailing" constant="44" id="Q3E-fn-ZxA"/>
                                             <constraint firstItem="ALz-vU-Lky" firstAttribute="centerX" secondItem="3mG-EX-Gdd" secondAttribute="centerX" id="RZr-6d-RLe"/>
                                             <constraint firstAttribute="height" constant="1000" id="ftI-lz-APv"/>
-                                            <constraint firstItem="ALz-vU-Lky" firstAttribute="top" secondItem="nNA-s3-Syj" secondAttribute="bottom" constant="20" id="gzL-b5-JSk"/>
+                                            <constraint firstItem="ALz-vU-Lky" firstAttribute="top" secondItem="nNA-s3-Syj" secondAttribute="bottom" constant="16" id="gzL-b5-JSk"/>
                                             <constraint firstItem="pdw-VT-RnH" firstAttribute="top" secondItem="3mG-EX-Gdd" secondAttribute="bottom" constant="8" symbolic="YES" id="qGD-Bz-j0d"/>
-                                            <constraint firstItem="nNA-s3-Syj" firstAttribute="leading" secondItem="KC8-3d-Skd" secondAttribute="leading" id="uBd-r5-kCe"/>
+                                            <constraint firstItem="nNA-s3-Syj" firstAttribute="leading" secondItem="KC8-3d-Skd" secondAttribute="leading" constant="5" id="uBd-r5-kCe"/>
                                         </constraints>
                                     </view>
                                 </subviews>
