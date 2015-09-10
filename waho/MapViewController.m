@@ -18,7 +18,6 @@
 @synthesize mapView;
 @synthesize placesArray, favoritedPlaces, visitedPlaces, tableView;
 
-
 - (void)viewDidLoad {
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -79,7 +78,9 @@
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    if(self.userLocationShown) return ;
     [self.mapView setRegion:MKCoordinateRegionMake([self.locationManager location].coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+    self.userLocationShown = YES ;
     
 }
 

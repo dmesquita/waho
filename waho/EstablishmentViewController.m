@@ -36,7 +36,9 @@
     PFFile *imageFile = thisPlace[@"picture1"];
     imgPerson.file = imageFile;
     
-    [imgPerson loadInBackground];
+    [imgPerson loadInBackground:^(UIImage *image, NSError *error){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
     PFFile *imageFile2 = thisPlace[@"picture2"];
     PFFile *imageFile3 = thisPlace[@"picture3"];
     pictures = @[imageFile2, imageFile3];
@@ -44,6 +46,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES]; // loading animation
+    
     [self showEstablishmentData:place];
     
     //create carousel

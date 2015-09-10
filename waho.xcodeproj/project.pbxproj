@@ -65,6 +65,9 @@
 		62594AC91BA123FA00A07411 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 625949D51BA123F900A07411 /* README.txt */; };
 		62594B601BA124BA00A07411 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5891B2E4AD4002F79E2 /* libsqlite3.dylib */; };
 		62594B611BA124C000A07411 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E4C5871B2E4ACB002F79E2 /* libz.dylib */; };
+		62594B7A1BA12EB100A07411 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62594B771BA12E7A00A07411 /* libMBProgressHUD.a */; };
+		62594B801BA12F3A00A07411 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62594B7F1BA12F3A00A07411 /* Foundation.framework */; };
+		62594B811BA12F5200A07411 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49543A8D1B2B68E4005E9164 /* UIKit.framework */; };
 		B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A952281B2B776100485EC8 /* EstablishmentViewController.m */; };
 		B9F4307B1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F4307A1B2F5EEC007CB828 /* SaveEstablishmentTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -76,6 +79,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 499CEC8B1B2B36AC00DF341A;
 			remoteInfo = waho;
+		};
+		62594B761BA12E7A00A07411 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62594B711BA12E7A00A07411 /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D286A7491518C70F00E13FB8;
+			remoteInfo = "MBProgressHUD Static Library";
+		};
+		62594B781BA12E7A00A07411 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62594B711BA12E7A00A07411 /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D104D7A1ACA36CC00973364;
+			remoteInfo = "MBProgressHUD Framework";
+		};
+		62594B7B1BA12EC000A07411 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62594B711BA12E7A00A07411 /* MBProgressHUD.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D286A7481518C70F00E13FB8;
+			remoteInfo = "MBProgressHUD Static Library";
+		};
+		62594B7D1BA12EC000A07411 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62594B711BA12E7A00A07411 /* MBProgressHUD.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D104D791ACA36CC00973364;
+			remoteInfo = "MBProgressHUD Framework";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -161,6 +192,8 @@
 		625949D31BA123F900A07411 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		625949D41BA123F900A07411 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		625949D51BA123F900A07411 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		62594B711BA12E7A00A07411 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = "../../Downloads/MBProgressHUD-master/MBProgressHUD.xcodeproj"; sourceTree = "<group>"; };
+		62594B7F1BA12F3A00A07411 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B9A952211B2B5F5100485EC8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B9A952231B2B5F5A00485EC8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B9A952251B2B5F7E00485EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -175,6 +208,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62594B811BA12F5200A07411 /* UIKit.framework in Frameworks */,
+				62594B801BA12F3A00A07411 /* Foundation.framework in Frameworks */,
+				62594B7A1BA12EB100A07411 /* libMBProgressHUD.a in Frameworks */,
 				62594B611BA124C000A07411 /* libz.dylib in Frameworks */,
 				62594B601BA124BA00A07411 /* libsqlite3.dylib in Frameworks */,
 				625949B91BA1223600A07411 /* Bolts.framework in Frameworks */,
@@ -236,6 +272,8 @@
 		49543A8C1B2B68DB005E9164 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62594B7F1BA12F3A00A07411 /* Foundation.framework */,
+				62594B711BA12E7A00A07411 /* MBProgressHUD.xcodeproj */,
 				42E537111B739FB100A42C27 /* MessageUI.framework */,
 				42DF57A91B6586CA00C2ABF6 /* iCarousel */,
 				B9A952251B2B5F7E00485EC8 /* UIKit.framework */,
@@ -508,6 +546,15 @@
 			name = PageContent;
 			sourceTree = "<group>";
 		};
+		62594B721BA12E7A00A07411 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62594B771BA12E7A00A07411 /* libMBProgressHUD.a */,
+				62594B791BA12E7A00A07411 /* MBProgressHUD.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -522,6 +569,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				62594B7C1BA12EC000A07411 /* PBXTargetDependency */,
+				62594B7E1BA12EC000A07411 /* PBXTargetDependency */,
 			);
 			name = waho;
 			productName = waho;
@@ -576,6 +625,12 @@
 			mainGroup = 499CEC831B2B36AC00DF341A;
 			productRefGroup = 499CEC8D1B2B36AC00DF341A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 62594B721BA12E7A00A07411 /* Products */;
+					ProjectRef = 62594B711BA12E7A00A07411 /* MBProgressHUD.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				499CEC8B1B2B36AC00DF341A /* waho */,
@@ -583,6 +638,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		62594B771BA12E7A00A07411 /* libMBProgressHUD.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMBProgressHUD.a;
+			remoteRef = 62594B761BA12E7A00A07411 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		62594B791BA12E7A00A07411 /* MBProgressHUD.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MBProgressHUD.framework;
+			remoteRef = 62594B781BA12E7A00A07411 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		499CEC8A1B2B36AC00DF341A /* Resources */ = {
@@ -657,6 +729,16 @@
 			isa = PBXTargetDependency;
 			target = 499CEC8B1B2B36AC00DF341A /* waho */;
 			targetProxy = 499CECA61B2B36AC00DF341A /* PBXContainerItemProxy */;
+		};
+		62594B7C1BA12EC000A07411 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MBProgressHUD Static Library";
+			targetProxy = 62594B7B1BA12EC000A07411 /* PBXContainerItemProxy */;
+		};
+		62594B7E1BA12EC000A07411 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MBProgressHUD Framework";
+			targetProxy = 62594B7D1BA12EC000A07411 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

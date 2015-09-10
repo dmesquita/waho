@@ -20,6 +20,7 @@
 @property(nonatomic) NSArray *placesArray;
 @property(nonatomic) NSMutableArray *favoritedPlaces;
 @property(nonatomic) NSMutableArray *visitedPlaces;
+@property(nonatomic) BOOL userLocationShown ; // Check if already loaded the location
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoadingMarkers;
 @property (weak, nonatomic) IBOutlet UITableView *listEstablishmentView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlMap;
