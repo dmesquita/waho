@@ -161,19 +161,6 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPy-Qa-85R">
-                                                <rect key="frame" x="311" y="146" width="20" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="A3b-a6-ZkE"/>
-                                                    <constraint firstAttribute="height" constant="40" id="M3r-4w-y3F"/>
-                                                </constraints>
-                                                <state key="normal">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="favoritarNovo:" destination="zpd-wd-7Up" eventType="touchUpInside" id="ACI-Lz-qii"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALz-vU-Lky">
                                                 <rect key="frame" x="24" y="194" width="343" height="21"/>
                                                 <constraints>
@@ -204,6 +191,19 @@
                                                     <constraint firstAttribute="height" constant="24" id="GSU-If-93F"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPy-Qa-85R">
+                                                <rect key="frame" x="311" y="146" width="20" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="A3b-a6-ZkE"/>
+                                                    <constraint firstAttribute="height" constant="40" id="M3r-4w-y3F"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="favoritarNovo:" destination="zpd-wd-7Up" eventType="touchUpInside" id="ACI-Lz-qii"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -341,10 +341,10 @@
             </objects>
             <point key="canvasLocation" x="-731.5" y="317.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Tuts-->
         <scene sceneID="vFf-2f-G2p">
             <objects>
-                <viewController id="awG-d1-Kd4" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Tuts" id="awG-d1-Kd4" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oXu-QD-mEV"/>
                         <viewControllerLayoutGuide type="bottom" id="ryf-Ob-RPe"/>
@@ -360,10 +360,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="startWalkthrough:" destination="awG-d1-Kd4" eventType="touchUpInside" id="A6L-eC-ncu"/>
-                                    <segue destination="5DW-Td-SPd" kind="modal" modalTransitionStyle="coverVertical" id="fbT-Tt-0cZ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

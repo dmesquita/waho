@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 #import "Parse/Parse.h"
 #import "ParseUI/ParseUI.h"
 #import "PlacesFromParse.h"

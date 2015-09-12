@@ -14,7 +14,6 @@
 
 @implementation MapViewController
 
-@synthesize activityLoadingMarkers;
 @synthesize mapView;
 @synthesize placesArray, favoritedPlaces, visitedPlaces, tableView;
 
@@ -41,7 +40,7 @@
     
     CLLocation *location = [self.locationManager location];
     
-    [activityLoadingMarkers startAnimating];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];    
     
     
     // --- Loading markers ---
@@ -64,8 +63,7 @@
                 
                 [mapView addAnnotation:annotationPointCustom];
             };[tableView reloadData];
-            activityLoadingMarkers.hidesWhenStopped = true;
-            [activityLoadingMarkers stopAnimating];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         } else {
             [self loadMarkersFail];
             NSLog(@"Erro ao carregar marcadores");

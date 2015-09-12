@@ -18,7 +18,7 @@
     static PlacesFromParse *sharedPlacesFromParse = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedPlacesFromParse= [[self alloc] init];
+        sharedPlacesFromParse = [[self alloc] init];
     });
     return sharedPlacesFromParse;
 }

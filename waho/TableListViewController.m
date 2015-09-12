@@ -26,10 +26,12 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     NSLog(@"esta no loop de estabelecimentos");
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES]; // loading animation
     placesArray = [[PlacesFromParse sharedPlacesFromParse]placesArray];
     for (int i = 0; i < [placesArray count]; i++){
         NSLog(@"esta no loop de estabelecimentos");
     }
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
