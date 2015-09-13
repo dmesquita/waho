@@ -41,7 +41,8 @@
     [self.tableView reloadData];
     
     //Get visited Places
-    visitedPlaces = [[PlacesFromParse sharedPlacesFromParse]visitedPlaces];    
+    visitedPlaces = [[PlacesFromParse sharedPlacesFromParse]visitedPlaces];
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -35,7 +35,23 @@
     }
 }
 
-- (void)viewDidLoad {    
+- (void)viewDidLoad {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ( [defaults integerForKey:@"view_tuts"] == nil ) {
+            [defaults setInteger:0 forKey:@"view_tuts"];
+            [defaults synchronize];
+    }
+    
+    if ( [defaults integerForKey:@"view_tuts"] == 0 ) {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"Tuts"];
+        [self.parentViewController presentViewController:vc animated:YES completion:nil];
+        [defaults setInteger:1 forKey:@"view_tuts"];
+        [defaults synchronize];
+    }
+    
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
                                 [UIColor whiteColor], NSForegroundColorAttributeName, nil];
     NSDictionary *attributesSelected = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
@@ -50,6 +66,7 @@
     UITabBarController *tabBarController = (UITabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController ;
     
     [tabBarController setDelegate:self];
+    
 }
 
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
@@ -62,15 +79,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
