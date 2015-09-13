@@ -7,6 +7,7 @@
 //
 
 #import "MainTabBarViewController.h"
+#import "ViewController.h"
 
 @interface MainTabBarViewController ()
 
@@ -16,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

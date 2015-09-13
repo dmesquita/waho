@@ -29,6 +29,9 @@
         PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
         [logInViewController setDelegate:self];
         
+        [logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
+        
+        
         PFSignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
         [signUpViewController setDelegate:self];
         
@@ -41,6 +44,8 @@
     UITabBarController *tabBarController = (UITabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController ;
     
     [tabBarController setDelegate:self];
+    [tabBarController setSelectedIndex:2] ;
+
 }
 
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {

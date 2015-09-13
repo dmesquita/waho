@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "TabViewController.h"
+#import "ViewController.h"
+
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -25,10 +27,6 @@
     
         [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(16452420)];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    TabViewController *tabBarVC = (TabViewController *)[storyboard instantiateViewControllerWithIdentifier:@"tabBar"];
-    
         //Customizing tabBarController
         UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
         UITabBar *tabBar = tabBarController.tabBar;
@@ -36,10 +34,16 @@
         // repeat for every tab, but increment the index each time
         UITabBarItem *firstTab = [tabBar.items objectAtIndex:0];
         UITabBarItem *secondTab = [tabBar.items objectAtIndex:1];
+        UITabBarItem *thirdTab = [tabBar.items objectAtIndex:2];
     
         // also repeat for every tab
         firstTab.image = [[UIImage imageNamed:@"terra"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
         firstTab.selectedImage = [[UIImage imageNamed:@"terra_cheia"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+        thirdTab.image = [[UIImage imageNamed:@"Me"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+        thirdTab.selectedImage = [[UIImage imageNamed:@"Me_cheio"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+    
     
         // also repeat for every tab
         secondTab.image = [[UIImage imageNamed:@"bandeira_vazia"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
@@ -80,9 +84,18 @@
     pageControl.pageIndicatorTintColor = [UIColor blackColor];
     pageControl.currentPageIndicatorTintColor = [UIColor colorWithRed:251.0/255.0 green:11.0/255.0 blue:68.0/255.0 alpha:1.0];
     pageControl.backgroundColor = [UIColor clearColor];
-
     
-    return YES;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ( [defaults integerForKey:@"view_tuts"] != nil ) { // makes the tutorial load every time , remove this for load just the first time
+        [defaults setInteger:0 forKey:@"view_tuts"];
+        [defaults synchronize];
+    }
+    
+    [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
+    
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                    didFinishLaunchingWithOptions:launchOptions];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -100,11 +113,20 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation
+            ];
 }
 
 @end

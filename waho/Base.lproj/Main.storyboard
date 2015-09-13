@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5DW-Td-SPd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5DW-Td-SPd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -265,10 +265,10 @@
             </objects>
             <point key="canvasLocation" x="1017.5" y="-885"/>
         </scene>
-        <!--Map And List Container View Controller-->
+        <!--mapview-->
         <scene sceneID="Mpp-W2-PJ5">
             <objects>
-                <viewController id="Jch-xR-vmS" customClass="MapAndListContainerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapview" title="mapview" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jch-xR-vmS" customClass="MapAndListContainerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NlB-10-AbI"/>
                         <viewControllerLayoutGuide type="bottom" id="EDx-VA-pWS"/>
@@ -317,10 +317,10 @@
             </objects>
             <point key="canvasLocation" x="441.5" y="195.5"/>
         </scene>
-        <!--Main Tab Bar View Controller-->
+        <!--tabbar-->
         <scene sceneID="rf9-RZ-9Id">
             <objects>
-                <tabBarController storyboardIdentifier="tabBar" id="5DW-Td-SPd" customClass="MainTabBarViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" title="tabbar" id="5DW-Td-SPd" customClass="MainTabBarViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="WOk-uj-tta"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -344,7 +344,7 @@
         <!--Tuts-->
         <scene sceneID="vFf-2f-G2p">
             <objects>
-                <viewController title="Tuts" id="awG-d1-Kd4" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Tuts" title="Tuts" id="awG-d1-Kd4" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oXu-QD-mEV"/>
                         <viewControllerLayoutGuide type="bottom" id="ryf-Ob-RPe"/>
@@ -360,6 +360,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startWalkthrough:" destination="awG-d1-Kd4" eventType="touchUpInside" id="fcu-li-OK1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

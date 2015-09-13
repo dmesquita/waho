@@ -1,6 +1,0 @@
-framework module FBAudienceNetwork {
-  umbrella header "FBAudienceNetwork.h"
-
-  export *
-  module * { export * }
-}

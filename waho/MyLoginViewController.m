@@ -7,6 +7,7 @@
 //
 
 #import "MyLoginViewController.h"
+#import <ParseUI/PFLogInView.h>
 
 @interface MyLoginViewController ()
 @property (nonatomic, strong) UIImageView *fieldsBackground;
@@ -20,8 +21,11 @@
     [super viewDidLoad];
     
     [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"waho text"]]];
-    [self.logInView.signUpButton setTitle:@"Cadastrar" forState:UIControlStateNormal];
-    [self.logInView.signUpButton setTitle:@"Cadastrar" forState:UIControlStateHighlighted];
+    [self.logInView.logInButton setTitle:@"Entrar" forState:UIControlStateNormal];
+    self.logInView.usernameField.placeholder = @"Usuário" ;
+    self.logInView.passwordField.placeholder = @"******" ;
+    [self.logInView.passwordForgottenButton setTitle:@"Esqueceu a senha?" forState:UIControlStateNormal];
+    self.logInView.signUpButton.titleLabel.text = @"Cadastrar-se" ;
     
 }
 
