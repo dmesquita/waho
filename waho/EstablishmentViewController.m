@@ -149,17 +149,38 @@
 
 
 - (void) likePlace:(PFObject *)object{
-    [object addUniqueObject:[[PFUser currentUser] objectId] forKey:@"favorites"];
-    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            NSLog(@"local favoritado!");
-            [favoritedPlaces addObject:place];
-            [self favoritedSuccess];
-        } else {
-            [self favoritedFail];
-            NSLog(@"Error: %@", error);
-        }
-    }];
+    if([favoritedPlaces containsObject:place]){
+        PFQuery *query = [PFQuery queryWithClassName:@"Place"];
+        [query whereKey:@"ObjectId" equalTo:place.objectId];
+        [query includeKey:@"favorites"] ;
+        [query whereKeyExists:[[PFUser currentUser] objectId]] ;
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            NSLog(@"ok , ne") ;
+            if (!error) {
+                // The find succeeded.
+                // Do something with the found objects
+                for (PFObject *object in objects) {
+                    [object deleteInBackground];
+                }
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+    } else {
+        [object addUniqueObject:[[PFUser currentUser] objectId] forKey:@"favorites"];
+        [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                NSLog(@"local favoritado!");
+                [favoritedPlaces addObject:place];
+                [self favoritedSuccess];
+            } else {
+                [self favoritedFail];
+                NSLog(@"Error: %@", error);
+            }
+        }];
+    }
 }
 
 - (IBAction)favoritarNovo:(UIButton *)sender {
@@ -173,6 +194,7 @@
         // show the signup or login page
         PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
         [logInViewController setDelegate:self];
+         [logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
 }

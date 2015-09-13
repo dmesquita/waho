@@ -29,6 +29,9 @@
         PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
         [logInViewController setDelegate:self];
         
+        [logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
+        
+        
         PFSignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
         [signUpViewController setDelegate:self];
         

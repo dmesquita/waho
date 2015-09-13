@@ -29,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
     savedEstablishments = [[NSMutableArray alloc] init];
     favoriteImages = [[NSMutableArray alloc] init];
     favoritePlaces = [[PlacesFromParse sharedPlacesFromParse]favoritedPlaces];
@@ -42,6 +43,25 @@
     
     //Get visited Places
     visitedPlaces = [[PlacesFromParse sharedPlacesFromParse]visitedPlaces];
+
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    savedEstablishments = [[NSMutableArray alloc] init];
+    favoriteImages = [[NSMutableArray alloc] init];
+    favoritePlaces = [[PlacesFromParse sharedPlacesFromParse]favoritedPlaces];
+    for (int i = 0; i < [favoritePlaces count]; i++){
+        NSString *nome = favoritePlaces[i][@"name"];
+        [savedEstablishments addObject:nome];
+        PFFile *imagem = favoritePlaces[i][@"pictureSalvos"];
+        [favoriteImages addObject:imagem];
+    };
+    [self.tableView reloadData];
+    
+    //Get visited Places
+    visitedPlaces = [[PlacesFromParse sharedPlacesFromParse]visitedPlaces];
+    NSLog(@"wtf" );
 
 }
 
