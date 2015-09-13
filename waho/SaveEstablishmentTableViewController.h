@@ -10,10 +10,13 @@
 #import "Parse/Parse.h"
 #import "ParseUI/ParseUI.h"
 #import "MapViewController.h"
+#import "MyLoginViewController.h"
+#import "MySignUpViewController.h"
+#import <MessageUI/MessageUI.h>
 #import "EstablishmentViewController.h"
 #import "PlacesFromParse.h"
 
-@interface SaveEstablishmentTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SaveEstablishmentTableViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate,UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *favoritePlaces;

@@ -15,9 +15,14 @@
 @implementation EstablishmentViewController
 @synthesize viewPrincipal, storyView, localView, lblFavoritado, lblName, txtStory, lblQuote, place, favoritedPlaces, visitedPlaces, imgPerson, btFavoritar, btVisitei, scrollView, pictures;
 
-- (void)changeFavButtonToSaved{
-    UIImage *bandeiraSalva = [UIImage imageNamed:@"bandeira_salvar"];
-    [btFavoritar setBackgroundImage:bandeiraSalva forState:UIControlStateNormal];
+- (void)changeFavButtonToSaved:(BOOL)reverse {
+    if ( reverse ) {
+        UIImage *bandeiraSalva = [UIImage imageNamed:@"bandeira_nao_salvo"];
+        [btFavoritar setBackgroundImage:bandeiraSalva forState:UIControlStateNormal];
+    } else {
+        UIImage *bandeiraSalva = [UIImage imageNamed:@"bandeira_salvar"];
+        [btFavoritar setBackgroundImage:bandeiraSalva forState:UIControlStateNormal];
+    }
 }
 
 - (void)showEstablishmentData:(PFObject *) thisPlace {
@@ -63,7 +68,7 @@
     
     
     if([favoritedPlaces containsObject:place]){
-        [self changeFavButtonToSaved];
+        [self changeFavButtonToSaved:NO];
     }else{
         UIImage *bandeiraSalva = [UIImage imageNamed:@"bandeira_nao_salvo"];
         [btFavoritar setBackgroundImage:bandeiraSalva forState:UIControlStateNormal];
@@ -151,18 +156,21 @@
 - (void) likePlace:(PFObject *)object{
     if([favoritedPlaces containsObject:place]){
         PFQuery *query = [PFQuery queryWithClassName:@"Place"];
-        [query whereKey:@"ObjectId" equalTo:place.objectId];
-        [query includeKey:@"favorites"] ;
-        [query whereKeyExists:[[PFUser currentUser] objectId]] ;
+        NSLog(@"%@" , place.objectId);
+        [query whereKey:@"objectId" equalTo:place.objectId];
         
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            NSLog(@"ok , ne") ;
             if (!error) {
                 // The find succeeded.
                 // Do something with the found objects
-                for (PFObject *object in objects) {
-                    [object deleteInBackground];
+                for (int i = 0; i <objects.count; i++) {
+                    NSLog(@"ok , ne") ;
+                    PFObject *event = [objects objectAtIndex:i];    // note using 'objects', not 'eventObjects'
+                    [event removeObject:[[PFUser currentUser] objectId] forKey:@"favorites"];
                 }
+                [PFObject saveAll:objects];
+                [favoritedPlaces removeObject:place] ;
+                [self changeFavButtonToSaved:YES];
             } else {
                 // Log details of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -200,7 +208,7 @@
 }
 
 - (void) favoritedSuccess{
-    [self changeFavButtonToSaved];
+    [self changeFavButtonToSaved:NO];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sucesso!" message:@"Local favoritado com sucesso" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
 }
