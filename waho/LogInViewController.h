@@ -11,6 +11,7 @@
 #import "ParseUI/ParseUI.h"
 #import "EstablishmentViewController.h"
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface LogInViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 

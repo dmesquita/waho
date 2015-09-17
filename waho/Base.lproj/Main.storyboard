@@ -356,7 +356,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDr-XN-Lp2">
                                 <rect key="frame" x="93" y="609" width="189" height="50"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="23"/>
-                                <state key="normal" title="Começar!" backgroundImage="startButton.png">
+                                <state key="normal" title="Começar!" backgroundImage="startButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -518,9 +518,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Frame usuário-câmera" translatesAutoresizingMaskIntoConstraints="NO" id="842-BC-YWd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="270"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Faça login no app!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OA5-pZ-KYT">
                                 <rect key="frame" x="45" y="381" width="278" height="21"/>
                                 <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="18"/>
@@ -544,8 +541,23 @@
                                     <action selector="recomendarLocal:" destination="NVQ-DR-kOQ" eventType="touchUpInside" id="GjK-DB-qan"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAD-Mu-M3O">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmX-SA-BSz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="248"/>
+                                <state key="normal" backgroundImage="Frame usuário-câmera">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickImage:" destination="NVQ-DR-kOQ" eventType="touchUpInside" id="Nmf-xc-bou"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Eu" id="elY-a9-TPt">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="jC4-uo-UKk">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qAD-Mu-M3O">
                                 <rect key="frame" x="335" y="72" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="logoff">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -553,15 +565,14 @@
                                     <action selector="logoffClick:" destination="NVQ-DR-kOQ" eventType="touchUpInside" id="USK-XX-8bG"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Eu" id="elY-a9-TPt"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btLogoff" destination="qAD-Mu-M3O" id="zSv-0G-Tym"/>
                         <outlet property="btRecomendarLocal" destination="wYl-5H-mKd" id="GoJ-9W-yGD"/>
                         <outlet property="lblEmail" destination="YBU-m9-XH6" id="2yA-Up-3XZ"/>
+                        <outlet property="lblImage" destination="zmX-SA-BSz" id="xhf-xh-ivB"/>
                         <outlet property="lblNome" destination="OA5-pZ-KYT" id="lyX-aT-hRH"/>
                     </connections>
                 </viewController>
@@ -616,7 +627,7 @@
         <image name="bandeira" width="25" height="25"/>
         <image name="faixa curvada" width="375" height="25"/>
         <image name="logoff" width="24" height="24"/>
-        <image name="startButton.png" width="378" height="99"/>
+        <image name="startButton" width="126" height="33"/>
         <image name="terra" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
