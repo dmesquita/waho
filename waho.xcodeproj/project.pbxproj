@@ -47,7 +47,6 @@
 		499CECA01B2B36AC00DF341A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499CEC9E1B2B36AC00DF341A /* LaunchScreen.xib */; };
 		499CECAC1B2B36AC00DF341A /* wahoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CECAB1B2B36AC00DF341A /* wahoTests.m */; };
 		6257CC961BA537D00019D012 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6257CC951BA537D00019D012 /* FBSDKCoreKit.framework */; };
-		6257CC981BA53C090019D012 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6257CC971BA53C090019D012 /* FBSDKLoginKit.framework */; };
 		625949B91BA1223600A07411 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625949B31BA1223600A07411 /* Bolts.framework */; };
 		625949BF1BA122BE00A07411 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625949B41BA1223600A07411 /* Parse.framework */; };
 		625949C01BA122BE00A07411 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625949B51BA1223600A07411 /* ParseCrashReporting.framework */; };
@@ -174,7 +173,6 @@
 				42DF51771B308E9400CF0DE2 /* MapKit.framework in Frameworks */,
 				42E4C58E1B2E50FA002F79E2 /* Accounts.framework in Frameworks */,
 				42E4C58C1B2E50F3002F79E2 /* Social.framework in Frameworks */,
-				6257CC981BA53C090019D012 /* FBSDKLoginKit.framework in Frameworks */,
 				42E4C5861B2E4AB6002F79E2 /* SystemConfiguration.framework in Frameworks */,
 				42E4C5841B2E4AA2002F79E2 /* StoreKit.framework in Frameworks */,
 				42E4C5821B2E4A98002F79E2 /* Security.framework in Frameworks */,
