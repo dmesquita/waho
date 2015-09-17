@@ -188,6 +188,11 @@
                 NSLog(@"Error: %@", error);
             }
         }];
+        
+        /* Add this place to global favoritedPlaces array */
+        NSMutableArray* favoritePlacesUpdated = [[PlacesFromParse sharedPlacesFromParse]favoritedPlaces];
+        [favoritePlacesUpdated addObject:place];
+        [[PlacesFromParse sharedPlacesFromParse]setFavoritedPlaces:favoritePlacesUpdated];
     }
 }
 

@@ -11,6 +11,7 @@
 #import "Parse/Parse.h"
 #import "MyLoginViewController.h"
 #import "iCarousel.h"
+#import "PlacesFromParse.h"
 
 @interface EstablishmentViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, iCarouselDataSource, iCarouselDelegate>
 

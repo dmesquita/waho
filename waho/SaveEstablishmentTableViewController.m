@@ -24,19 +24,7 @@
     [super viewDidLoad];
     PFUser *userF = [PFUser currentUser];
     if (userF) {
-        savedEstablishments = [[NSMutableArray alloc] init];
-        favoriteImages = [[NSMutableArray alloc] init];
-        favoritePlaces = [[PlacesFromParse sharedPlacesFromParse]favoritedPlaces];
-        for (int i = 0; i < [favoritePlaces count]; i++){
-            NSString *nome = favoritePlaces[i][@"name"];
-            [savedEstablishments addObject:nome];
-            PFFile *imagem = favoritePlaces[i][@"pictureSalvos"];
-            [favoriteImages addObject:imagem];
-        };
-        [self.tableView reloadData];
-        
-        //Get visited Places
-        visitedPlaces = [[PlacesFromParse sharedPlacesFromParse]visitedPlaces];
+        [self getFavoritedPlaces];
     } else {
         // show the signup or login page
         PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
@@ -52,6 +40,71 @@
         [logInViewController setSignUpController:signUpViewController];
         
         [self presentViewController:logInViewController animated:YES completion:NULL];
+    }
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    PFUser *userF = [PFUser currentUser];
+    if (userF) {
+        [self getFavoritedPlaces];
+    } else {
+        // show the signup or login page
+        PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
+        [logInViewController setDelegate:self];
+        
+        [logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
+        
+        
+        PFSignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
+        [signUpViewController setDelegate:self];
+        
+        // Assign our sign up controller to be displayed from the login controller
+        [logInViewController setSignUpController:signUpViewController];
+        
+        [self presentViewController:logInViewController animated:YES completion:NULL];
+    }
+    
+}
+
+-(void)getFavoritedPlaces{
+    savedEstablishments = [[NSMutableArray alloc] init];
+    favoriteImages = [[NSMutableArray alloc] init];
+    favoritePlaces = [[PlacesFromParse sharedPlacesFromParse]favoritedPlaces];
+    for (int i = 0; i < [favoritePlaces count]; i++){
+        NSString *nome = favoritePlaces[i][@"name"];
+        [savedEstablishments addObject:nome];
+        PFFile *imagem = favoritePlaces[i][@"pictureSalvos"];
+        [favoriteImages addObject:imagem];
+    };
+    [self.tableView reloadData];
+    
+    //Get visited Places
+    visitedPlaces = [[PlacesFromParse sharedPlacesFromParse]visitedPlaces];
+}
+
+- (void) getFavoritedPlacesFromParse {
+    if ([PFUser currentUser] != nil) {
+        PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
+        [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
+        [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                [[PlacesFromParse sharedPlacesFromParse]setFavoritedPlaces:objects];
+                if([objects count] > 0){
+                    NSLog(@"Lista de favoritos encontrada");
+                    for (int i = 0; i < [objects count]; i++) {
+                        NSLog(objects[i][@"name"]);
+                    };
+                    [self getFavoritedPlaces];
+                }else{
+                    NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+                }
+            } else {
+                NSLog(@"Error: %@", error);
+            }
+        }];
+    } else {
+        NSLog(@"Usuario nao esta logado");
     }
     
 }
@@ -90,8 +143,13 @@
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     NSLog(@"logou eh tetraaa1");
     [self _loadData];
+    
+    /* Now that user is logged in, get his favoritedPlaces array */
+    [self getFavoritedPlacesFromParse];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"SavedEstablishmentCell";
