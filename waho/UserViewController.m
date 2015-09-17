@@ -83,7 +83,36 @@
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     NSLog(@"logou eh tetraaa1");
     [self _loadData] ;
+    
+    /* Now that user is logged in, get his favoritedPlaces array */
+    [self getFavoritedPlaces];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) getFavoritedPlaces {
+    if ([PFUser currentUser] != nil) {
+        PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
+        [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
+        [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                [[PlacesFromParse sharedPlacesFromParse]setFavoritedPlaces:objects];
+                if([objects count] > 0){
+                    NSLog(@"Lista de favoritos encontrada");
+                    for (int i = 0; i < [objects count]; i++) {
+                        NSLog(objects[i][@"name"]);
+                    };
+                }else{
+                    NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+                }
+            } else {
+                NSLog(@"Error: %@", error);
+            }
+        }];
+    } else {
+        NSLog(@"Usuario nao esta logado");
+    }
+    
 }
 
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {

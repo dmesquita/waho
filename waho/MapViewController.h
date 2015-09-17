@@ -27,4 +27,6 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlMap;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+- (void) getFavoritedPlaces;
+
 @end

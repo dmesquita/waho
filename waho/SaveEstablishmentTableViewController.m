@@ -83,6 +83,32 @@
     visitedPlaces = [[PlacesFromParse sharedPlacesFromParse]visitedPlaces];
 }
 
+- (void) getFavoritedPlacesFromParse {
+    if ([PFUser currentUser] != nil) {
+        PFQuery *queryUser = [PFQuery queryWithClassName:@"Place"];
+        [queryUser whereKey:@"favorites" equalTo:[[PFUser currentUser] objectId]];
+        [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                [[PlacesFromParse sharedPlacesFromParse]setFavoritedPlaces:objects];
+                if([objects count] > 0){
+                    NSLog(@"Lista de favoritos encontrada");
+                    for (int i = 0; i < [objects count]; i++) {
+                        NSLog(objects[i][@"name"]);
+                    };
+                    [self getFavoritedPlaces];
+                }else{
+                    NSLog(@"Nenhum favorito encontrado ao procurar lista de favoritos");
+                }
+            } else {
+                NSLog(@"Error: %@", error);
+            }
+        }];
+    } else {
+        NSLog(@"Usuario nao esta logado");
+    }
+    
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"pushFavorite"]) {
@@ -117,8 +143,13 @@
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     NSLog(@"logou eh tetraaa1");
     [self _loadData];
+    
+    /* Now that user is logged in, get his favoritedPlaces array */
+    [self getFavoritedPlacesFromParse];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"SavedEstablishmentCell";
