@@ -22,17 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //[PFUser logOut];
-
-}
-
-- (void)viewWillAppear:(BOOL)animated {
     PFUser *userF = [PFUser currentUser];
     if (userF) {
         savedEstablishments = [[NSMutableArray alloc] init];
@@ -64,7 +53,7 @@
         
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
-
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -98,6 +87,11 @@
     return  [savedEstablishments count];
 }
 
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    NSLog(@"logou eh tetraaa1");
+    [self _loadData];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"SavedEstablishmentCell";
@@ -129,6 +123,33 @@
     }
     
     return cell;
+}
+
+- (void)_loadData {
+    // ...
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil];
+    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            // result is a dictionary with the user's Facebook data
+            NSDictionary *userData = (NSDictionary *)result;
+            
+            NSString *facebookID = userData[@"id"];
+            NSString *name = userData[@"name"];
+            
+            NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
+            UIImage *picture = [UIImage imageWithData: [NSData dataWithContentsOfURL:pictureURL]];
+            
+            
+            NSData *imageData = UIImagePNGRepresentation(picture);
+            PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
+            [imageFile saveInBackground];
+            
+            PFUser *user = [PFUser currentUser];
+            [user setObject:imageFile forKey:@"avatar"];
+            [user setObject:name forKey:@"name"] ;
+            [user saveInBackground];
+        }
+    }];
 }
 
 @end
