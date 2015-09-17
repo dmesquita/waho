@@ -23,7 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    int cnt_redbull = 1; // add 1 to each one you drink \o/
+    int cnt_redbull = 5; // add 1 to each one you drink \o/
     
      [PFImageView class];
     

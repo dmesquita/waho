@@ -84,6 +84,7 @@
     NSLog(@"logou eh tetraaa1");
     [self _loadData] ;
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self viewDidLoad] ;
 }
 
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
