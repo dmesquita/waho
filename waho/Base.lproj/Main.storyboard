@@ -403,16 +403,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bmf-p7-351">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="442"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeN-Mo-PAo">
-                                <rect key="frame" x="160.5" y="446" width="53.5" height="25"/>
+                                <rect key="frame" x="160.5" y="502" width="53.5" height="25"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tm1-GP-GCy">
-                                <rect key="frame" x="164.5" y="491" width="45.5" height="17.5"/>
+                                <rect key="frame" x="164.5" y="547" width="45.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Light" family="Comfortaa" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -425,9 +425,9 @@
                             <constraint firstItem="Bmf-p7-351" firstAttribute="leading" secondItem="gRr-MK-COB" secondAttribute="leading" id="GEi-xo-m9I"/>
                             <constraint firstItem="PeN-Mo-PAo" firstAttribute="centerX" secondItem="tm1-GP-GCy" secondAttribute="centerX" id="TKv-Cg-DVe"/>
                             <constraint firstItem="Bmf-p7-351" firstAttribute="top" secondItem="gRr-MK-COB" secondAttribute="top" id="bF7-gc-GIy"/>
-                            <constraint firstAttribute="bottom" secondItem="PeN-Mo-PAo" secondAttribute="bottom" constant="196" id="dHB-va-B5f"/>
+                            <constraint firstAttribute="bottom" secondItem="PeN-Mo-PAo" secondAttribute="bottom" constant="140" id="dHB-va-B5f"/>
                             <constraint firstItem="tm1-GP-GCy" firstAttribute="top" secondItem="PeN-Mo-PAo" secondAttribute="bottom" constant="20" id="p3G-j4-8Hz"/>
-                            <constraint firstItem="PeN-Mo-PAo" firstAttribute="top" secondItem="Bmf-p7-351" secondAttribute="bottom" constant="80" id="tSl-JN-CLS"/>
+                            <constraint firstItem="PeN-Mo-PAo" firstAttribute="top" secondItem="Bmf-p7-351" secondAttribute="bottom" constant="60" id="tSl-JN-CLS"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
