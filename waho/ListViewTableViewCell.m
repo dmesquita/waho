@@ -12,6 +12,9 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    if([[UIScreen mainScreen] bounds].size.height == 667.00){
+        self.constraintImgCategory.constant = 320.00;
+    };
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

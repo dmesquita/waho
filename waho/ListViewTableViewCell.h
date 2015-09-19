@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgFav;
 @property (weak, nonatomic) IBOutlet UIImageView *imgCategory;
 @property (weak, nonatomic) IBOutlet UILabel *lbTitlePlace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgCategory;
 
 @end
