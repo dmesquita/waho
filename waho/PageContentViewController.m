@@ -20,6 +20,9 @@
     self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
     self.titleLabel.text = self.titleText;
     self.descriptionLabel.text = self.descriptionText;
+    
+    [self.titleLabel setPreferredMaxLayoutWidth:200.0];
+    [self.descriptionLabel setPreferredMaxLayoutWidth:200.0];
 
 }
 

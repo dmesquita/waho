@@ -19,7 +19,7 @@
     
     // Create the data model
     _pageTitles = @[@"Descubra", @"Explore", @"Conheça"];
-    _pageImages = @[@"imagem.png", @"imagem2.png", @"imagem3.png"];
+    _pageImages = @[@"Tutorial image 1", @"Tutorial image 2", @"Tutorial image 3"];
     _pageDescriptions =@[@"Encontre novos lugares fantáticos através de histórias fantásticas", @"Encontre os lugares mais próximos a você", @"Salve as histórias e monte seu roteiro de viagem"];
     
     // Create page view controller
