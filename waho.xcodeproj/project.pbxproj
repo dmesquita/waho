@@ -41,6 +41,7 @@
 		42E73A7D1B388B94003E466C /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E73A791B388B94003E466C /* Comfortaa-Light.ttf */; };
 		42E73A7E1B388B94003E466C /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E73A7A1B388B94003E466C /* Comfortaa-Regular.ttf */; };
 		42E8A6E61B5C225500B37429 /* ListViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8A6E51B5C225500B37429 /* ListViewTableViewCell.m */; };
+		42ED43621BAF21D30039D919 /* FavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ED43611BAF21D30039D919 /* FavoriteTableViewCell.m */; };
 		491F24E61B2B3876008CD3F2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 491F24E51B2B3876008CD3F2 /* README.md */; };
 		499CEC921B2B36AC00DF341A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC911B2B36AC00DF341A /* main.m */; };
 		499CEC951B2B36AC00DF341A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEC941B2B36AC00DF341A /* AppDelegate.m */; };
@@ -126,6 +127,8 @@
 		42E73A7A1B388B94003E466C /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		42E8A6E41B5C225500B37429 /* ListViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewTableViewCell.h; sourceTree = "<group>"; };
 		42E8A6E51B5C225500B37429 /* ListViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewTableViewCell.m; sourceTree = "<group>"; };
+		42ED43601BAF21D30039D919 /* FavoriteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteTableViewCell.h; sourceTree = "<group>"; };
+		42ED43611BAF21D30039D919 /* FavoriteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteTableViewCell.m; sourceTree = "<group>"; };
 		491F24E51B2B3876008CD3F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		499CEC8C1B2B36AC00DF341A /* waho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = waho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499CEC901B2B36AC00DF341A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -218,6 +221,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		42ED43631BAF29710039D919 /* FavoriteTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				42ED43601BAF21D30039D919 /* FavoriteTableViewCell.h */,
+				42ED43611BAF21D30039D919 /* FavoriteTableViewCell.m */,
+			);
+			name = FavoriteTableViewCell;
+			sourceTree = "<group>";
+		};
 		49543A8C1B2B68DB005E9164 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +291,7 @@
 		499CEC8E1B2B36AC00DF341A /* waho */ = {
 			isa = PBXGroup;
 			children = (
+				42ED43631BAF29710039D919 /* FavoriteTableViewCell */,
 				42E73A771B388B94003E466C /* Resources */,
 				499CEC931B2B36AC00DF341A /* AppDelegate.h */,
 				499CEC941B2B36AC00DF341A /* AppDelegate.m */,
@@ -579,6 +592,7 @@
 				42E537101B73978E00A42C27 /* UserViewController.m in Sources */,
 				4223F62A1B41BF21003E0632 /* TabViewController.m in Sources */,
 				420172CD1B58645000019518 /* TableListViewController.m in Sources */,
+				42ED43621BAF21D30039D919 /* FavoriteTableViewCell.m in Sources */,
 				42B803961B41B44A00F281D4 /* ViewController.m in Sources */,
 				42E0F0101B333D4B00DA42DF /* LogInViewController.m in Sources */,
 				42E5370D1B738D8100A42C27 /* MyLoginViewController.m in Sources */,
