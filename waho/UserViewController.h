@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btRecomendarLocal;
 @property (weak, nonatomic) IBOutlet UIButton *btLogoff;
 @property (weak, nonatomic) IBOutlet UIButton *lblImage;
+@property (weak, nonatomic) IBOutlet UILabel *lblLogin;
+@property (weak, nonatomic) IBOutlet UIButton *btLogin;
 
 
 @end

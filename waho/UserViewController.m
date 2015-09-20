@@ -14,7 +14,7 @@
 
 @implementation UserViewController
 
-@synthesize lblNome, lblEmail , lblImage;
+@synthesize lblNome, lblEmail , lblImage, btRecomendarLocal;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +22,8 @@
     PFUser *userF = [PFUser currentUser];
     //[PFUser logOut];
     if (userF) {
+        [self hideLoginMessage];
+        [self showUserContent];
         if ( userF[@"name"]) {
             lblNome.text = userF[@"name"];
         } else {
@@ -33,21 +35,10 @@
             [lblImage setBackgroundImage:avatar forState:UIControlStateNormal] ;
         }
         lblEmail.text = userF[@"email"];
+        
     } else {
-        // show the signup or login page
-        PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
-        [logInViewController setDelegate:self];
-        
-        [logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
-        
-        
-        PFSignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
-        [signUpViewController setDelegate:self];
-        
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-        [self presentViewController:logInViewController animated:YES completion:NULL];
+        [self showLoginMessage];
+        [self hideUserContent];
     }
     
     UITabBarController *tabBarController = (UITabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController ;
@@ -57,25 +48,57 @@
 
 }
 
+-(void)showUserContent{
+    lblNome.hidden = NO;
+    lblImage.hidden = NO;
+    lblEmail.hidden = NO;
+    btRecomendarLocal.hidden = NO;
+}
+
+-(void)hideUserContent{
+    lblNome.hidden = YES;
+    lblImage.hidden = YES;
+    lblEmail.hidden = YES;
+    btRecomendarLocal.hidden = YES;
+}
+
+-(void)showLoginMessage{
+    self.lblLogin.hidden = NO;
+    self.btLogin.hidden = NO;
+}
+
+-(void)hideLoginMessage{
+    self.lblLogin.hidden = YES;
+    self.btLogin.hidden = YES;
+}
+- (IBAction)loginButtonPressed:(id)sender {
+    PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
+    [logInViewController setDelegate:self];
+    
+    [logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
+    
+    
+    PFSignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
+    [signUpViewController setDelegate:self];
+    
+    // Assign our sign up controller to be displayed from the login controller
+    [logInViewController setSignUpController:signUpViewController];
+    
+    [self presentViewController:logInViewController animated:YES completion:NULL];
+}
+
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     if (tabBarController.selectedIndex == 2){
         PFUser *userF = [PFUser currentUser];
         //[PFUser logOut];
         if (userF) {
+            [self hideLoginMessage];
+            [self showUserContent];
             lblNome.text = userF[@"username"];
             lblEmail.text = userF[@"email"];
         } else {
-            // show the signup or login page
-            PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
-            [logInViewController setDelegate:self];
-            
-            PFSignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
-            [signUpViewController setDelegate:self];
-            
-            // Assign our sign up controller to be displayed from the login controller
-            [logInViewController setSignUpController:signUpViewController];
-            
-            [self presentViewController:logInViewController animated:YES completion:NULL];
+            [self showLoginMessage];
+            [self hideUserContent];
         }
     }    
 }
@@ -122,6 +145,8 @@
 
 - (IBAction)logoffClick:(UIButton *)sender {
     [PFUser logOut];
+    [self showLoginMessage];
+    [self hideUserContent];
     [self logoffMessage];
 }
 
@@ -171,7 +196,7 @@
 }
 
 - (void) logoffMessage{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Logout" message:@"Logout efetuado com sucesso (feche o app para atualizar)" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Logout" message:@"Logout efetuado com sucesso" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
 }
 

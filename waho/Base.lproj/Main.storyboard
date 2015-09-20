@@ -21,6 +21,8 @@
             <string>Comfortaa</string>
             <string>Comfortaa</string>
             <string>Comfortaa</string>
+            <string>Comfortaa</string>
+            <string>Comfortaa</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -594,8 +596,30 @@
                                     <action selector="pickImage:" destination="NVQ-DR-kOQ" eventType="touchUpInside" id="Nmf-xc-bou"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faça login no app ou cadastra-se!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1V-Mp-HdO">
+                                <rect key="frame" x="46" y="346" width="282" height="18"/>
+                                <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="17"/>
+                                <color key="textColor" red="0.3529411764705882" green="0.42352941176470588" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52Y-cK-0W7">
+                                <rect key="frame" x="115" y="391" width="144" height="33"/>
+                                <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="15"/>
+                                <state key="normal" title="Login / Cadastro" backgroundImage="startButton">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="NVQ-DR-kOQ" eventType="touchUpInside" id="K3L-na-nT5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="x1V-Mp-HdO" secondAttribute="centerX" constant="0.5" id="OQP-FW-WiE"/>
+                            <constraint firstItem="52Y-cK-0W7" firstAttribute="top" secondItem="x1V-Mp-HdO" secondAttribute="bottom" constant="27" id="dHt-yr-fxt"/>
+                            <constraint firstAttribute="centerY" secondItem="x1V-Mp-HdO" secondAttribute="centerY" constant="-21.5" id="ki3-UB-96G"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Eu" id="elY-a9-TPt">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="jC4-uo-UKk">
@@ -613,10 +637,12 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="btLogin" destination="52Y-cK-0W7" id="FWI-tC-YX1"/>
                         <outlet property="btLogoff" destination="qAD-Mu-M3O" id="zSv-0G-Tym"/>
-                        <outlet property="btRecomendarLocal" destination="wYl-5H-mKd" id="GoJ-9W-yGD"/>
+                        <outlet property="btRecomendarLocal" destination="wYl-5H-mKd" id="f25-nO-1hd"/>
                         <outlet property="lblEmail" destination="YBU-m9-XH6" id="2yA-Up-3XZ"/>
                         <outlet property="lblImage" destination="zmX-SA-BSz" id="xhf-xh-ivB"/>
+                        <outlet property="lblLogin" destination="x1V-Mp-HdO" id="9KQ-Ge-1pX"/>
                         <outlet property="lblNome" destination="OA5-pZ-KYT" id="lyX-aT-hRH"/>
                     </connections>
                 </viewController>
