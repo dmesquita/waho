@@ -30,21 +30,28 @@
         // show the signup or login page
         tableView.hidden = YES;
         [self.lbLogin setPreferredMaxLayoutWidth:200.0];
-        PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
-        [logInViewController setDelegate:self];
-        
-        [logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
-        
-        
-        PFSignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
-        [signUpViewController setDelegate:self];
-        
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-        //[self presentViewController:logInViewController animated:YES completion:NULL];
     }
     
+}
+
+-(void)hideLoginMessage{
+    self.lbLogin.hidden = YES;
+    self.btLogin.hidden = YES;
+}
+
+- (IBAction)showLoginScreen:(id)sender {
+    PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
+    [logInViewController setDelegate:self];
+    
+    [logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
+    
+    
+    PFSignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
+    [signUpViewController setDelegate:self];
+    
+    // Assign our sign up controller to be displayed from the login controller
+    [logInViewController setSignUpController:signUpViewController];
+    [self presentViewController:logInViewController animated:YES completion:NULL];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -55,27 +62,7 @@
     } else {
         [self.lbLogin setPreferredMaxLayoutWidth:200.0];
         tableView.hidden = YES;
-        // show the signup or login page
-        PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
-        [logInViewController setDelegate:self];
-        
-        [logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
-        
-        
-        PFSignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
-        [signUpViewController setDelegate:self];
-        
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-        //[self presentViewController:logInViewController animated:YES completion:NULL];
     }
-    
-}
-
--(void)hideLoginMessage{
-    self.lbLogin.hidden = YES;
-    self.btLogin.hidden = YES;
 }
 
 -(void)getFavoritedPlaces{
