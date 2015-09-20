@@ -19,6 +19,8 @@
             <string>Comfortaa</string>
             <string>Comfortaa</string>
             <string>Comfortaa</string>
+            <string>Comfortaa</string>
+            <string>Comfortaa</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -34,6 +36,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Você precisar estar logado para ver os lugares salvos!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv3-Xj-hEj">
+                                <rect key="frame" x="32" y="323" width="300" height="18"/>
+                                <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="17"/>
+                                <color key="textColor" red="0.3529411764705882" green="0.42352941176470588" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0c-0l-XpH">
+                                <rect key="frame" x="101" y="375" width="179" height="33"/>
+                                <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="18"/>
+                                <state key="normal" title="Log in" backgroundImage="startButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6oQ-sw-QO6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,10 +92,18 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h0c-0l-XpH" firstAttribute="centerX" secondItem="Kv3-Xj-hEj" secondAttribute="centerX" constant="8.5" id="VUf-Gd-xOB"/>
+                            <constraint firstItem="h0c-0l-XpH" firstAttribute="top" secondItem="Kv3-Xj-hEj" secondAttribute="bottom" constant="34" id="k1z-OZ-h1Y"/>
+                            <constraint firstAttribute="centerY" secondItem="h0c-0l-XpH" secondAttribute="centerY" constant="-58" id="vuz-kk-Kc2"/>
+                            <constraint firstAttribute="centerX" secondItem="h0c-0l-XpH" secondAttribute="centerX" constant="-3" id="yFX-tY-NYi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lugares Salvos" id="wXE-lx-i5p"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="btLogin" destination="h0c-0l-XpH" id="yRR-hZ-ZJk"/>
+                        <outlet property="lbLogin" destination="Kv3-Xj-hEj" id="7vV-NT-EOn"/>
                         <outlet property="tableView" destination="6oQ-sw-QO6" id="wcH-YZ-oE5"/>
                     </connections>
                 </viewController>
@@ -404,6 +427,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bmf-p7-351">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="442"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeN-Mo-PAo">
                                 <rect key="frame" x="160.5" y="502" width="53.5" height="25"/>

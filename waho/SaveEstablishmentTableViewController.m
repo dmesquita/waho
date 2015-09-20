@@ -24,9 +24,12 @@
     [super viewDidLoad];
     PFUser *userF = [PFUser currentUser];
     if (userF) {
+        [self hideLoginMessage];
         [self getFavoritedPlaces];
     } else {
         // show the signup or login page
+        tableView.hidden = YES;
+        [self.lbLogin setPreferredMaxLayoutWidth:200.0];
         PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
         [logInViewController setDelegate:self];
         
@@ -39,7 +42,7 @@
         // Assign our sign up controller to be displayed from the login controller
         [logInViewController setSignUpController:signUpViewController];
         
-        [self presentViewController:logInViewController animated:YES completion:NULL];
+        //[self presentViewController:logInViewController animated:YES completion:NULL];
     }
     
 }
@@ -47,8 +50,11 @@
 -(void)viewDidAppear:(BOOL)animated{
     PFUser *userF = [PFUser currentUser];
     if (userF) {
+        [self hideLoginMessage];
         [self getFavoritedPlaces];
     } else {
+        [self.lbLogin setPreferredMaxLayoutWidth:200.0];
+        tableView.hidden = YES;
         // show the signup or login page
         PFLogInViewController *logInViewController = [[MyLoginViewController alloc] init];
         [logInViewController setDelegate:self];
@@ -62,9 +68,14 @@
         // Assign our sign up controller to be displayed from the login controller
         [logInViewController setSignUpController:signUpViewController];
         
-        [self presentViewController:logInViewController animated:YES completion:NULL];
+        //[self presentViewController:logInViewController animated:YES completion:NULL];
     }
     
+}
+
+-(void)hideLoginMessage{
+    self.lbLogin.hidden = YES;
+    self.btLogin.hidden = YES;
 }
 
 -(void)getFavoritedPlaces{

@@ -22,5 +22,7 @@
 @property (nonatomic) NSArray *favoritePlaces;
 @property (nonatomic) NSMutableArray *favoriteImages;
 @property (nonatomic) NSMutableArray *visitedPlaces;
+@property (weak, nonatomic) IBOutlet UILabel *lbLogin;
+@property (weak, nonatomic) IBOutlet UIButton *btLogin;
 
 @end
