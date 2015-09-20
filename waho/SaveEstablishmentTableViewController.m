@@ -26,8 +26,10 @@
     if (userF) {
         [self hideLoginMessage];
         [self getFavoritedPlaces];
+        tableView.hidden = NO;
     } else {
         // show the signup or login page
+        [self showLoginMessage];
         tableView.hidden = YES;
         [self.lbLogin setPreferredMaxLayoutWidth:200.0];
     }
@@ -37,6 +39,11 @@
 -(void)hideLoginMessage{
     self.lbLogin.hidden = YES;
     self.btLogin.hidden = YES;
+}
+
+-(void)showLoginMessage{
+    self.lbLogin.hidden = NO;
+    self.btLogin.hidden = NO;
 }
 
 - (IBAction)showLoginScreen:(id)sender {
@@ -59,8 +66,10 @@
     if (userF) {
         [self hideLoginMessage];
         [self getFavoritedPlaces];
+        tableView.hidden = NO;
     } else {
         [self.lbLogin setPreferredMaxLayoutWidth:200.0];
+        [self showLoginMessage];
         tableView.hidden = YES;
     }
 }
@@ -144,7 +153,7 @@
     
     /* Now that user is logged in, get his favoritedPlaces array */
     [self getFavoritedPlacesFromParse];
-    
+    [self getFavoritedPlaces];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
