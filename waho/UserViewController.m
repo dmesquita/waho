@@ -94,7 +94,11 @@
         if (userF) {
             [self hideLoginMessage];
             [self showUserContent];
-            lblNome.text = userF[@"username"];
+            if ( userF[@"name"]) {
+                lblNome.text = userF[@"name"];
+            } else {
+                lblNome.text = userF[@"username"];
+            }
             lblEmail.text = userF[@"email"];
         } else {
             [self showLoginMessage];
