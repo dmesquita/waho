@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Miguel Araújo. All rights reserved.
 //
 
+#import <ParseUI/ParseUI.h>
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "ParseUI/ParseUI.h"
 
 @interface ListViewTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet PFImageView  *imgBackground;

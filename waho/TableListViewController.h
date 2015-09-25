@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
-#import "Parse/Parse.h"
-#import "ParseUI/ParseUI.h"
 #import "PlacesFromParse.h"
 #import "ListViewTableViewCell.h"
 #import "EstablishmentViewController.h"
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 @interface TableListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic) NSArray *placesArray;

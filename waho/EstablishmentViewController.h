@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
-#import "Parse/Parse.h"
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 #import "MyLoginViewController.h"
 #import "iCarousel.h"
 #import "PlacesFromParse.h"

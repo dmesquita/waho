@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Parse/Parse.h"
 #import "MyLoginViewController.h"
 #import "MySignUpViewController.h"
 #import <MessageUI/MessageUI.h>
+#import <Parse/Parse.h>
 
 @interface UserViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, MFMailComposeViewControllerDelegate, UITabBarControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *lblNome;
