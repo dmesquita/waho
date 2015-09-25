@@ -51,13 +51,13 @@
 		62DA9C0A1BAA6B28007F2EFA /* imagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DA9C071BAA6B28007F2EFA /* imagem.png */; };
 		62DA9C0B1BAA6B28007F2EFA /* imagem2.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DA9C081BAA6B28007F2EFA /* imagem2.png */; };
 		62DA9C0C1BAA6B28007F2EFA /* imagem3.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DA9C091BAA6B28007F2EFA /* imagem3.png */; };
-		B931379F1BB049A300CBC2E8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B931379C1BB049A300CBC2E8 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		B93137A01BB049A300CBC2E8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B931379D1BB049A300CBC2E8 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
-		B93137A11BB049A300CBC2E8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B931379E1BB049A300CBC2E8 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
-		B93137A61BB04A2200CBC2E8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93137A21BB04A2200CBC2E8 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
-		B93137A71BB04A2200CBC2E8 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93137A31BB04A2200CBC2E8 /* ParseCrashReporting.framework */; settings = {ASSET_TAGS = (); }; };
-		B93137A81BB04A2200CBC2E8 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93137A41BB04A2200CBC2E8 /* ParseFacebookUtilsV4.framework */; settings = {ASSET_TAGS = (); }; };
-		B93137A91BB04A2200CBC2E8 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93137A51BB04A2200CBC2E8 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		B931379F1BB049A300CBC2E8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B931379C1BB049A300CBC2E8 /* Bolts.framework */; };
+		B93137A01BB049A300CBC2E8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B931379D1BB049A300CBC2E8 /* FBSDKCoreKit.framework */; };
+		B93137A11BB049A300CBC2E8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B931379E1BB049A300CBC2E8 /* FBSDKLoginKit.framework */; };
+		B93137A61BB04A2200CBC2E8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93137A21BB04A2200CBC2E8 /* Parse.framework */; };
+		B93137A71BB04A2200CBC2E8 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93137A31BB04A2200CBC2E8 /* ParseCrashReporting.framework */; };
+		B93137A81BB04A2200CBC2E8 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93137A41BB04A2200CBC2E8 /* ParseFacebookUtilsV4.framework */; };
+		B93137A91BB04A2200CBC2E8 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93137A51BB04A2200CBC2E8 /* ParseUI.framework */; };
 		B93137AB1BB04ABB00CBC2E8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B93137AA1BB04ABB00CBC2E8 /* libz.tbd */; };
 		B93137AD1BB04AC700CBC2E8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B93137AC1BB04AC700CBC2E8 /* libsqlite3.tbd */; };
 		B9A952291B2B776100485EC8 /* EstablishmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A952281B2B776100485EC8 /* EstablishmentViewController.m */; };
@@ -524,12 +524,12 @@
 		499CEC841B2B36AC00DF341A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					499CEC8B1B2B36AC00DF341A = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 422H3ECAY9;
+						DevelopmentTeam = EHBSXGFU8H;
 					};
 					499CECA41B2B36AC00DF341A = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -673,6 +673,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -744,9 +745,10 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = waho/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -765,9 +767,10 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = waho/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -788,6 +791,7 @@
 				);
 				INFOPLIST_FILE = wahoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/waho.app/waho";
 			};
@@ -803,6 +807,7 @@
 				);
 				INFOPLIST_FILE = wahoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/waho.app/waho";
 			};
