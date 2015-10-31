@@ -18,5 +18,6 @@
 @property(nonatomic) NSArray *placesArray;
 @property(nonatomic) NSArray *items;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTableWidth;
 
 @end

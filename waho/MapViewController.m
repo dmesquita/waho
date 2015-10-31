@@ -76,6 +76,8 @@
     
 }
 
+
+
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     if(self.userLocationShown) return ;
     [self.mapView setRegion:MKCoordinateRegionMake([self.locationManager location].coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
@@ -153,10 +155,6 @@
         return nil;
     }
     
-}
-
--(void)viewWillAppear:(BOOL)animated{
-
 }
 
 

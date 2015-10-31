@@ -34,6 +34,14 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    //6s
+    if([[UIScreen mainScreen] bounds].size.height == 736.00){
+        self.constraintTableWidth.constant = 500;
+        
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -100,6 +108,7 @@
 {
     return 175;
 }
+\
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

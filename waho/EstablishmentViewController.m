@@ -30,12 +30,22 @@
     lblQuote.text = thisPlace[@"quote"];
     txtStory.text = thisPlace[@"about"];
     NSArray *features = thisPlace[@"features"];
+    int qtdFeatures = [features count];
     for(int i = 0; i < [features count]; i++){
         UILabel *label =  [[UILabel alloc] initWithFrame: CGRectMake(58, 775+(25*i), 259, 21) ];
         label.text = features[i];
         label.font = [UIFont fontWithName:@"Avenir" size:15];
         [scrollView addSubview:label];
     }
+    
+    UIButton *goToGoogleMaps = [UIButton buttonWithType:UIButtonTypeCustom];
+    [[goToGoogleMaps imageView] setContentMode: UIViewContentModeScaleAspectFill];
+    [goToGoogleMaps addTarget:self
+               action:@selector(openMaps)
+     forControlEvents:UIControlEventTouchUpInside];
+    [goToGoogleMaps setImage:[UIImage imageNamed:@"btOpenGoogleMaps"] forState:UIControlStateNormal];
+    goToGoogleMaps.frame = CGRectMake(58, 775+(25*(qtdFeatures+1)), 283, 34);
+    [scrollView addSubview:goToGoogleMaps];
     
     /* Images appearing in the view */
     PFFile *imageFile = thisPlace[@"picture1"];
@@ -47,6 +57,29 @@
     PFFile *imageFile2 = thisPlace[@"picture2"];
     PFFile *imageFile3 = thisPlace[@"picture3"];
     pictures = @[imageFile2, imageFile3];
+}
+
+- (void)openMaps{
+    PFGeoPoint * point;
+    point = place[@"location"];
+    double lat = point.latitude;
+    double lon = point.longitude;
+    NSString *urlInit = @"comgooglemaps://?daddr=";
+    NSString *urlEnd = @"&directionsmode=transit";
+    NSString *comma = @",";
+    NSString *latString = [NSString stringWithFormat:@"%f", lat];
+    NSString *lonString = [NSString stringWithFormat:@"%f", lon];
+    if ([[UIApplication sharedApplication] canOpenURL:
+         [NSURL URLWithString:@"comgooglemaps://"]]) {
+        [[UIApplication sharedApplication] openURL:
+         [NSURL URLWithString: [NSString stringWithFormat:@"%@%@%@%@%@", urlInit, latString, comma, lonString, urlEnd]]];
+    } else {
+        NSLog(@"Can't use comgooglemaps://");
+        NSString *urlInit = @"http://maps.apple.com/?daddr=";
+        NSString *comma = @",";
+        [[UIApplication sharedApplication] openURL:
+         [NSURL URLWithString: [NSString stringWithFormat:@"%@%@%@%@", urlInit, latString, comma,lonString]]];
+    }
 }
 
 - (void)viewDidLoad {

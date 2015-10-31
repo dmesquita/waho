@@ -523,24 +523,33 @@
                         <viewControllerLayoutGuide type="bottom" id="nZI-p7-O8V"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="V0U-UJ-8Lw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NPT-Xr-kYQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NPT-Xr-kYQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="P0D-Yz-kh7"/>
+                                    <constraint firstAttribute="height" constant="667" id="V5D-aE-jOt"/>
+                                </constraints>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NPT-Xr-kYQ" firstAttribute="top" secondItem="7lv-OY-iKx" secondAttribute="bottom" id="2CS-Ov-wc7"/>
+                            <constraint firstItem="nZI-p7-O8V" firstAttribute="top" secondItem="NPT-Xr-kYQ" secondAttribute="bottom" id="xO2-68-tH1"/>
+                            <constraint firstItem="NPT-Xr-kYQ" firstAttribute="leading" secondItem="V0U-UJ-8Lw" secondAttribute="leading" id="zud-Jp-VW0"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="mapView" destination="NPT-Xr-kYQ" id="Zj7-AR-Gf9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcc-X3-PyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1017.5" y="13.5"/>
+            <point key="canvasLocation" x="1043" y="34"/>
         </scene>
         <!--Table List View Controller-->
         <scene sceneID="WnK-Sd-1Ef">
@@ -557,6 +566,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Gtu-QG-HT9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Tau-kZ-vo9"/>
+                                </constraints>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -570,7 +582,8 @@
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="tableView" destination="Gtu-QG-HT9" id="lyw-a6-9jA"/>
+                        <outlet property="constraintTableWidth" destination="Tau-kZ-vo9" id="HcO-wa-yKg"/>
+                        <outlet property="tableView" destination="Gtu-QG-HT9" id="Pze-bK-IWr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zft-fC-4FC" userLabel="First Responder" sceneMemberID="firstResponder"/>

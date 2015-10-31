@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *listEstablishmentView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlMap;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMapWidth;
 
 - (void) getFavoritedPlaces;
 
