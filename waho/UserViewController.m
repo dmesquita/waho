@@ -31,8 +31,34 @@
         }
         
         if ( userF[@"avatar"]) {
-            UIImage *avatar = [[UIImage alloc] initWithData: [[userF objectForKey:@"avatar"] getData]] ;
-            [lblImage setBackgroundImage:avatar forState:UIControlStateNormal] ;
+            
+            //5s
+            if([[UIScreen mainScreen] bounds].size.height == 568.00){
+                self.constraintImgHeight.constant = 170;
+                self.constraintImgWidth.constant = 320;
+            }
+            //4s
+            if([[UIScreen mainScreen] bounds].size.height == 480.00){
+                self.constraintImgHeight.constant = 170;
+                self.constraintImgWidth.constant = 320;
+            }
+            
+            //Set image from parse
+            UIImage *avatar = [[UIImage alloc] initWithData: [[userF objectForKey:@"avatar"] getData]];
+            [lblImage setBackgroundImage:avatar forState:UIControlStateNormal];
+        }else{
+            //5s
+            if([[UIScreen mainScreen] bounds].size.height == 568.00){
+                self.constraintImgHeight.constant = 170;
+                self.constraintImgWidth.constant = 320;
+                [lblImage setBackgroundImage:[UIImage imageNamed:@"Frame usuário-câmera 4s"] forState:UIControlStateNormal];
+            }
+            //4s
+            if([[UIScreen mainScreen] bounds].size.height == 480.00){
+                self.constraintImgHeight.constant = 170;
+                self.constraintImgWidth.constant = 320;
+                [lblImage setBackgroundImage:[UIImage imageNamed:@"Frame usuário-câmera 4s"] forState:UIControlStateNormal];
+            }
         }
         lblEmail.text = userF[@"email"];
         
@@ -44,8 +70,12 @@
     UITabBarController *tabBarController = (UITabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController ;
     
     [tabBarController setDelegate:self];
-    [tabBarController setSelectedIndex:2] ;
+    [tabBarController setSelectedIndex:2];
 
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
 }
 
 -(void)showUserContent{
@@ -157,7 +187,7 @@
 - (IBAction)recomendarLocal:(UIButton *)sender {
     if ([MFMailComposeViewController canSendMail]){
     // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"app@waho.io"];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"dhsm@cin.ufpe.br"];
     
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;

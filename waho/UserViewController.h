@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *lblImage;
 @property (weak, nonatomic) IBOutlet UILabel *lblLogin;
 @property (weak, nonatomic) IBOutlet UIButton *btLogin;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgWidth;
 
 
 @end

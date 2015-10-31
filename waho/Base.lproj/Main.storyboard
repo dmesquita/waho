@@ -23,7 +23,6 @@
             <string>Comfortaa</string>
             <string>Comfortaa</string>
             <string>Comfortaa</string>
-            <string>Comfortaa</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -602,36 +601,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Faça login no app!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OA5-pZ-KYT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Faça login no app!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OA5-pZ-KYT">
                                 <rect key="frame" x="45" y="381" width="278" height="21"/>
                                 <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="seu@email.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBU-m9-XH6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="seu@email.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBU-m9-XH6">
                                 <rect key="frame" x="45" y="437" width="183" height="21"/>
                                 <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYl-5H-mKd">
-                                <rect key="frame" x="36" y="489" width="201" height="30"/>
-                                <fontDescription key="fontDescription" name="Comfortaa" family="Comfortaa" pointSize="18"/>
-                                <state key="normal" title="Recomende um local!">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYl-5H-mKd">
+                                <rect key="frame" x="62" y="489" width="250" height="34"/>
+                                <state key="normal" backgroundImage="btRecomendar">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="recomendarLocal:" destination="NVQ-DR-kOQ" eventType="touchUpInside" id="GjK-DB-qan"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmX-SA-BSz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="248"/>
-                                <state key="normal" backgroundImage="Frame usuário-câmera">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pickImage:" destination="NVQ-DR-kOQ" eventType="touchUpInside" id="Nmf-xc-bou"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faça login no app ou cadastra-se!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1V-Mp-HdO">
@@ -651,13 +640,31 @@
                                     <action selector="loginButtonPressed:" destination="NVQ-DR-kOQ" eventType="touchUpInside" id="K3L-na-nT5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmX-SA-BSz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="b1S-Zs-egQ"/>
+                                    <constraint firstAttribute="width" constant="375" id="gQK-sL-4fJ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Frame usuário-câmera">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickImage:" destination="NVQ-DR-kOQ" eventType="touchUpInside" id="Nmf-xc-bou"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wYl-5H-mKd" firstAttribute="centerX" secondItem="dzY-tk-AMN" secondAttribute="centerX" id="4Fb-PW-7uh"/>
+                            <constraint firstItem="OA5-pZ-KYT" firstAttribute="top" secondItem="zmX-SA-BSz" secondAttribute="bottom" constant="47" id="7my-fv-n1Q"/>
                             <constraint firstAttribute="centerX" secondItem="52Y-cK-0W7" secondAttribute="centerX" constant="0.5" id="BHu-V7-Y6y"/>
+                            <constraint firstItem="52Y-cK-0W7" firstAttribute="top" secondItem="x1V-Mp-HdO" secondAttribute="bottom" constant="26" id="DgK-TW-S6p"/>
+                            <constraint firstItem="zmX-SA-BSz" firstAttribute="top" secondItem="jAK-Of-6WA" secondAttribute="bottom" id="IoF-ZY-RUH"/>
                             <constraint firstAttribute="centerX" secondItem="x1V-Mp-HdO" secondAttribute="centerX" id="OQP-FW-WiE"/>
-                            <constraint firstItem="52Y-cK-0W7" firstAttribute="top" secondItem="x1V-Mp-HdO" secondAttribute="bottom" constant="26.5" id="dHt-yr-fxt"/>
+                            <constraint firstItem="wYl-5H-mKd" firstAttribute="top" secondItem="YBU-m9-XH6" secondAttribute="bottom" constant="31" id="TfI-vu-9cZ"/>
                             <constraint firstAttribute="centerY" secondItem="x1V-Mp-HdO" secondAttribute="centerY" id="ki3-UB-96G"/>
+                            <constraint firstItem="YBU-m9-XH6" firstAttribute="top" secondItem="OA5-pZ-KYT" secondAttribute="bottom" constant="35" id="pRf-Vl-qYm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Eu" id="elY-a9-TPt">
@@ -679,6 +686,8 @@
                         <outlet property="btLogin" destination="52Y-cK-0W7" id="FWI-tC-YX1"/>
                         <outlet property="btLogoff" destination="qAD-Mu-M3O" id="zSv-0G-Tym"/>
                         <outlet property="btRecomendarLocal" destination="wYl-5H-mKd" id="f25-nO-1hd"/>
+                        <outlet property="constraintImgHeight" destination="b1S-Zs-egQ" id="bvX-g7-byj"/>
+                        <outlet property="constraintImgWidth" destination="gQK-sL-4fJ" id="Qfw-Xj-eV5"/>
                         <outlet property="lblEmail" destination="YBU-m9-XH6" id="2yA-Up-3XZ"/>
                         <outlet property="lblImage" destination="zmX-SA-BSz" id="xhf-xh-ivB"/>
                         <outlet property="lblLogin" destination="x1V-Mp-HdO" id="9KQ-Ge-1pX"/>
@@ -734,6 +743,7 @@
         <image name="Frame usuário-câmera" width="375" height="270"/>
         <image name="Me" width="19" height="27"/>
         <image name="bandeira" width="25" height="25"/>
+        <image name="btRecomendar" width="250" height="34"/>
         <image name="faixa curvada" width="375" height="25"/>
         <image name="logoff" width="24" height="24"/>
         <image name="startButton" width="126" height="33"/>

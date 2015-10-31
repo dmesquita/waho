@@ -44,7 +44,7 @@
                action:@selector(openMaps)
      forControlEvents:UIControlEventTouchUpInside];
     [goToGoogleMaps setImage:[UIImage imageNamed:@"btOpenGoogleMaps"] forState:UIControlStateNormal];
-    goToGoogleMaps.frame = CGRectMake(58, 775+(25*(qtdFeatures+1)), 283, 34);
+    goToGoogleMaps.frame = CGRectMake(45, 775+(25*(qtdFeatures+1)), 283, 34);
     [scrollView addSubview:goToGoogleMaps];
     
     /* Images appearing in the view */
