@@ -142,6 +142,25 @@
     self.carousel = nil;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    CGFloat height = self.view.frame.size.height;
+    NSLog(@"tamanho da tela %f",height);
+    //5s
+    if([[UIScreen mainScreen] bounds].size.height == 568.00){
+        self.constraintTxtStoryWidth.constant = 300;
+    }
+    //4s
+    if([[UIScreen mainScreen] bounds].size.height == 480.00){
+        self.constraintTxtStoryWidth.constant = 260;
+    }
+    //6s
+    if([[UIScreen mainScreen] bounds].size.height == 736.00){
+        self.imgFaixaCurvada.image = [UIImage imageNamed:@"faixa curvada 6plus"];
+        self.constraintFaixaLabelSpace.constant = 12;
+
+    }
+}
+
 - (void)dealloc
 {
     //it's a good idea to set these to nil here to avoid

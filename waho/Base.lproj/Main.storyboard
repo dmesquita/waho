@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5DW-Td-SPd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5DW-Td-SPd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -60,10 +60,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SavedEstablishmentCell" rowHeight="130" id="KS1-ON-k12" customClass="FavoriteTableViewCell">
-                                        <rect key="frame" x="0.0" y="86" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="22" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KS1-ON-k12" id="Jk3-3L-YOb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WaS-cO-wsr" customClass="PFImageView">
@@ -235,7 +235,7 @@
                                                 <rect key="frame" x="17" y="514" width="350" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faixa curvada" translatesAutoresizingMaskIntoConstraints="NO" id="nNA-s3-Syj">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faixa curvada" translatesAutoresizingMaskIntoConstraints="NO" id="nNA-s3-Syj">
                                                 <rect key="frame" x="5" y="154" width="375" height="24"/>
                                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                                 <constraints>
@@ -304,6 +304,9 @@
                     <connections>
                         <outlet property="btFavoritar" destination="gPy-Qa-85R" id="WDJ-s9-AnC"/>
                         <outlet property="carousel" destination="vv1-7V-XTo" id="CnN-AU-nSB"/>
+                        <outlet property="constraintFaixaLabelSpace" destination="gzL-b5-JSk" id="1r4-oW-a5m"/>
+                        <outlet property="constraintTxtStoryWidth" destination="05v-GC-WCh" id="hkl-b7-gd9"/>
+                        <outlet property="imgFaixaCurvada" destination="nNA-s3-Syj" id="n1E-KR-tf0"/>
                         <outlet property="imgPerson" destination="pRv-q3-Qf1" id="uNe-5m-mZc"/>
                         <outlet property="lblName" destination="ALz-vU-Lky" id="mMj-To-8Q6"/>
                         <outlet property="lblQuote" destination="3mG-EX-Gdd" id="EqT-0h-DkS"/>
@@ -346,7 +349,7 @@
                     <navigationItem key="navigationItem" id="64h-EU-jDG">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="qYb-vm-WXu">
-                            <rect key="frame" x="120" y="6.5" width="135" height="31"/>
+                            <rect key="frame" x="119" y="6.5" width="137" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Mapa"/>
@@ -647,7 +650,7 @@
                     <navigationItem key="navigationItem" title="Eu" id="elY-a9-TPt">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="jC4-uo-UKk">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qAD-Mu-M3O">
-                                <rect key="frame" x="335" y="72" width="24" height="24"/>
+                                <rect key="frame" x="335" y="10" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="logoff">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -723,9 +726,4 @@
         <image name="startButton" width="126" height="33"/>
         <image name="terra" width="25" height="25"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

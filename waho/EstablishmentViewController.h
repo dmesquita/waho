@@ -37,6 +37,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *txtStory;
 @property (weak, nonatomic) IBOutlet UIButton *btFavoritar;
 @property (weak, nonatomic) IBOutlet UIButton *btVisitei;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTxtStoryWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintFaixaLabelSpace;
+@property (weak, nonatomic) IBOutlet UIImageView *imgFaixaCurvada;
 
 - (IBAction)segmentValeuChanged:(id)sender;
 
