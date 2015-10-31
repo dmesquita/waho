@@ -39,18 +39,18 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ( [defaults integerForKey:@"view_tuts"] == nil ) {
-            [defaults setInteger:0 forKey:@"view_tuts"];
-            [defaults synchronize];
-    }
     
-    if ( [defaults integerForKey:@"view_tuts"] == 0 ) {
+    if([[[defaults dictionaryRepresentation] allKeys] containsObject:@"view_tuts"]){
+        //User already saw the tutorial
+    }else{
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"Tuts"];
         [self.parentViewController presentViewController:vc animated:YES completion:nil];
         [defaults setInteger:1 forKey:@"view_tuts"];
         [defaults synchronize];
     }
+
+   
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Helvetica" size:16], NSFontAttributeName,
                                 [UIColor whiteColor], NSForegroundColorAttributeName, nil];
